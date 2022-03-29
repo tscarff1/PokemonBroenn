@@ -4674,10 +4674,10 @@ Route134_Text_JackIntro:
 	.string "Even those POKéMON that can swim are\n"
 	.string "carried along by the rapid currents.$"
 
-Route134_Text_JackDefeat:
+Route134_Text_AsherDefeat:
 	.string "Aiyeeeeh!$"
 
-Route134_Text_JackPostBattle:
+Route134_Text_AsherPostBattle:
 	.string "I think POKéMON enjoy the fast-running\n"
 	.string "currents around these parts.$"
 

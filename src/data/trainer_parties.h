@@ -2071,7 +2071,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Kevin[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Jack[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Asher[] = {
     {
     .iv = 0,
     .lvl = 34,
@@ -12432,5 +12432,56 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .iv = 0,
     .lvl = 5,
     .species = SPECIES_KYOGRE,
+    }
+};
+
+//King of the Hill!
+static const struct TrainerMonNoItemDefaultMoves sParty_Jack[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_POLIWAG,
+    },{
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_SNUBBULL,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Jill[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_POLIWAG,
+    },{
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_SNUBBULL,
+    }
+};
+
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Simba[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_MEOWTH,
+    },{
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_SKITTY,
+    }
+};
+
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Hank[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_POLIWAG,
+    },{
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_SNUBBULL,
     }
 };
