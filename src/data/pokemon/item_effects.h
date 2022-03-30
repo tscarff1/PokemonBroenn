@@ -563,7 +563,6 @@ const u8 *const gItemEffectTable[] =
     [ITEM_REAPER_CLOTH - ITEM_POTION]    = gItemEffect_EvoStone,
     [ITEM_ELECTIRIZER - ITEM_POTION]    = gItemEffect_EvoStone,
     [ITEM_MAGMARIZER - ITEM_POTION]    = gItemEffect_EvoStone,
-    [ITEM_SHINY_STONE - ITEM_POTION]    = gItemEffect_EvoStone,
     [ITEM_PRISM_SCALE - ITEM_POTION]    = gItemEffect_EvoStone,
     [ITEM_DEEP_SEA_TOOTH - ITEM_POTION]    = gItemEffect_EvoStone,
     [ITEM_DEEP_SEA_SCALE - ITEM_POTION]    = gItemEffect_EvoStone,

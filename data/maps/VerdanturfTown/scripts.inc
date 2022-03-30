@@ -125,3 +125,22 @@ VerdanturfTown_Text_RusturfTunnelSign:
 	.string "“The tunnel project has been\n"
 	.string "canceled.”$"
 
+VerdanturfTown_EventScript_Hank::
+	trainerbattle_single TRAINER_HANK, VerdanturfTown_Text_HankIntro, VerdanturfTown_Text_HankDefeat
+	msgbox VerdanturfTown_Text_HankPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+VerdanturfTown_EventScript_Simba::
+	trainerbattle_single TRAINER_SIMBA, VerdanturfTown_Text_SimbaIntro, VerdanturfTown_Text_SimbaDefeat
+	msgbox VerdanturfTown_Text_SimbaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+VerdanturfTown_EventScript_Jack::
+	trainerbattle_single TRAINER_JACK, VerdanturfTown_Text_JackIntro, VerdanturfTown_Text_JackDefeat
+	msgbox VerdanturfTown_Text_JackPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+VerdanturfTown_EventScript_Jill::
+	trainerbattle_single TRAINER_JILL, VerdanturfTown_Text_JillIntro, VerdanturfTown_Text_JillDefeat
+	msgbox VerdanturfTown_Text_JillPostBattle, MSGBOX_AUTOCLOSE
+	end

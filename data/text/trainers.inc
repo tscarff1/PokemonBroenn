@@ -4670,7 +4670,7 @@ Route133_Text_ConorPostBattle:
 	.string "Don't let others lead you astray.\n"
 	.string "Don't lose direction as you grow older.$"
 
-Route134_Text_JackIntro:
+Route134_Text_AsherIntro:
 	.string "Even those POKéMON that can swim are\n"
 	.string "carried along by the rapid currents.$"
 
@@ -4779,3 +4779,50 @@ Route134_Text_HudsonPostBattle:
 	.string "Our boat drifted out to sea.\p"
 	.string "My buddy's a timid fellow, so I'm\n"
 	.string "worried about him.$"
+
+VerdanturfTown_Text_HankIntro:
+	.string "I'm your first opponent,\p"
+	.string "I tell you what!$"
+
+VerdanturfTown_Text_HankDefeat:
+	.string "Maybe one day I'll be\p"
+	.string "King of the Hill...$"
+
+VerdanturfTown_Text_HankPostBattle:
+	.string "Maybe one day I'll be\p"
+	.string "King of the Hill...$"
+
+VerdanturfTown_Text_SimbaIntro:
+	.string "I just can't wait to be King!$"
+
+VerdanturfTown_Text_SimbaDefeat:
+	.string "But I guess I'll have to..."
+
+VerdanturfTown_Text_SimbaPostBattle:
+	.string "Maybe one day I'll be\p"
+	.string "Lion King instead...$"
+
+VerdanturfTown_Text_JackIntro:
+	.string "I came up this hill to get\p"
+	.string "some water, but I didn't find\n"
+	.string "any!$"
+
+VerdanturfTown_Text_JackDefeat:
+	.string "Do you know where I can find water?$"
+
+VerdanturfTown_Text_JackPostBattle:
+	.string "Do you know where I can find water?$"
+
+VerdanturfTown_Text_JillIntro:
+	.string "Bet you weren't expecting a girl King!\p"
+	.string "But I am the King! If you can beat me,\n"
+	.string "that means you'll be King!$"
+
+VerdanturfTown_Text_JillDefeat:
+	.string "Wow! You're really strong!\p"
+	.string "You've earned this KING'S ROCK.$"
+
+VerdanturfTown_Text_JillPostBattle:
+	.string "You can keep the KING'S ROCK.\p"
+	.string "I can get us another one from\n"
+	.string "my mom!$"

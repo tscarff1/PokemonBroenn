@@ -12468,11 +12468,11 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Jill[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Simba[] = {
     {
     .iv = 0,
-    .lvl = 18,
+    .lvl = 17,
     .species = SPECIES_MEOWTH,
     },{
     .iv = 0,
-    .lvl = 18,
+    .lvl = 17,
     .species = SPECIES_SKITTY,
     }
 };
