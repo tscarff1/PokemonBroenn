@@ -197,7 +197,7 @@ void BattleAI_SetupAIData(u8 defaultScoreMoves)
         }
     }
 
-    gBattlerTarget = SetRandomTarget(sBattler_AI);
+    
 }
 
 u8 BattleAI_ChooseMoveOrAction(void)
@@ -253,6 +253,21 @@ static u8 ChooseMoveOrAction_Singles(void)
 
     RecordLastUsedMoveByTarget();
     GetAiLogicData(sBattler_AI, gBattlerTarget);
+
+    //I want early game to be easier, and to increase the use of the better AI as the game goes on. I will determine game progress by using the level of the Pokemon
+    //So a level 2 Pokemon will always choose a random move, while a level 100 will always try to choose optimally. I will play around with the in-between
+    if((Random() % MAX_AI_LEVEL + gBattleMons[sBattler_AI].level - 2) < MAX_AI_LEVEL) 
+    {
+        u32 numOfMoves = 0;
+        for (i = 1; i < MAX_MON_MOVES; i++)
+        {
+            if (gBattleMons[sBattler_AI].moves[i] != MOVE_NONE)
+            {
+                numOfMoves++;
+            }
+        }
+        return gBattleMons[sBattler_AI].moves[Random() % numOfMoves];
+    }
     
     while (flags != 0)
     {
