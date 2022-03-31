@@ -349,3 +349,16 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 	.string "It's hard to tell what you're like as\n"
 	.string "a TRAINER from a LEAGUE BADGE.$"
 
+RustboroCity_PokemonSchool_EventScript_Sidney::
+	lock
+	faceplayer
+	msgbox RustboroCity_PokemonSchool_Text_Sidney MSGBOX_NPC
+	release
+	end
+
+RustboroCity_PokemonSchool_Text_Sidney:
+	.string "Young trainers these days are really \n"
+	.string "something else!\p"
+	.string "...\p"
+	.string "Maybe I should have spent more time here\n"
+	.string "as a kid.$"
