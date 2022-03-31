@@ -399,3 +399,75 @@ OldaleTown_Text_CitySign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_EventScript_EggMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_OLDALE_EGG, OldaleTown_EventScript_EggReceived
+	msgbox OldaleTown_Text_NewTrainer
+	goto_if_unset FLAG_DEFEATED_RIVAL_ROUTE103, OldaleTown_EventScript_NoBattlesWon
+	msgbox OldaleTown_Text_WantTheEgg, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OldaleTown_EventScript_DeclineEgg
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OldaleTown_EventScript_NoRoomForEgg
+	msgbox OldaleTown_Text_HopeYoullTrainWithEgg, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_OLDALE_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message OldaleTown_Text_ReceivedTheEgg
+	waitfanfare
+	giveegg SPECIES_TYROGUE
+	release
+	end
+
+OldaleTown_EventScript_EggReceived::
+	msgbox OldaleTown_Text_EggCheckup MSGBOX_NPC
+	release
+	end
+
+OldaleTown_EventScript_NoBattlesWon::
+	msgbox OldaleTown_Text_NoBattlesWon MSGBOX_NPC
+	release
+	end
+
+OldaleTown_EventScript_DeclineEgg::
+	msgbox OldaleTown_Text_WhatAShame, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_NoRoomForEgg::
+	msgbox OldaleTown_Text_NoRoomForEgg MSGBOX_NPC
+	release
+	end
+
+OldaleTown_Text_NewTrainer:
+	.string "Hmm... You appear to be a promising new\n"
+	.string "trainer...$"
+
+OldaleTown_Text_NoBattlesWon:
+	.string "No, it doesn't look like you have won\n"
+	.string "even a single battle!$"
+
+OldaleTown_Text_WantTheEgg:
+	.string "You appear to even have battle\n"
+	.string "experience! Say...\p"
+	.string "Would you like to take this egg\n"
+	.string "with you? I'm sure it will grow\p"
+	.string "strong alongside you.$"
+
+OldaleTown_Text_WhatAShame:
+	.string "Really? That's truly a shame...$"
+
+OldaleTown_Text_NoRoomForEgg:
+	.string "Oh! You have no room in your\n"
+	.string "party! Please talk to me again when\p"
+	.string "you have more room.$"
+
+OldaleTown_Text_HopeYoullTrainWithEgg:
+	.string "Wonderful! I hope you'll train hard\n"
+	.string "AND play hard with this EGG!$"
+
+OldaleTown_Text_ReceivedTheEgg:
+	.string "{PLAYER} received the EGG.$"
+
+OldaleTown_Text_EggCheckup:
+	.string "Oh! It's you! How is that EGG\n"
+	.string "doing?$"
