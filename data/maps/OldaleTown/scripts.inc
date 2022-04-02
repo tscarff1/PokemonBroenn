@@ -1,9 +1,11 @@
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
+.set LOCALID_MOLTRES, 6
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, OldaleTown_OnResume
 	.byte 0
 
 OldaleTown_OnTransition:
@@ -12,7 +14,22 @@ OldaleTown_OnTransition:
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
+	call_if_set FLAG_BATTLED_MOLTRES, OldaleTown_EventScript_HideMoltres
 	end
+
+OldaleTown_EventScript_HideMoltres::
+	setflag FLAG_HIDE_MOLTRES
+	return
+
+OldaleTown_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, OldaleTown_EventScript_TryRemoveMoltres
+	end
+
+OldaleTown_EventScript_TryRemoveMoltres::
+	goto_if_set FLAG_BATTLED_MOLTRES, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
 OldaleTown_EventScript_SetOldaleState::
@@ -471,3 +488,37 @@ OldaleTown_Text_ReceivedTheEgg:
 OldaleTown_Text_EggCheckup:
 	.string "Oh! It's you! How is that EGG\n"
 	.string "doing?$"
+
+OldaleTown_EventScript_Moltres::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_MOLTRES, 2, ITEM_NONE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldaleTown_EventScript_DefeatedMoltres
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, OldaleTown_EventScript_RanFromMoltres
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, OldaleTown_EventScript_RanFromMoltres
+	setflag FLAG_BATTLED_MOLTRES
+	release
+	end
+
+OldaleTown_EventScript_DefeatedMoltres::
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	setflag FLAG_BATTLED_MOLTRES
+	setflag FLAG_HIDE_MOLTRES
+	goto Common_EventScript_LegendaryFlewAway
+	end
+
+OldaleTown_EventScript_RanFromMoltres::
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	setflag FLAG_BATTLED_MOLTRES
+	setflag FLAG_HIDE_MOLTRES
+	goto Common_EventScript_LegendaryFlewAway
+	end
