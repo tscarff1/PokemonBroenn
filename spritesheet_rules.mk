@@ -426,6 +426,12 @@ $(OBJEVENTGFXDIR)/pokemon/groudon.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon/ho_oh.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/pokemon/articuno.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/zapdos.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/pokemon/moltres.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
