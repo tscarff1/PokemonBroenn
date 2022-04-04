@@ -64,13 +64,14 @@ PetalburgCity_House1_EventScript_NoRoomForEgg::
 	end
 
 PetalburgCity_House1_Text_EggWomanTravel:
-	.string "I used to spend my time travelling the world,\n"
-	.string "but those days are long behind me.$"
+	.string "I used to spend my time travelling the\n"
+	.string "world, but those days are long behind me.$"
 
 PetalburgCity_House1_Text_NoBadges:
 	.string "Say! You seem like an adventurer!\p"
-	.string "If you come back after you've earned a badge,\n"
-	.string "I can give you something to take on your journey.$"
+	.string "If you come back after you've earned a\n"
+	.string "badge, I'll' give you something to take\p"
+	.string "on your journey.$"
 
 PetalburgCity_House1_Text_GiveEgg:
 	.string "Oh! I can see you've travelled some distance.\n"
