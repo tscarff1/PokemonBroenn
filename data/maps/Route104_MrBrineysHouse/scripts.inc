@@ -159,3 +159,18 @@ Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail:
 Route104_MrBrineysHouse_Text_Peeko:
 	.string "PEEKO: Pii piihyoro!$"
 
+Route104_MrBrineysHouse_EventScript_Drake::
+	lock
+	faceplayer
+	msgbox Route104_MrBrineysHouse_Text_Drake MSGBOX_NPC
+	release
+	end
+
+Route104_MrBrineysHouse_Text_Drake:
+	.string "Mr. Briney and I were once sailing\n"
+	.string "partners. Together, we helped \p"
+	.string "much of the HOENN region.\p"
+	.string "It's always nice to catch up with\n"
+	.string "old friends.\p"
+	.string "...\p"
+	.string "Even if they are a bit eccentric$"
