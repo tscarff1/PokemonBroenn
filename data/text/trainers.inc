@@ -4781,15 +4781,15 @@ Route134_Text_HudsonPostBattle:
 	.string "worried about him.$"
 
 VerdanturfTown_Text_HankIntro:
-	.string "I'm your first opponent,\p"
+	.string "I'm your first opponent,\n"
 	.string "I tell you what!$"
 
 VerdanturfTown_Text_HankDefeat:
-	.string "Maybe one day I'll be\p"
+	.string "Maybe one day I'll be\n"
 	.string "King of the Hill...$"
 
 VerdanturfTown_Text_HankPostBattle:
-	.string "Maybe one day I'll be\p"
+	.string "Maybe one day I'll be\n"
 	.string "King of the Hill...$"
 
 VerdanturfTown_Text_SimbaIntro:
@@ -4799,12 +4799,12 @@ VerdanturfTown_Text_SimbaDefeat:
 	.string "But I guess I'll have to..."
 
 VerdanturfTown_Text_SimbaPostBattle:
-	.string "Maybe one day I'll be\p"
+	.string "Maybe one day I'll be\n"
 	.string "Lion King instead...$"
 
 VerdanturfTown_Text_JackIntro:
-	.string "I came up this hill to get\p"
-	.string "some water, but I didn't find\n"
+	.string "I came up this hill to get\n"
+	.string "some water, but I didn't find\p"
 	.string "any!$"
 
 VerdanturfTown_Text_JackDefeat:
@@ -4819,10 +4819,10 @@ VerdanturfTown_Text_JillIntro:
 	.string "that means you'll be King!$"
 
 VerdanturfTown_Text_JillDefeat:
-	.string "Wow! You're really strong!\p"
+	.string "Wow! You're really strong!\n"
 	.string "You've earned this KING'S ROCK.$"
 
 VerdanturfTown_Text_JillPostBattle:
-	.string "You can keep the KING'S ROCK.\p"
-	.string "I can get us another one from\n"
-	.string "my mom!$"
+	.string "You can keep the KING'S ROCK.\n"
+	.string "I can get us another one from\p"
+	.string "my mom.$"

@@ -11979,8 +11979,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Jill),
-        .party = {.NoItemDefaultMoves = sParty_Jill},
+        .partySize = ARRAY_COUNT(sParty_Jack),
+        .party = {.NoItemDefaultMoves = sParty_Jack},
     },
 
     [TRAINER_JILL] =
