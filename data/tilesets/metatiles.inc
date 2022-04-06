@@ -354,6 +354,8 @@ gMetatileAttributes_DewfordGym::
 gMetatiles_MauvilleGym::
 	.incbin "data/tilesets/secondary/mauville_gym/metatiles.bin"
 
+gMetatileAttributes_MauvilleGym::
+	.incbin "data/tilesets/secondary/mauville_gym/metatile_attributes.bin"
 
 	.align 1
 gMetatiles_LavaridgeGym::
