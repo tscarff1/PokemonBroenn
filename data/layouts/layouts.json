@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_PETER_GYM",
+      "name": "MauvilleCity_PeterGym_Layout",
+      "width": 20,
+      "height": 60,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGymPeter",
+      "border_filepath": "data/layouts/MauvilleCity_PeterGym/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_PeterGym/map.bin"
     }
   ]
 }

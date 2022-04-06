@@ -1729,3 +1729,23 @@ gTilesetPalettes_UnionRoom::
 	.align 2
 gTilesetTiles_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_PeterGym::
+	.incbin "data/tilesets/secondary/petergym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/petergym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_PeterGym::
+	.incbin "data/tilesets/secondary/petergym/tiles.4bpp.lz"
