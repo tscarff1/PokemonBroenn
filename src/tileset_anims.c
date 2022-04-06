@@ -40,7 +40,6 @@ static void TilesetAnim_SootopolisGym(u16);
 static void TilesetAnim_Cave(u16);
 static void TilesetAnim_EliteFour(u16);
 static void TilesetAnim_MauvilleGym(u16);
-static void TilesetAnim_PeterGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
@@ -71,7 +70,6 @@ static void QueueAnimTiles_Cave_Lava(u16);
 static void QueueAnimTiles_BattleFrontierOutsideWest_Flag(u16);
 static void QueueAnimTiles_BattleFrontierOutsideEast_Flag(u16);
 static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
-static void QueueAnimTiles_PeterGym_WaterFlows(u);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
@@ -476,27 +474,6 @@ const u16 *const gTilesetAnims_MauvilleGym_ElectricGates[] = {
     gTilesetAnims_MauvilleGym_ElectricGates_Frame0,
     gTilesetAnims_MauvilleGym_ElectricGates_Frame1
 };
-
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame0[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/0.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame1[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/1.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame2[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/2.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame3[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/3.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame4[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/4.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame5[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/5.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame6[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/6.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlow_Frame7[] = INCBIN_U16("data/tilesets/secondary/mauville_gym_peter/anim/water_flow/7.4bpp");
-
-const u16 *const gTilesetAnims_PeterGym_WaterFlows[] = {
-    gTilesetAnims_PeterGym_WaterFlow_Frame0,
-    gTilesetAnims_PeterGym_WaterFlow_Frame1,
-    gTilesetAnims_PeterGym_WaterFlow_Frame2,
-    gTilesetAnims_PeterGym_WaterFlow_Frame3,
-    gTilesetAnims_PeterGym_WaterFlow_Frame4,
-    gTilesetAnims_PeterGym_WaterFlow_Frame5,
-    gTilesetAnims_PeterGym_WaterFlow_Frame6,
-    gTilesetAnims_PeterGym_WaterFlow_Frame7
-};
-
 const u16 gTilesetAnims_BikeShop_BlinkingLights_Frame0[] = INCBIN_U16("data/tilesets/secondary/bike_shop/anim/blinking_lights/0.4bpp");
 const u16 gTilesetAnims_BikeShop_BlinkingLights_Frame1[] = INCBIN_U16("data/tilesets/secondary/bike_shop/anim/blinking_lights/1.4bpp");
 const u16 tileset_anims_space_7[16] = {};
@@ -837,13 +814,6 @@ void InitTilesetAnim_MauvilleGym(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_MauvilleGym;
 }
 
-void InitTilesetAnim_PeterGym(void)
-{
-    sSecondaryTilesetAnimCounter = 0;
-    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
-    sSecondaryTilesetAnimCallback = TilesetAnim_PeterGym;
-}
-
 void InitTilesetAnim_BikeShop(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -1098,17 +1068,6 @@ static void TilesetAnim_MauvilleGym(u16 timer)
 {
     if (timer % 2 == 0)
         QueueAnimTiles_MauvilleGym_ElectricGates(timer >> 1);
-}
-
-static void TilesetAnim_PeterGym(u16 timer)
-{
-    if (timer % 2 == 0)
-        QueueAnimTiles_PeterGym_WaterFlows(timer >> 4);
-}
-
-static void QueueAnimTiles_PeterGym_WaterFlows(u8 timer) {
-    u8 i = timer % 8;
-    AppendTilesetAnimToBuffer(gTilesetAnims_PeterGym_WaterFlows[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 496)), 0x100);
 }
 
 static void TilesetAnim_SootopolisGym(u16 timer)
