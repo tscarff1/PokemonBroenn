@@ -14,18 +14,30 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 6,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PeterGym_EventScript_GymGuide",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {
-      "x": 8,
+      "x": 9,
       "y": 39,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY",
       "dest_warp_id": 0
     },
     {
-      "x": 9,
+      "x": 10,
       "y": 39,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY",
@@ -36,6 +48,21 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PeterGym_EventScript_LeftStatue"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PeterGym_EventScript_RightStatue"
+    }
   ]
 }

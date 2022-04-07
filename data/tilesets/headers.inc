@@ -841,4 +841,4 @@ gTileset_PeterGym::
 	.4byte gTilesetPalettes_PeterGym
 	.4byte gMetatiles_PeterGym
 	.4byte gMetatileAttributes_PeterGym
-	.4byte NULL
+	.4byte InitTilesetAnim_PeterGym

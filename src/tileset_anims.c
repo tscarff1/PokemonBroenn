@@ -43,6 +43,7 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
+static void TilesetAnim_PeterGym(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -73,6 +74,48 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+
+static void QueueAnimTiles_PeterGym_WaterFlow(u16);
+
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame0[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_0.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame1[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_1.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame2[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_2.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame3[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_3.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame4[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_4.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame5[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_5.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame6[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_6.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlow_Frame7[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_7.4bpp");
+
+const u16 *const gTilesetAnims_PeterGym_WaterFlow[] = {
+    gTilesetAnims_PeterGym_WaterFlow_Frame0,
+    gTilesetAnims_PeterGym_WaterFlow_Frame1,
+    gTilesetAnims_PeterGym_WaterFlow_Frame2,
+    gTilesetAnims_PeterGym_WaterFlow_Frame3,
+    gTilesetAnims_PeterGym_WaterFlow_Frame4,
+    gTilesetAnims_PeterGym_WaterFlow_Frame5,
+    gTilesetAnims_PeterGym_WaterFlow_Frame6,
+    gTilesetAnims_PeterGym_WaterFlow_Frame7
+};
+
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame0[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_0.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame1[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_1.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame2[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_2.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame3[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_3.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame4[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_4.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame5[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_5.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame6[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_6.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame7[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_7.4bpp");
+
+const u16 *const gTilesetAnims_PeterGym_WaterFlowSide[] = {
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame0,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame1,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame2,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame3,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame4,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame5,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame6,
+    gTilesetAnims_PeterGym_WaterFlowSide_Frame7
+};
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -835,6 +878,13 @@ void InitTilesetAnim_BattleDome(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_BattleDome;
 }
 
+void InitTilesetAnim_PeterGym(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_PeterGym;
+}
+
 static void TilesetAnim_Rustboro(u16 timer)
 {
     if (timer % 8 == 0)
@@ -1111,6 +1161,14 @@ static void TilesetAnim_BattleDome2(u16 timer)
         BlendAnimPalette_BattleDome_FloorLightsNoBlend(timer >> 2);
 }
 
+static void TilesetAnim_PeterGym(u16 timer)
+{
+    if (timer % 2 == 0)
+        QueueAnimTiles_PeterGym_WaterFlow(timer >> 1);
+    if (timer % 2 == 0)
+        QueueAnimTiles_PeterGym_WaterFlowSide(timer >> 1);
+}
+
 static void QueueAnimTiles_Building_TVTurnedOn(u16 timer)
 {
     u16 i = timer % 2;
@@ -1186,4 +1244,15 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
         if (!--sSecondaryTilesetAnimCounterMax)
             sSecondaryTilesetAnimCallback = NULL;
     }
+}
+
+
+static void QueueAnimTiles_PeterGym_WaterFlow(u16 timer) {
+    u16 i = timer % 8;
+    AppendTilesetAnimToBuffer(gTilesetAnims_PeterGym_WaterFlow[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(640)), 0x400);
+}
+
+static void QueueAnimTiles_PeterGym_WaterFlowSide(u16 timer) {
+    u16 i = timer % 8;
+    AppendTilesetAnimToBuffer(gTilesetAnims_PeterGym_WaterFlowSide[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(640)), 0x400);
 }
