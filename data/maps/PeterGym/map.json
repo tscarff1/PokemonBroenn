@@ -54,7 +54,7 @@
       "y": 36,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "PeterGym_EventScript_LeftStatue"
+      "script": "PeterGym_EventScript_LeftGymStatue"
     },
     {
       "type": "sign",
@@ -62,7 +62,7 @@
       "y": 36,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "PeterGym_EventScript_RightStatue"
+      "script": "PeterGym_EventScript_RightGymStatue"
     }
   ]
 }

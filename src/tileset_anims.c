@@ -76,6 +76,7 @@ static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 
 static void QueueAnimTiles_PeterGym_WaterFlow(u16);
+static void QueueAnimTiles_PeterGym_WaterFlowSide(u16);
 
 const u16 gTilesetAnims_PeterGym_WaterFlow_Frame0[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_0.4bpp");
 const u16 gTilesetAnims_PeterGym_WaterFlow_Frame1[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_1.4bpp");
@@ -97,14 +98,14 @@ const u16 *const gTilesetAnims_PeterGym_WaterFlow[] = {
     gTilesetAnims_PeterGym_WaterFlow_Frame7
 };
 
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame0[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_0.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame1[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_1.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame2[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_2.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame3[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_3.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame4[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_4.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame5[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_5.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame6[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_6.4bpp");
-const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame7[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flow_anim_7.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame0[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_0.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame1[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_1.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame2[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_2.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame3[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_3.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame4[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_4.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame5[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_5.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame6[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_6.4bpp");
+const u16 gTilesetAnims_PeterGym_WaterFlowSide_Frame7[] = INCBIN_U16("data/tilesets/secondary/petergym/anim/flowside_anim_7.4bpp");
 
 const u16 *const gTilesetAnims_PeterGym_WaterFlowSide[] = {
     gTilesetAnims_PeterGym_WaterFlowSide_Frame0,
@@ -1254,5 +1255,5 @@ static void QueueAnimTiles_PeterGym_WaterFlow(u16 timer) {
 
 static void QueueAnimTiles_PeterGym_WaterFlowSide(u16 timer) {
     u16 i = timer % 8;
-    AppendTilesetAnimToBuffer(gTilesetAnims_PeterGym_WaterFlowSide[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(640)), 0x400);
+    AppendTilesetAnimToBuffer(gTilesetAnims_PeterGym_WaterFlowSide[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(672)), 0x400);
 }
