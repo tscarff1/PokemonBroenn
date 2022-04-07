@@ -556,3 +556,10 @@ gMetatiles_UnionRoom::
 	.align 1
 gMetatileAttributes_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/metatile_attributes.bin"
+	.align 1
+gMetatiles_PeterGym::
+	.incbin "data/tilesets/secondary/petergym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_PeterGym::
+	.incbin "data/tilesets/secondary/petergym/metatile_attributes.bin"

@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETER_GYM",
+      "name": "PeterGym_Layout",
+      "width": 20,
+      "height": 40,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PeterGym",
+      "border_filepath": "data/layouts/PeterGym/border.bin",
+      "blockdata_filepath": "data/layouts/PeterGym/map.bin"
     }
   ]
 }

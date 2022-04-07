@@ -832,3 +832,13 @@ gTileset_UnionRoom::
 	.4byte NULL @ animation callback
 
 	.align 2
+	.align 2
+gTileset_PeterGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_PeterGym
+	.4byte gTilesetPalettes_PeterGym
+	.4byte gMetatiles_PeterGym
+	.4byte gMetatileAttributes_PeterGym
+	.4byte NULL
