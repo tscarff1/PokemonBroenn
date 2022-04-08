@@ -3419,32 +3419,32 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     {
-    .iv = 200,
+    .iv = 250,
     .lvl = 20,
-    .species = SPECIES_VOLTORB,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_SPARK, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
+    .species = SPECIES_HORSEA,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_WATER_GUN, MOVE_LEER, MOVE_ATTRACT, MOVE_ICY_WIND}
     },
     {
     .iv = 200,
-    .lvl = 20,
-    .species = SPECIES_ELECTRIKE,
+    .lvl = 24,
+    .species = SPECIES_MILOTIC,
+    .heldItem = ITEM_BRIGHT_POWDER,
+    .moves = {MOVE_WATER_PULSE, MOVE_WRAP, MOVE_DOUBLE_TEAM, MOVE_ICY_WIND}
+    },
+    {
+    .iv = 200,
+    .lvl = 23,
+    .species = SPECIES_CORSOLA,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHOCK_WAVE, MOVE_LEER, MOVE_QUICK_ATTACK, MOVE_HOWL}
+    .moves = {MOVE_BUBBLE_BEAM, MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROLLOUT}
     },
     {
     .iv = 220,
-    .lvl = 22,
-    .species = SPECIES_MAGNETON,
+    .lvl = 20,
+    .species = SPECIES_SKRELP,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SUPERSONIC, MOVE_SHOCK_WAVE, MOVE_THUNDER_WAVE, MOVE_SONIC_BOOM}
-    },
-    {
-    .iv = 250,
-    .lvl = 24,
-    .species = SPECIES_MANECTRIC,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_HOWL}
+    .moves = {MOVE_BUBBLE, MOVE_ACID, MOVE_TAIL_WHIP, MOVE_FEINT_ATTACK}
     }
 };
 

@@ -1263,6 +1263,18 @@ static const struct SpriteFrameImage sPicTable_Wattson[] = {
     overworld_frame(gObjectEventPic_Wattson, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Peter[] = {
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Peter, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Flannery[] = {
     overworld_frame(gObjectEventPic_Flannery, 2, 4, 0),
     overworld_frame(gObjectEventPic_Flannery, 2, 4, 1),

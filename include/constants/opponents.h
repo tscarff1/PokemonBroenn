@@ -268,7 +268,7 @@
 #define TRAINER_DRAKE                       264
 #define TRAINER_ROXANNE_1                   265
 #define TRAINER_BRAWLY_1                    266
-#define TRAINER_WATTSON_1                   267
+#define TRAINER_PETER                   267
 #define TRAINER_FLANNERY_1                  268
 #define TRAINER_NORMAN_1                    269
 #define TRAINER_WINONA_1                    270
