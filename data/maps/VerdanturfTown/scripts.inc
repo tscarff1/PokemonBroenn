@@ -144,3 +144,29 @@ VerdanturfTown_EventScript_Jill::
 	trainerbattle_single TRAINER_JILL, VerdanturfTown_Text_JillIntro, VerdanturfTown_Text_JillDefeat
 	msgbox VerdanturfTown_Text_JillPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VerdanturfTown_EventScript_KOTH_Guide::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_JILL, VerdanturfTown_EventScript_KOTH_Guide_Victory
+	msgbox VerdanturfTown_Text_KOTH_Guide MSGBOX_NPC
+	release
+	end
+
+
+VerdanturfTown_EventScript_KOTH_Guide_Victory::
+	msgbox VerdanturfTown_Text_KOTH_Guide_Victory MSGBOX_NPC
+	release
+	end
+
+VerdanturfTown_Text_KOTH_Guide:
+	.string "Are you here to play KING OF THE HILL\n"
+	.string "with us? If you beat everyone on the\p"
+	.string "hill and become KING you win the\n"
+	.string "special prize -- a KING'S ROCK!$"
+
+VerdanturfTown_Text_KOTH_Guide_Victory:
+	.string "Wow! I can't believe you beat KING\n"
+	.string "JILL! You must be really strong!\p"
+	.string "Now we'll have to get another KING'S\n"
+	.string "ROCK from our parents.$"
