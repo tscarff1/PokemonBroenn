@@ -84,7 +84,7 @@ PeterGym_EventScript_NotTrainer::
 	end
 
 PeterGym_Text_NotTrainer:
-	.string "Me? I'm not a trainer, I'm a breeder!"
+	.string "Me? I'm not a trainer, I'm a breeder!$"
 	
 PeterGym_EventScript_Vivian::
 	trainerbattle_single TRAINER_VIVIAN, PeterGym_Text_VivianIntro, PeterGym_Text_VivianDefeat
@@ -127,7 +127,7 @@ PeterGym_Text_AmTrainer:
 	.string "Me? I am a trainer!\n"
 	.string "... ... ...\p"
 	.string "But my POKéMON haven't\n"
-	.string "hatched yet..."
+	.string "hatched yet...$"
 
 PeterGym_EventScript_Angelo::
 	trainerbattle_single TRAINER_ANGELO, PeterGym_Text_AngeloIntro, PeterGym_Text_AngeloDefeat
@@ -161,3 +161,83 @@ PeterGym_Text_ShawnPostBattle:
 	.string "around for a long, long time.\p"
 	.string "He was battling even before your\n"
 	.string "daddy was born, that tough coot.$"
+
+PeterGym_EventScript_Peter::
+	trainerbattle_single TRAINER_PETER, PeterGym_Text_PeterIntro, PeterGym_Text_PeterDefeat, PeterGym_EventScript_PeterDefeated, NO_MUSIC
+	goto_if_unset FLAG_RECEIVED_TM34, PeterGym_EventScript_GiveWaterPulse2
+	msgbox PeterGym_Text_PeterPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+PeterGym_EventScript_PeterDefeated::
+	message PeterGym_Text_ReceivedSteamBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox PeterGym_Text_ExplainSteamBadgeTakeThis, MSGBOX_DEFAULT
+	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
+	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
+	setflag FLAG_DEFEATED_MAUVILLE_GYM
+	setflag FLAG_BADGE03_GET
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	setvar VAR_0x8008, 3
+	call Common_EventScript_SetGymTrainers
+	special DrawWholeMapView
+	playse SE_UNLOCK
+	call PeterGym_EventScript_GiveWaterPulse
+	closemessage
+	release
+	end
+
+PeterGym_EventScript_GiveWaterPulse2::
+	giveitem ITEM_TM03
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox PeterGym_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM03
+	release
+	end
+
+PeterGym_EventScript_GiveWaterPulse::
+	giveitem ITEM_TM03
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	msgbox PeterGym_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM03
+	return
+
+
+PeterGym_Text_PeterIntro:
+	.string "It's really tough managing a GYM and\n"
+	.string "keeping up on POKéMON breeding!\p"
+	.string "Say... Do you want to run the GYM\n"
+	.string "so I can focus on breeding\p"
+	.string "What's that?\n"
+	.string "I'm not allowed to do that?\p"
+	.string "Okay, how about a battle\n"
+	.string "instead!$"
+
+PeterGym_Text_PeterDefeat:
+	.string "Ahahahah!\n"
+	.string "Fine, I lost!\p"
+	.string "Take this BADGE!$"
+
+PeterGym_Text_ReceivedSteamBadge:
+	.string "{PLAYER} received the STEAM BADGE\n"
+	.string "from PETER.$"
+
+PeterGym_Text_ExplainSteamBadgeTakeThis:
+	.string "With the STEAM BADGE, POKéMON can\n"
+	.string "use ROCK SMASH out of battle.\p"
+	.string "And, it will make your POKéMON a little\n"
+	.string "bit faster, too.\p"
+	.string "Hmm…\n"
+	.string "You should take this, too!$"
+
+PeterGym_Text_ExplainWaterPulse:
+	.string "That TM03 there contains WATER PULSE.\p"
+	.string "It's a dirty move you can use to\n"
+	.string "confuse your opponents. Definitely\p"
+	.string "pay to win.$"
+
+PeterGym_Text_PeterPostBattle:
+	.string "The next GYM is in LAVARIDGE. Say hi\n"
+	.string "to Flannery for me? Like actually?$"
