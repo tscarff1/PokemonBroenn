@@ -3508,3 +3508,8 @@ static const u8 sSapphireDesc[] = _(
     "A brilliant blue gem\n"
     "that symbolizes\n"
     "honesty.");
+
+static const u8 sWishTagDesc[] = _(
+    "An ordinary, bio-\n"
+    "degradable scrap of\n"
+    "paper.");
