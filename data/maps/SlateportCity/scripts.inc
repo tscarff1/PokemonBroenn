@@ -1383,3 +1383,66 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+
+SlateportCity_EventScript_WishTagSalesman::
+	lock
+	faceplayer
+	goto_if_set FLAG_PURCHASED_WISH_TAG, SlateportCity_EventScript_EnjoyWishTag
+	showmoneybox 0, 0
+	msgbox SlateportCity_Text_WantWishTag, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_DeclineWishTag
+	checkmoney 2500
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_WishTagNoMoney
+	call_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_RemoveMoney
+	giveitem ITEM_WISH_TAG
+	hidemoneybox
+	msgbox SlateportCity_Text_EnjoyWishTag, MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_EnjoyWishTag::
+	msgbox SlateportCity_Text_EnjoyWishTag MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_DeclineWishTag::
+	msgbox SlateportCity_Text_DeclineWishTag MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_WishTagNoMoney::
+	msgbox SlateportCity_Text_WishTagNoMoney MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_RemoveMoney::
+	removemoney 2500
+	updatemoneybox
+	return
+
+SlateportCity_Text_EnjoyWishTag:
+	.string "Make sure you think about your WISH\n"
+	.string "as you cast that WISH TAG in to the sea!\p"
+	.string "Is very important to focus, yes yes!\n"
+	.string "And the WISH TAG is bio-degradable!$"
+
+SlateportCity_Text_WantWishTag:
+	.string "Hello hello! I have great offer, just\n"
+	.string "for you! My offer is to make your\p"
+	.string "greatest dreams come true, yes yes!\n"
+	.string "How, you ask? With WISH TAG! Simply\p"
+	.string "focus hard on wish, then let WISH TAG\n"
+	.string "fall in to ocean! So easy. And only\p"
+	.string "¥2500! Small price for dreams, yes yes!$"
+
+SlateportCity_Text_DeclineWishTag:
+	.string "No? Okay, you must not have money.\n"
+	.string "Come back with money, I make your\p"
+	.string "dreams come true!$"
+
+SlateportCity_Text_WishTagNoMoney:
+	.string "You have no money! Come back with.\n"
+	.string "money, I sell you WISH TAG. You need\p"
+	.string "it.$"
+
