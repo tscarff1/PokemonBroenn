@@ -1524,9 +1524,9 @@
 #define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
 #define FLAG_PURCHASED_WISH_TAG                     (SYSTEM_FLAGS + 0x9A)
 #define FLAG_HIDE_SHELBY_SLATEPORT                  (SYSTEM_FLAGS + 0x9B)
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
+#define FLAG_HIDE_JERRY_FALLARBOR                   (SYSTEM_FLAGS + 0x9C)
+#define FLAG_HIDE_JERRY_FOSSILMANIAC                (SYSTEM_FLAGS + 0x9D)
+#define FLAG_TBD                (SYSTEM_FLAGS + 0x9E)
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
 #define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag

@@ -1610,17 +1610,16 @@ SlateportCity_EventScript_ShelbyIllBeHere::
 	end
 
 @ If WISH TAG PROGRESS is 0 or 1, we haven't interacted with Shelby or bought the WISH TAG. So Shelby should just give a hint that there is an event
-@ If PROGRESS is 7, the player has caught Jirachi and Shelby should congratulate the player
-@ If PROGRESS is 3-6, the player is looking for Jirachi and has already battled Shelby
+@ If PROGRESS is 8, the player has caught Jirachi and Shelby should congratulate the player
+@ If PROGRESS is 3-7, the player is looking for Jirachi and has already battled Shelby
 SlateportCity_EventScript_Shelby::
 	goto_if_le VAR_WISH_TAG_PROGRESS, 1, SlateportCity_EventScript_ShelbyWishes
-	goto_if_eq VAR_WISH_TAG_PROGRESS, 7, SlateportCity_EventScript_ShelbyFoundJirachi
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 8, SlateportCity_EventScript_ShelbyFoundJirachi
 	goto_if_ge VAR_WISH_TAG_PROGRESS, 3, SlateportCity_EventScript_ShelbyGrandsonInformation
 	msgbox SlateportCity_Text_ShelbyReady, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_ShelbyIllBeHere
 	trainerbattle_single TRAINER_SHELBY_1, SlateportCity_Text_ShelbyBattle, SlateportCity_Text_ShelbyDefeat, SlateportCity_EventScript_ShelbyPostBattle
 	end
-
 
 SlateportCity_EventScript_ShelbyWishes::
 	lock
@@ -1630,6 +1629,7 @@ SlateportCity_EventScript_ShelbyWishes::
 
 SlateportCity_EventScript_ShelbyPostBattle::
 	setvar VAR_WISH_TAG_PROGRESS, 3
+	clearflag FLAG_HIDE_JERRY_FALLARBOR
 	msgbox SlateportCity_Text_ShelbyGrandsonInformation, MSGBOX_NPC
 	end
 
@@ -1696,3 +1696,4 @@ SlateportCity_Text_ShelbyGrandsonInformation:
 	.string "he was heading to FALLARBOR TOWN to\p"
 	.string "talk to a scientist researching\n"
 	.string "METEORITES. You may find him there.$"
+	
