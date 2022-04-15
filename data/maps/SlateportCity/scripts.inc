@@ -1611,10 +1611,10 @@ SlateportCity_EventScript_ShelbyIllBeHere::
 
 @ If WISH TAG PROGRESS is 0 or 1, we haven't interacted with Shelby or bought the WISH TAG. So Shelby should just give a hint that there is an event
 @ If PROGRESS is 8, the player has caught Jirachi and Shelby should congratulate the player
-@ If PROGRESS is 3-7, the player is looking for Jirachi and has already battled Shelby
+@ If PROGRESS is 3-8, the player is looking for Jirachi and has already battled Shelby
 SlateportCity_EventScript_Shelby::
 	goto_if_le VAR_WISH_TAG_PROGRESS, 1, SlateportCity_EventScript_ShelbyWishes
-	goto_if_eq VAR_WISH_TAG_PROGRESS, 8, SlateportCity_EventScript_ShelbyFoundJirachi
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 9, SlateportCity_EventScript_ShelbyFoundJirachi
 	goto_if_ge VAR_WISH_TAG_PROGRESS, 3, SlateportCity_EventScript_ShelbyGrandsonInformation
 	msgbox SlateportCity_Text_ShelbyReady, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_ShelbyIllBeHere

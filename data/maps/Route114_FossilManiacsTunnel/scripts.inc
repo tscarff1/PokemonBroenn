@@ -108,6 +108,7 @@ Route114_FossilManiacsTunnel_EventScript_Jerry::
 	waitmovement 0
 	removeobject LOCALID_JERRY
 	setvar VAR_WISH_TAG_PROGRESS, 5
+	clearflag FLAG_HIDE_JERRY_FOSSILMANIACHOUSE
 	release
 	end
 
