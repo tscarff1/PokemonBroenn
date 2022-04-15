@@ -161,7 +161,7 @@
 #define VAR_BOARD_BRINEY_BOAT_STATE          0x408E
 #define VAR_DEVON_CORP_3F_STATE              0x408F
 #define VAR_BRINEY_HOUSE_STATE               0x4090
-#define VAR_WISH_TAG_PROGRESS                0x4091 // //0 = Nothing, 1 = Wish Tag Purchased, 2 = Shelby talked to, 3 = Shelby defeated, 4 = JERRY met, 5 = Ancient Coin obtained, 6 = Birch talked to, 7 = Rusturf tunnel opened, 8 = JIRACHI battled
+#define VAR_WISH_TAG_PROGRESS                0x4091 // //0 = Nothing, 1 = Wish Tag Purchased, 2 = Shelby talked to, 3 = Shelby defeated, 4 = JERRY met, 5 = fossil maniac talked to, 6 = Birch talked to, 7 = Rusturf tunnel opened, 8 = JIRACHI battled
 #define VAR_LITTLEROOT_INTRO_STATE           0x4092
 #define VAR_MAUVILLE_GYM_STATE               0x4093
 #define VAR_LILYCOVE_MUSEUM_2F_STATE         0x4094
