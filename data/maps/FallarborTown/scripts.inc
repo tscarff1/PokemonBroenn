@@ -165,7 +165,7 @@ FallarborTown_Text_Jerry_WhereCosmo:
 	.string "knows anything about a certain POKéMON.$"
 
 FallarborTown_Text_JerryCosmoNoHelp:
-	.string "Hmm... Cosmo doesn't seem to have learned\n"
+	.string "Hmm... COZMO doesn't seem to have learned\n"
 	.string "any new information...\p"
 	.string "Say, you are a Trainer, right? Do you know\n"
 	.string "anything about the POKéMON, JIRACHI?$"
