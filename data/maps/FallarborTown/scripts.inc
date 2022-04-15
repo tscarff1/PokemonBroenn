@@ -100,7 +100,7 @@ FallarborTown_EventScript_JerryTalk::
 	end
 
 FallarborTown_EventScript_JerryAppears::
-	goto_if_unset FLAG_MET_ARCHIE_METEOR_FALLS, FallarborTown_EventScript_DoNothing
+	goto_if_unset FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FallarborTown_EventScript_DoNothing
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
