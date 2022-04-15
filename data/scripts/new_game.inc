@@ -275,5 +275,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_HIDE_JERRY_FALLARBOR
 	setflag FLAG_HIDE_JERRY_FOSSILMANIAC
+	setflag FLAG_HIDE_MT_CHIMNEY_GUARD
 	call EventScript_ResetAllBerries
 	end
