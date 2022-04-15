@@ -1,4 +1,5 @@
 .set LOCALID_FOSSIL_MANIAC, 1
+.set LOCALID_JERRY, 2
 
 Route114_FossilManiacsTunnel_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route114_FossilManiacsTunnel_OnTransition
@@ -36,6 +37,7 @@ Route114_FossilManiacsTunnel_EventScript_ManiacMentionCaveIn::
 Route114_FossilManiacsTunnel_EventScript_FossilManiac::
 	lock
 	faceplayer
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 4, Route114_FossilManiacsTunnel_EventScript_Jerry
 	goto_if_set FLAG_RECEIVED_REVIVED_FOSSIL_MON, Route114_FossilManiacsTunnel_EventScript_PlayerRevivedFossil
 	checkitem ITEM_ROOT_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
@@ -91,3 +93,68 @@ Route114_FossilManiacsTunnel_Text_NotSafeThatWay:
 	.string "But I've left it alone because I don't\n"
 	.string "think there are any FOSSILS there…$"
 
+Route114_FossilManiacsTunnel_EventScript_Jerry::
+	lockall
+	msgbox Route114_FossilManiacsTunnel_Text_FoundWeirdObject, MSGBOX_NPC
+	addobject LOCALID_JERRY, 
+	playse SE_PIN
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_QuestionMark
+	applymovement LOCALID_JERRY, Route114_FossilManiacsTunnel_Movement_JerryEnter
+	waitmovement 0
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox Route114_FossilManiacsTunnel_Text_JerryIntro, MSGBOX_NPC
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox Route114_FossilManiacsTunnel_Text_FossilManiac_Bell, MSGBOX_NPC
+	applymovement LOCALID_JERRY, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox Route114_FossilManiacsHouse_Text_GoAtOnce, MSGBOX_NPC
+	applymovement LOCALID_JERRY, Route114_FossilManiacsTunnel_Movement_JerryExit
+	waitmovement 0
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_FaceUp
+	release
+	end
+
+Route114_FossilManiacsTunnel_Text_FoundWeirdObject:
+	.string "Don't you think FOSSILS are\n"
+	.string "wonderful? It's so upsetting when\p"
+	.string "you think you found a fossil, but\n"
+	.string "it's just some artifact.$"
+
+ Route114_FossilManiacsTunnel_Text_JerryIntro:
+	.string "Did I hear you mention artifacts?\n"
+	.string "Have you found any BELLS? I'm \p"
+	.string "searching for one that makes a\n"
+	.string "PURE TONE.$"
+
+Route114_FossilManiacsTunnel_Text_FossilManiac_Bell:
+	.string "A PURE BELL you say? I do recall\n"
+	.string "something like that, but it wasn't\p"
+	.string "a FOSSIL so it didn't mean much to me.\n"
+	.string "You can have it if you'd like. My \p"
+	.string "little brother may know where it is.$"
+
+Route114_FossilManiacsHouse_Text_GoAtOnce:
+	.string "I will ask him at once!$"
+
+Route114_FossilManiacsTunnel_Movement_JerryEnter:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_faster_left
+	step_end
+
+Route114_FossilManiacsTunnel_Movement_JerryExit:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end

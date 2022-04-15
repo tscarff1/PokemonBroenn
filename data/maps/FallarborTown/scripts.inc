@@ -128,6 +128,7 @@ FallarborTown_EventScript_JerryAppears::
 
 @This just makes the trigger not do anything if COSMO is not back from Meteor Falls
 FallarborTown_EventScript_DoNothing::
+	release
 	end
 
 FallarborTown_Movement_PushPlayerDown:
