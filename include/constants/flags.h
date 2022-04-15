@@ -1526,7 +1526,7 @@
 #define FLAG_HIDE_SHELBY_SLATEPORT                  (SYSTEM_FLAGS + 0x9B)
 #define FLAG_HIDE_JERRY_FALLARBOR                   (SYSTEM_FLAGS + 0x9C)
 #define FLAG_HIDE_JERRY_FOSSILMANIAC                (SYSTEM_FLAGS + 0x9D)
-#define FLAG_TBD                (SYSTEM_FLAGS + 0x9E)
+#define FLAG_HIDE_JERRY_FOSSILMANIACHOUSE           (SYSTEM_FLAGS + 0x9E)
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
 #define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag

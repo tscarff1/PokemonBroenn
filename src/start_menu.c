@@ -681,9 +681,11 @@ static bool8 StartMenuQuestsCallback(void)
     {
         FlagSet(FLAG_SYS_NATIONAL_DEX);
         EnableNationalPokedex();
-        FlagSet(FLAG_HIDE_JERRY_FALLARBOR);
-        VarSet(VAR_WISH_TAG_PROGRESS,3);
-       ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);  // Display PokeNav
+        FlagSet(FLAG_HIDE_JERRY_FOSSILMANIAC);
+        FlagSet(FLAG_HIDE_JERRY_FOSSILMANIACHOUSE);
+        FlagSet(FLAG_HIDE_MT_CHIMNEY_GUARD);
+        VarSet(VAR_WISH_TAG_PROGRESS,4);
+        ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);  // Display PokeNav
         return TRUE;
     }
 
