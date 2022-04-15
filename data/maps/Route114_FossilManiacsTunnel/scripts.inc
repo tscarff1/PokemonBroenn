@@ -94,27 +94,51 @@ Route114_FossilManiacsTunnel_Text_NotSafeThatWay:
 	.string "think there are any FOSSILS there…$"
 
 Route114_FossilManiacsTunnel_EventScript_Jerry::
-	lockall
-	msgbox Route114_FossilManiacsTunnel_Text_FoundWeirdObject, MSGBOX_NPC
-	addobject LOCALID_JERRY, 
+	msgbox Route114_FossilManiacsTunnel_Text_FoundWeirdObject, MSGBOX_DEFAULT
 	playse SE_PIN
 	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_QuestionMark
-	applymovement LOCALID_JERRY, Route114_FossilManiacsTunnel_Movement_JerryEnter
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_FaceRight
-	waitmovement 0
-	msgbox Route114_FossilManiacsTunnel_Text_JerryIntro, MSGBOX_NPC
-	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox Route114_FossilManiacsTunnel_Text_FossilManiac_Bell, MSGBOX_NPC
-	applymovement LOCALID_JERRY, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	msgbox Route114_FossilManiacsHouse_Text_GoAtOnce, MSGBOX_NPC
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 6, Route114_FossilManiacsTunnel_EventScript_JerryEnterLeft
+	call_if_eq VAR_TEMP_0, 5, Route114_FossilManiacsTunnel_EventScript_JerryEnterRight
+	msgbox Route114_FossilManiacsTunnel_Text_GoAtOnce, MSGBOX_DEFAULT
 	applymovement LOCALID_JERRY, Route114_FossilManiacsTunnel_Movement_JerryExit
 	waitmovement 0
 	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_FaceUp
+	waitmovement 0
+	removeobject LOCALID_JERRY
+	setvar VAR_WISH_TAG_PROGRESS, 5
 	release
 	end
+
+Route114_FossilManiacsTunnel_EventScript_JerryEnterLeft::
+	setobjectxyperm LOCALID_JERRY, 5, 10
+	addobject LOCALID_JERRY
+	applymovement LOCALID_JERRY, Route114_FossilManiacsTunnel_Movement_JerryEnterLeft
+	waitmovement 0
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox Route114_FossilManiacsTunnel_Text_JerryIntro, MSGBOX_DEFAULT
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox Route114_FossilManiacsTunnel_Text_FossilManiac_Bell, MSGBOX_DEFAULT
+	applymovement LOCALID_JERRY, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	return
+
+Route114_FossilManiacsTunnel_EventScript_JerryEnterRight::
+	addobject LOCALID_JERRY
+	applymovement LOCALID_JERRY, Route114_FossilManiacsTunnel_Movement_JerryEnterRight
+	waitmovement 0
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox Route114_FossilManiacsTunnel_Text_JerryIntro, MSGBOX_DEFAULT
+	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox Route114_FossilManiacsTunnel_Text_FossilManiac_Bell, MSGBOX_DEFAULT
+	applymovement LOCALID_JERRY, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
 
 Route114_FossilManiacsTunnel_Text_FoundWeirdObject:
 	.string "Don't you think FOSSILS are\n"
@@ -135,10 +159,19 @@ Route114_FossilManiacsTunnel_Text_FossilManiac_Bell:
 	.string "You can have it if you'd like. My \p"
 	.string "little brother may know where it is.$"
 
-Route114_FossilManiacsHouse_Text_GoAtOnce:
+Route114_FossilManiacsTunnel_Text_GoAtOnce:
 	.string "I will ask him at once!$"
 
-Route114_FossilManiacsTunnel_Movement_JerryEnter:
+Route114_FossilManiacsTunnel_Movement_JerryEnterLeft:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route114_FossilManiacsTunnel_Movement_JerryEnterRight:
 	walk_up
 	walk_up
 	walk_up
