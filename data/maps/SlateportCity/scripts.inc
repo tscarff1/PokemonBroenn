@@ -1696,4 +1696,3 @@ SlateportCity_Text_ShelbyGrandsonInformation:
 	.string "he was heading to FALLARBOR TOWN to\p"
 	.string "talk to a scientist researching\n"
 	.string "METEORITES. You may find him there.$"
-	

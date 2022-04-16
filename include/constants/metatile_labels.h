@@ -791,7 +791,7 @@
 
 //gTileset_Cave
 #define METATILE_Rusturf_Door_Left_Upper  0x20B
-#define METATILE_Rusturf_Door_left_Lower  0x213
+#define METATILE_Rusturf_Door_Left_Lower  0x213
 #define METATILE_Rusturf_Door_Upper       0x20C  
 #define METATILE_Rusturf_Door_Lower       0x214
 #define METATILE_Rusturf_Door_Right_Upper 0x20D

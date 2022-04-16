@@ -12,7 +12,7 @@ Route114_FossilManiacsHouse_OnTransition:
 
 Route114_FossilManiacsHouse_EventScript_SetupJerry::
 	setobjectxyperm LOCALID_LILBRO, 5, 4
-	setobjectmovementtype LOCALID_LILBRO, Common_Movement_FaceUp
+	setobjectmovementtype LOCALID_LILBRO, MOVEMENT_TYPE_FACE_UP
 	end
 
 Route114_FossilManiacsHouse_EventScript_FossilManiacsBrother::
@@ -108,11 +108,11 @@ Route114_FossilManiacsHouse_Text_IsTheBell:
 	.string "all this time!$"
 
 Route114_FossilManiacsHouse_Text_TakeTheBell:
-	.string "However, Jirachi is a POKéMON.\n"
+	.string "However, JIRACHI is a POKéMON.\n"
 	.string "Which means I believe it will\p"
 	.string "respond better to someone who is\n"
-	.string "more intimate with POKéMON: A\p"
-	.string "trainer like yourself. Please,\n"
+	.string "more intimate with POKéMON:\p"
+	.string "A trainer like yourself. Please,\n"
 	.string "take this PURE BELL and we can\p"
 	.string "find JIRACHI together!$"
 

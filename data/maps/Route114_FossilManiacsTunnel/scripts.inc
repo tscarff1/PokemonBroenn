@@ -192,3 +192,4 @@ Route114_FossilManiacsTunnel_Movement_JerryExit:
 	walk_down
 	walk_down
 	step_end
+	

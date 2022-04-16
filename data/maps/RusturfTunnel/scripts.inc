@@ -8,6 +8,7 @@
 RusturfTunnel_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RusturfTunnel_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, RusturfTunnel_OnFrame
+	map_script MAP_SCRIPT_ON_LOAD, RusturfTunnel_OnLoad
 	.byte 0
 
 RusturfTunnel_OnFrame:
@@ -17,6 +18,9 @@ RusturfTunnel_OnFrame:
 
 RusturfTunnel_OnTransition:
 	call_if_eq VAR_RUSTURF_TUNNEL_STATE, 2, RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos
+	end
+
+RusturfTunnel_OnLoad:
 	call_if_le VAR_WISH_TAG_PROGRESS, 7, RusturfTunnel_EventScript_HideJirachiCave
 	end
 
@@ -547,17 +551,25 @@ RusturfTunnel_EventScript_Jerry::
 	goto_if_eq VAR_WISH_TAG_PROGRESS, 8, RusturfTunnel_EventScript_OpenedCave
 	msgbox RusturfTunnel_Text_UseWishBell, MSGBOX_DEFAULT
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
 	msgbox RusturfTunnel_Text_RingBell, MSGBOX_DEFAULT
 	playse SE_NOTE_G
-	waitsound
+	waitse
 	delay 30
 	playse SE_NOTE_G
-	waitsound
+	waitse
 	delay 30
+	closemessage
 	playse SE_SWITCH
+	waitse
 	goto RusturfTunnel_EventScript_OpenCave
+	special DrawWholeMapView
 	playse SE_PIN
+	waitse
 	applymovement LOCALID_JERRY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_JERRY, Common_Movement_FaceLeft
+	waitmovement 0
 	msgbox RusturfTunnel_Text_OpenedCave, MSGBOX_DEFAULT
 	setvar VAR_WISH_TAG_PROGRESS, 8
 	releaseall

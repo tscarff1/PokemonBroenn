@@ -203,17 +203,18 @@ Route114_Text_LanettesHouse:
 Route114_EventScript_JerryTalk::
 	lockall
 	faceplayer
-	msgbox Route114_Text_WhereToGo, MSGBOX_DEFAULT
+	msgbox Route114_Text_JerryWhereToGo, MSGBOX_DEFAULT
 	releaseall
 	setvar VAR_WISH_TAG_PROGRESS, 7
 	end
 
 Route114_Text_JerryWhereToGo:
-	.string "Thank you for being a part\n"
-	.string "of this journey with me. I\p"
-	.string "am sure that together we can\n"
-	.string "find JIRACHI! The FOSSIL MANIAC's\p"
+	.string "Thank you for being a part of\n"
+	.string "this journey with me. I am sure\p"
+	.string "that together we can find\n"
+	.string "JIRACHI! The FOSSIL MANIAC's\p"
 	.string "younger brother said that the\n"
 	.string "PURE BELL was found inside\p"
 	.string "RUSTURF TUNNEL. It's the perfect\n"
-	.string "place for a long-sleeping POKéMON$."
+	.string "place for a long-sleeping POKéMON.\p"
+	.string "I will meet you there!$"
