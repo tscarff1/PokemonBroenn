@@ -2304,9 +2304,9 @@ const u8 gLatiosPokedexText[] = _(
 
 const u8 gJirachiPokedexText[] = _(
     "Jirachi is said to make wishes come true.\n"
-    "While it sleeps, a tough crystalline shell\n"
-    "envelops the body to protect it from\n"
-    "enemies.");
+    "It is said to sleep until it is awoken by\n"
+    "the ringing of a pure tone and the\n"
+    "presence of a pure-hearted trainer.");
 
 const u8 gDeoxysPokedexText[] = _(
     "Deoxys emerged from a virus that came\n"
