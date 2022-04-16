@@ -8,7 +8,6 @@ FallarborTown_OnTransition:
 	setflag FLAG_VISITED_FALLARBOR_TOWN
 	setvar VAR_CONTEST_HALL_STATE, 0
 	clearflag FLAG_CONTEST_SKETCH_CREATED
-	goto_if_eq VAR_WISH_TAG_PROGRESS, 6, FallarborTown_EventScript_JerryMeeting
 	end
 
 FallarborTown_EventScript_ExpertM::
@@ -178,9 +177,3 @@ FallarborTown_Text_JerryInvitePlayer:
 	.string "house of the FOSSIL MANIAC next. I \p"
 	.string "believe JIRACHI may be sleeping deep\n"
 	.string "underground!$"
-
-FallarborTown_EventScript_JerryMeeting::
-	lockall
-	applymovement LOCALID_JERRY, FallarborTown_Movement_JerryToMeeting
-
-FallarborTown_Movement_JerryToMeeting:	
