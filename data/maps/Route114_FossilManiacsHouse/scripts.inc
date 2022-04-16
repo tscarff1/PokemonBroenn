@@ -92,6 +92,7 @@ Route114_FossilManiacsHouse_EventScript_Jerry::
 	applymovement LOCALID_JERRY, Route114_FossilManiacsHouse_Movement_JerryLeaveDown
 	waitmovement 0
 	removeobject LOCALID_JERRY
+	clearflag FLAG_HIDE_JERRY_ROUTE114
 	release
 	end
 

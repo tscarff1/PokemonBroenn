@@ -171,7 +171,8 @@ FallarborTown_Text_JerryCosmoNoHelp:
 	.string "anything about the POKéMON, JIRACHI?$"
 
 FallarborTown_Text_JerryInvitePlayer:
-	.string "Oh! You've met my grandmother! Well, if\n"
+	.string "Oh! You've met my grandmother! My name is\n"
+	.string "Jerry. I could use a TRAINER's help. If\n"
 	.string "you would like to help me in my search\p"
 	.string "for JIRACHI, I will be visting the\n"
 	.string "house of the FOSSIL MANIAC next. I \p"
