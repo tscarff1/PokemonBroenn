@@ -685,6 +685,7 @@ static bool8 StartMenuQuestsCallback(void)
         FlagSet(FLAG_HIDE_JERRY_FOSSILMANIACHOUSE);
         FlagSet(FLAG_HIDE_MT_CHIMNEY_GUARD);
         FlagSet(FLAG_HIDE_JERRY_ROUTE114);
+        FlagSet(FLAG_HIDE_JERRY_RUSTURF);
         VarSet(VAR_WISH_TAG_PROGRESS,4);
         ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);  // Display PokeNav
         return TRUE;

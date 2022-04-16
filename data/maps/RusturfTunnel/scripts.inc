@@ -3,6 +3,7 @@
 .set LOCALID_GRUNT, 6
 .set LOCALID_PEEKO, 7
 .equ LOCALID_WANDA, 10
+.set LOCALID_JERRY, 11
 
 RusturfTunnel_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RusturfTunnel_OnTransition
@@ -16,7 +17,17 @@ RusturfTunnel_OnFrame:
 
 RusturfTunnel_OnTransition:
 	call_if_eq VAR_RUSTURF_TUNNEL_STATE, 2, RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos
+	call_if_le VAR_WISH_TAG_PROGRESS, 7, RusturfTunnel_EventScript_HideJirachiCave
 	end
+
+RusturfTunnel_EventScript_HideJirachiCave::
+	setmetatile 17, 2, METATILE_Rusturf_Wall_Upper, TRUE
+	setmetatile 17, 3, METATILE_Rusturf_Wall_Upper, TRUE
+	setmetatile 18, 2, METATILE_Rusturf_Wall_Upper, TRUE
+	setmetatile 18, 3, METATILE_Rusturf_Wall_Upper, TRUE
+	setmetatile 19, 2, METATILE_Rusturf_Wall_Upper, TRUE
+	setmetatile 19, 3, METATILE_Rusturf_Wall_Upper, TRUE	
+	return
 
 RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos::
 	setobjectxyperm LOCALID_PEEKO, 13, 4
@@ -530,3 +541,52 @@ RusturfTunnel_Text_MikePostBattle:
 	.string "protect POKéMON, right?\l"
 	.string "There's a feel-good story!$"
 
+RusturfTunnel_EventScript_Jerry::
+	lockall
+	faceplayer
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 8, RusturfTunnel_EventScript_OpenedCave
+	msgbox RusturfTunnel_Text_UseWishBell, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	msgbox RusturfTunnel_Text_RingBell, MSGBOX_DEFAULT
+	playse SE_NOTE_G
+	waitsound
+	delay 30
+	playse SE_NOTE_G
+	waitsound
+	delay 30
+	playse SE_SWITCH
+	goto RusturfTunnel_EventScript_OpenCave
+	playse SE_PIN
+	applymovement LOCALID_JERRY, Common_Movement_ExclamationMark
+	msgbox RusturfTunnel_Text_OpenedCave, MSGBOX_DEFAULT
+	setvar VAR_WISH_TAG_PROGRESS, 8
+	releaseall
+	end
+
+RusturfTunnel_EventScript_OpenedCave::
+	faceplayer
+	msgbox RusturfTunnel_Text_OpenedCave, MSGBOX_DEFAULT
+	releaseall
+	end
+
+RusturfTunnel_EventScript_OpenCave::
+	setmetatile 17, 2, METATILE_Rusturf_Door_Left_Upper, TRUE
+	setmetatile 17, 3, METATILE_Rusturf_Door_Left_Lower, TRUE
+	setmetatile 18, 2, METATILE_Rusturf_Door_Upper, FALSE
+	setmetatile 18, 3, METATILE_Rusturf_Door_Lower, FALSE
+	setmetatile 19, 2, METATILE_Rusturf_Door_Right_Upper, TRUE
+	setmetatile 19, 3, METATILE_Rusturf_Door_Left_Lower, TRUE	
+	return
+
+RusturfTunnel_Text_UseWishBell:
+	.string "Something about this spot...\n"
+	.string "I wonder if something will\p"
+	.string "happen if you ring the PURE BELL.$"
+
+RusturfTunnel_Text_OpenedCave:
+	.string "Incredible! The ringing of the PURE\n"
+	.string "opened the way to a new cave! JIRACHI\p"
+	.string "must be in there!$"
+
+RusturfTunnel_Text_RingBell:
+	.string "{PLAYER} rang the PURE BELL$"
