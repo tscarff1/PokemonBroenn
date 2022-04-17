@@ -279,5 +279,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_JERRY_FOSSILMANIACHOUSE
 	setflag FLAG_HIDE_JERRY_ROUTE114
 	setflag FLAG_HIDE_JERRY_RUSTURF
+	setflag FLAG_HIDE_JERRY_WISH_CAVE
 	call EventScript_ResetAllBerries
 	end

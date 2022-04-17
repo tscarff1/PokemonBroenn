@@ -1529,8 +1529,8 @@
 #define FLAG_HIDE_JERRY_FOSSILMANIACHOUSE           (SYSTEM_FLAGS + 0x9E)
 #define FLAG_HIDE_JERRY_ROUTE114                    (SYSTEM_FLAGS + 0x9F)
 #define FLAG_HIDE_JERRY_RUSTURF                     (SYSTEM_FLAGS + 0xA0)
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
+#define FLAG_HIDE_JERRY_WISH_CAVE                   (SYSTEM_FLAGS + 0xA1)
+#define FLAG_CAUGHT_JIRACHI                         (SYSTEM_FLAGS + 0xA2)
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag

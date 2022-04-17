@@ -562,8 +562,7 @@ RusturfTunnel_EventScript_Jerry::
 	closemessage
 	playse SE_SWITCH
 	waitse
-	goto RusturfTunnel_EventScript_OpenCave
-	special DrawWholeMapView
+	call RusturfTunnel_EventScript_OpenCave
 	playse SE_PIN
 	waitse
 	applymovement LOCALID_JERRY, Common_Movement_ExclamationMark
@@ -588,6 +587,7 @@ RusturfTunnel_EventScript_OpenCave::
 	setmetatile 18, 3, METATILE_Rusturf_Door_Lower, FALSE
 	setmetatile 19, 2, METATILE_Rusturf_Door_Right_Upper, TRUE
 	setmetatile 19, 3, METATILE_Rusturf_Door_Left_Lower, TRUE	
+	special DrawWholeMapView
 	return
 
 RusturfTunnel_Text_UseWishBell:

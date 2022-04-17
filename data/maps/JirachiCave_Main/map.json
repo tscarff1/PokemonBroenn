@@ -2,15 +2,15 @@
   "id": "MAP_JIRACHI_CAVE_MAIN",
   "name": "JirachiCave_Main",
   "layout": "LAYOUT_JIRACHI_CAVE_MAIN",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "music": "MUS_SEALED_CHAMBER",
+  "region_map_section": "MAPSEC_WISH_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,
   "allow_running": true,
-  "show_map_name": false,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -25,7 +25,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "JirachiCave_Main_Jirachi",
-      "flag": "0"
+      "flag": "FLAG_CAUGHT_JIRACHI"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "x": 13,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JirachiCave_Main_Jerry",
+      "flag": "FLAG_HIDE_JERRY_WISH_CAVE"
     }
   ],
   "warp_events": [
@@ -38,7 +51,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 29,
+      "elevation": 3,
+      "var": "VAR_WISH_TAG_PROGRESS",
+      "var_value": "8",
+      "script": "JirachiCave_Main_JerryTrigger"
+    }
   ],
   "bg_events": [
 
