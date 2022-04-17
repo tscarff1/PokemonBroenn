@@ -172,6 +172,10 @@
 #define VAR_STEVENS_HOUSE_STATE              0x40C6
 #define VAR_OLDALE_STATE                     0x40C7
 
+
+//New story events!
+#define VAR_WISH_TAG_PROGRESS                0x4091 //0 = Nothing, 1 = Wish Tag Purchased, 2 = Shelby battled, 3 = Ancient Coin obtained, 4 = Birch talked to, 5 = Rusturf tunnel opened, 6 = JIRACHI battled
+
 // special vars
 // They are commonly used as parameters to commands, or return values from commands.
 #define VAR_SPECIAL_0     0x8000

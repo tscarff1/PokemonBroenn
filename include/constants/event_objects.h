@@ -243,7 +243,8 @@
 #define OBJ_EVENT_GFX_ARTICUNO                   239
 #define OBJ_EVENT_GFX_ZAPDOS                     240
 #define OBJ_EVENT_GFX_MOLTRES                    241
-#define NUM_OBJ_EVENT_GFX                        242
+#define OBJ_EVENT_GFX_JIRACHI                    242
+#define NUM_OBJ_EVENT_GFX                        243
 
 
 // These are dynamic object gfx ids.

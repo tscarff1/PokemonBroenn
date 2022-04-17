@@ -9368,4 +9368,26 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+    [ITEM_WISH_TAG] =
+    {
+        .name = _("Wish Tag"),
+        .itemId = ITEM_WISH_TAG,
+        .price = 0,
+        .description = sWishTagDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_PURE_BELL] =
+    {
+        .name = _("Pure Bell"),
+        .itemId = ITEM_PURE_BELL,
+        .price = 0,
+        .description = sPureBellDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };

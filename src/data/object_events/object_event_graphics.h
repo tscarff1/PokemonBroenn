@@ -381,3 +381,5 @@ const u32 gObjectEventPic_Zapdos[] = INCBIN_U32("graphics/object_events/pics/pok
 const u16 gObjectEventPal_Zapdos[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u32 gObjectEventPic_Moltres[] = INCBIN_U32("graphics/object_events/pics/pokemon/moltres.4bpp");
 const u16 gObjectEventPal_Moltres[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
+const u16 gObjectEventPic_Jirachi[] = INCBIN_U16("graphics/object_events/pics/pokemon/jirachi.4bpp");
+const u16 gObjectEventPal_Jirachi[] = INCBIN_U16("graphics/object_events/palettes/jirachi.gbapal");

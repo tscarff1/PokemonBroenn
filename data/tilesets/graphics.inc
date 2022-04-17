@@ -1731,8 +1731,7 @@ gTilesetTiles_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/tiles.4bpp.lz"
 
 	.align 2
-
-	.align 2
+	.incbin "data/tilesets/secondary/petergym/tiles.4bpp.lz"
 gTilesetPalettes_PeterGym::
 	.incbin "data/tilesets/secondary/petergym/palettes/00.gbapal"
 	.incbin "data/tilesets/secondary/petergym/palettes/01.gbapal"

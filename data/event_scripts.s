@@ -1059,3 +1059,6 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/PeterGym/scripts.inc"
+	.include "data/maps/JirachiCave_Entrance/scripts.inc"
+
+	.include "data/maps/JirachiCave_Main/scripts.inc"

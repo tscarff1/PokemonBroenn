@@ -95,6 +95,7 @@ static bool8 StartMenuPokedexCallback(void);
 static bool8 StartMenuPokemonCallback(void);
 static bool8 StartMenuBagCallback(void);
 static bool8 StartMenuPokeNavCallback(void);
+static bool8 StartMenuQuestsCallback(void);
 static bool8 StartMenuPlayerNameCallback(void);
 static bool8 StartMenuSaveCallback(void);
 static bool8 StartMenuOptionCallback(void);
@@ -160,7 +161,7 @@ static const struct MenuAction sStartMenuItems[] =
     {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
     {gText_MenuBag, {.u8_void = StartMenuBagCallback}},
     {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
-    {gText_MenuQuests, {.u8_void = StartMenuPokeNavCallback}},
+    {gText_MenuQuests, {.u8_void = StartMenuQuestsCallback}},
     {gText_MenuPlayer, {.u8_void = StartMenuPlayerNameCallback}},
     {gText_MenuSave, {.u8_void = StartMenuSaveCallback}},
     {gText_MenuOption, {.u8_void = StartMenuOptionCallback}},
@@ -668,6 +669,26 @@ static bool8 StartMenuPokeNavCallback(void)
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_InitPokeNav);  // Display PokeNav
 
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuQuestsCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        FlagSet(FLAG_SYS_NATIONAL_DEX);
+        EnableNationalPokedex();
+        FlagSet(FLAG_HIDE_JERRY_FOSSILMANIAC);
+        FlagSet(FLAG_HIDE_JERRY_FOSSILMANIACHOUSE);
+        FlagSet(FLAG_HIDE_MT_CHIMNEY_GUARD);
+        FlagSet(FLAG_HIDE_JERRY_ROUTE114);
+        FlagSet(FLAG_HIDE_JERRY_RUSTURF);
+        FlagSet(FLAG_HIDE_JERRY_WISH_CAVE);
+        VarSet(VAR_WISH_TAG_PROGRESS,4);
+        ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);  // Display PokeNav
         return TRUE;
     }
 

@@ -27,7 +27,44 @@ MauvilleCity_EventScript_Boy::
 	end
 
 MauvilleCity_EventScript_Maniac::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_MAUVILLE_EGG, MauvilleCity_EventScript_EggReceived
 	msgbox MauvilleCity_Text_AllSortsOfPeopleComeThrough, MSGBOX_NPC
+	specialvar VAR_RESULT, ScriptGetPokedexInfo
+	copyvar VAR_0x8009, VAR_0x8006
+	compare_local_to_value VAR_0x8009, 20
+	goto_if_ge VAR_0x8006, 20, MauvilleCity_EventScript_OfferEgg
+	msgbox MauvilleCity_Text_NotQualifiedForEgg, MSGBOX_NPC
+	release
+	end
+
+MauvilleCity_EventScript_EggReceived::
+	msgbox MauvilleCity_Text_AskEgg MSGBOX_NPC
+	release
+	end
+
+MauvilleCity_EventScript_OfferEgg::
+	msgbox MauvilleCity_Text_QualifiedForEgg, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_DeclineEgg
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, MauvilleCity_EventScript_NoRoomForEgg
+	setflag FLAG_RECEIVED_MAUVILLE_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message MauvilleCity_Text_ReceiveEgg
+	waitfanfare
+	giveegg SPECIES_TYROGUE
+	release
+	end
+
+MauvilleCity_EventScript_DeclineEgg::
+	msgbox MauvilleCity_Text_DeclineEgg, MSGBOX_NPC
+	release
+	end
+
+MauvilleCity_EventScript_NoRoomForEgg::
+	msgbox OldaleTown_Text_NoRoomForEgg, MSGBOX_DEFAULT
+	release
 	end
 
 MauvilleCity_EventScript_Woman::
@@ -619,10 +656,39 @@ MauvilleCity_Text_NurseHurtMonBackToHealth:
 	.string "you have to nurse it back to health.$"
 
 MauvilleCity_Text_AllSortsOfPeopleComeThrough:
-	.string "The roads of this town stretch north\n"
-	.string "and south, and east and west.\p"
-	.string "Because of that, we get all sorts of\n"
-	.string "people coming through.$"
+	.string "The roads of this town stretch in\n"
+	.string "all directions. Because of that, we\p"
+	.string "get a lot of people coming through.\n"
+	.string "I want this egg to see all sorts of\p"
+	.string "POKéMON like I see people.$"
+
+MauvilleCity_Text_NotQualifiedForEgg:
+	.string "Say! You're a trainer!\n"
+	.string "I think my EGG could be happy with\p"
+	.string "you. Come back when you've caught at\n"
+	.string "least 20 different POKéMON.$"
+
+MauvilleCity_Text_QualifiedForEgg:
+	.string "And I think that one is you!\n"
+	.string "You've caught so many POKéMON\p"
+	.string "that I know this EGG will feel right\n"
+	.string "at home! Will you take it?$"
+
+MauvilleCity_Text_NoRoomForEgg:
+	.string "Oh no! You have no room for the\n"
+	.string "Please come back when you have \p"
+	.string "room in your party.$"
+
+MauvilleCity_Text_AskEgg:
+	.string "How is that EGG doing? I can only\n"
+	.string "imagine how many POKéMON it has seen\p"
+	.string "with you.$"
+
+MauvilleCity_Text_DeclineEgg:
+	.string "Oh? I guess I was wrong about you.$"
+
+MauvilleCity_Text_ReceiveEgg:
+	.string "{PLAYER} received the EGG.$"
 
 MauvilleCity_Text_RydelVeryGenerous:
 	.string "Have you been to RYDEL'S CYCLES yet?\p"
