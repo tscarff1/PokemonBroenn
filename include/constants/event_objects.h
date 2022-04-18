@@ -228,7 +228,7 @@
 #define OBJ_EVENT_GFX_TRICK_HOUSE_STATUE         224
 #define OBJ_EVENT_GFX_KIRLIA                     225
 #define OBJ_EVENT_GFX_DUSCLOPS                   226
-#define OBJ_EVENT_GFX_PETER                    227
+#define OBJ_EVENT_GFX_PETER                      227
 #define OBJ_EVENT_GFX_SUDOWOODO                  228
 #define OBJ_EVENT_GFX_MEW                        229
 #define OBJ_EVENT_GFX_RED                        230
@@ -244,7 +244,8 @@
 #define OBJ_EVENT_GFX_ZAPDOS                     240
 #define OBJ_EVENT_GFX_MOLTRES                    241
 #define OBJ_EVENT_GFX_JIRACHI                    242
-#define NUM_OBJ_EVENT_GFX                        243
+#define OBJ_EVENT_GFX_SAGE                       243
+#define NUM_OBJ_EVENT_GFX                        244
 
 
 // These are dynamic object gfx ids.
