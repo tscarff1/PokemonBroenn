@@ -1426,7 +1426,7 @@ SlateportCity_EventScript_RemoveMoney::
 
 SlateportCity_Text_EnjoyWishTag:
 	.string "Make sure you think about your WISH\n"
-	.string "as you pin in to the LIGHTHOUSE!\p"
+	.string "as you pin it to the LIGHTHOUSE!\p"
 	.string "Is very important to focus, yes yes!\n"
 	.string "And your WISH will surely come true!$"
 
@@ -1683,7 +1683,7 @@ SlateportCity_Text_ShelbyBattle:
 
 SlateportCity_Text_ShelbyDefeat:
 	.string "It's been quite some time since\n"
-	.string "I've met a trainer like you!\p"
+	.string "I've met a trainer like you!$"
 
 SlateportCity_Text_FoundJirachi:
 	.string "Incredible! You and my grandson\n"
