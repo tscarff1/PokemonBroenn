@@ -1265,8 +1265,7 @@ PetalburgCity_Gym_Text_NormanIntro:
 	.string "How important it is to love cats?\n"
 	.string "In any meowment, nothing is more\p"
 	.string "important than cats. Literally\n"
-	.string "nothing.\l"
-	.string "Want to battle?$"
+	.string "nothing.$"
 
 PetalburgCity_Gym_Text_NormanDefeat:
 	.string "…\p"
