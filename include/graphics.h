@@ -6617,6 +6617,7 @@ extern const u32 gTrainerFrontPic_LeaderWattson[];
 extern const u32 gTrainerFrontPic_LeaderPeter[];
 extern const u32 gTrainerFrontPic_LeaderFlannery[];
 extern const u32 gTrainerFrontPic_LeaderNorman[];
+extern const u32 gTrainerFrontPic_LeaderSage[];
 extern const u32 gTrainerFrontPic_LeaderWinona[];
 extern const u32 gTrainerFrontPic_LeaderTateAndLiza[];
 extern const u32 gTrainerFrontPic_LeaderJuan[];

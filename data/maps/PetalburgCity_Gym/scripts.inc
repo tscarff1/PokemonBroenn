@@ -30,6 +30,7 @@ PetalburgCity_Gym_EventScript_OpenUnlockedDoors::
 	call_if_defeated TRAINER_GEORGE, PetalburgCity_Gym_EventScript_OpenRecoveryRoomDoors
 	call_if_defeated TRAINER_JODY, PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors
 	call_if_defeated TRAINER_BERKE, PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
+	removeobject LOCALID_NORMAN
 	clearflag FLAG_HIDE_SAGE
 	end
 
@@ -134,7 +135,7 @@ PetalburgCity_Gym_EventScript_Sage::
 	lock
 	faceplayer
 	switch VAR_PETALBURG_GYM_STATE
-	case 6, PetalburgCity_Gym_EventScript_SageBattle
+	case 6, PetalburgCity_Gym_EventScript_NormanBattle
 	end
 
 PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth::
@@ -358,7 +359,7 @@ PetalburgCity_Gym_EventScript_GiveFacade2::
 	end
 
 PetalburgCity_Gym_EventScript_NormanRematch::
-	trainerbattle_rematch_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_SAGE, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
 	end
 

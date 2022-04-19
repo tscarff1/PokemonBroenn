@@ -136,6 +136,8 @@ const u32 gTrainerPalette_LeaderFlannery[] = INCBIN_U32("graphics/trainers/palet
 const u32 gTrainerFrontPic_LeaderNorman[] = INCBIN_U32("graphics/trainers/front_pics/leader_norman_front_pic.4bpp.lz");
 const u32 gTrainerPalette_LeaderNorman[] = INCBIN_U32("graphics/trainers/palettes/leader_norman.gbapal.lz");
 
+const u32 gTrainerFrontPic_LeaderSage[] = INCBIN_U32("graphics/trainers/front_pics/leader_sage_front_pic.4bpp.lz");
+
 const u32 gTrainerFrontPic_LeaderWinona[] = INCBIN_U32("graphics/trainers/front_pics/leader_winona_front_pic.4bpp.lz");
 const u32 gTrainerPalette_LeaderWinona[] = INCBIN_U32("graphics/trainers/palettes/leader_winona.gbapal.lz");
 

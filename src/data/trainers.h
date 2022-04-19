@@ -3765,12 +3765,12 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Flannery1},
     },
 
-    [TRAINER_NORMAN_1] =
+    [TRAINER_SAGE] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEADER_NORMAN,
+        .trainerPic = TRAINER_PIC_LEADER_SAGE,
         .trainerName = _("SAGE"),
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
