@@ -18,6 +18,7 @@ RusturfTunnel_OnFrame:
 
 RusturfTunnel_OnTransition:
 	call_if_eq VAR_RUSTURF_TUNNEL_STATE, 2, RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos
+	call_if_ge VAR_WISH_TAG_PROGRESS, 8, RusturfTunnel_EventScript_HideJerry
 	end
 
 RusturfTunnel_OnLoad:
@@ -31,6 +32,10 @@ RusturfTunnel_EventScript_HideJirachiCave::
 	setmetatile 18, 3, METATILE_Rusturf_Wall_Upper, TRUE
 	setmetatile 19, 2, METATILE_Rusturf_Wall_Upper, TRUE
 	setmetatile 19, 3, METATILE_Rusturf_Wall_Upper, TRUE	
+	return
+
+RusturfTunnel_EventScript_HideJerry::
+	removeobject LOCALID_JERRY
 	return
 
 RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos::

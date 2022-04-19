@@ -1,4 +1,5 @@
 .set LOCALID_JERRY, 2
+.set LOCALID_JIRACHI, 1
 
 JirachiCave_Main_MapScripts::
 	.byte 0
@@ -6,6 +7,7 @@ JirachiCave_Main_MapScripts::
 JirachiCave_Main_Jirachi::
 	lock
 	faceplayer
+	setvar VAR_WISH_TAG_PROGRESS, 9
 	waitse
 	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
 	delay 40
@@ -20,6 +22,7 @@ JirachiCave_Main_Jirachi::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, JirachiCave_Main_EventScript_RanFromJirachi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, JirachiCave_Main_EventScript_RanFromJirachi
 	setflag FLAG_CAUGHT_JIRACHI
+	removeobject LOCALID_JIRACHI
 	release
 	end
 
@@ -36,12 +39,13 @@ JirachiCave_Main_EventScript_RanFromJirachi::
 
 JirachiCave_Main_JerryTrigger::
 	lockall
+	clearflag FLAG_HIDE_JERRY_WISH_CAVE
 	addobject LOCALID_JERRY
 	applymovement LOCALID_JERRY, JirachiCave_Main_Movement_JerryEnter
 	waitmovement 0
 	msgbox JirachiCave_Main_Text_JerryFoundJirachi, MSGBOX_DEFAULT
 	setvar VAR_WISH_TAG_PROGRESS, 9
-	clearflag FLAG_HIDE_JERRY_WISH_CAVE
+	setflag FLAG_HIDE_JERRY_RUSTURF
 	releaseall
 	end
 
