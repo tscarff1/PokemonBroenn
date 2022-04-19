@@ -443,6 +443,15 @@
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F
 
+// gTileset_Rusturf
+#define METATILE_Rusturf_Door_Left_Lower   0x213
+#define METATILE_Rusturf_Door_Left_Upper   0x20B
+#define METATILE_Rusturf_Door_Lower        0x214
+#define METATILE_Rusturf_Door_Right_Lower  0x215
+#define METATILE_Rusturf_Door_Right_Upper  0x20D
+#define METATILE_Rusturf_Door_Upper        0x20C
+#define METATILE_Rusturf_Wall_Upper        0x219
+
 // gTileset_SecretBase
 #define METATILE_SecretBase_AttractMat_BottomLeft       0x313
 #define METATILE_SecretBase_AttractMat_BottomMid        0x314
@@ -788,14 +797,5 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
-
-//gTileset_Cave
-#define METATILE_Rusturf_Door_Left_Upper  0x20B
-#define METATILE_Rusturf_Door_Left_Lower  0x213
-#define METATILE_Rusturf_Door_Upper       0x20C  
-#define METATILE_Rusturf_Door_Lower       0x214
-#define METATILE_Rusturf_Door_Right_Upper 0x20D
-#define METATILE_Rusturf_Door_Right_Lower 0x215
-#define METATILE_Rusturf_Wall_Upper       0x219
 
 #endif // GUARD_METATILE_LABELS_H
