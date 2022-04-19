@@ -46,6 +46,9 @@
 #include "union_room.h"
 #include "constants/rgb.h"
 
+#include "script_pokemon_util.h"
+#include "constants/items.h"
+#include "item.h"
 // Menu actions
 enum
 {
@@ -685,10 +688,12 @@ static bool8 StartMenuQuestsCallback(void)
         FlagSet(FLAG_HIDE_JERRY_FOSSILMANIACHOUSE);
         FlagSet(FLAG_HIDE_MT_CHIMNEY_GUARD);
         FlagSet(FLAG_HIDE_JERRY_ROUTE114);
-        FlagSet(FLAG_HIDE_JERRY_RUSTURF);
         FlagSet(FLAG_HIDE_JERRY_WISH_CAVE);
-        VarSet(VAR_WISH_TAG_PROGRESS,4);
+        VarSet(VAR_WISH_TAG_PROGRESS,7);
+        ScriptGiveMon(SPECIES_LUDICOLO, 90, ITEM_NONE, 0, 0, 0);
+        AddBagItem(ITEM_MASTER_BALL, 20);
         ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);  // Display PokeNav
+        
         return TRUE;
     }
 
