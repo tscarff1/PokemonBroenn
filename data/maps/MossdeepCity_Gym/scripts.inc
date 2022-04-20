@@ -1,52 +1,37 @@
 MossdeepCity_Gym_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_OnLoad
 	.byte 0
 
-@ NOTE: Mossdeep Gym was redesigned between R/S and E. Leftover (and now functionally unused) scripts are commented below
-
-@ All the below checks are leftover from RS. FLAG_MOSSDEEP_GYM_SWITCH_X is never set
-MossdeepCity_Gym_OnLoad:
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_1, MossdeepCity_Gym_EventScript_SetSwitch1Metatiles
-	goto MossdeepCity_Gym_EventScript_CheckSwitch2
+MossdeepCity_Gym_EventScript_GetBook1::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book1, MSGBOX_DEFAULT
+	call MossdeepCity_Gym_EventScript_UnlockHall1
+	release
 	end
 
-MossdeepCity_Gym_EventScript_CheckSwitch2::
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_2, MossdeepCity_Gym_EventScript_SetSwitch2Metatiles
-	goto MossdeepCity_Gym_EventScript_CheckSwitch3
-	end
+MossdeepCity_Gym_EventScript_UnlockHall1::
+	playse SE_CLICK
+	waitse
+	setmetatile 11,33, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 12,33, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 13,33, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 14,33, METATILE_MossdeepGym_FloorDarkTop, FALSE
 
-MossdeepCity_Gym_EventScript_CheckSwitch3::
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_3, MossdeepCity_Gym_EventScript_SetSwitch3Metatiles
-	goto MossdeepCity_Gym_EventScript_CheckSwitch4
-	end
+	setmetatile 11,32, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 12,32, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 13,32, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 14,32, METATILE_MossdeepGym_WallRight, TRUE
 
-MossdeepCity_Gym_EventScript_CheckSwitch4::
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_SetSwitch4Metatiles
-	end
+	setmetatile 11,31, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 12,31, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 13,31, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 14,31, METATILE_MossdeepGym_WallTopRight, TRUE
+	return
 
-@ All the below set metatile scripts are leftover from RS and are functionally unused
-MossdeepCity_Gym_EventScript_SetSwitch1Metatiles::
-	setmetatile 5, 5, METATILE_RS_MossdeepGym_RedArrow_Right, FALSE
-	setmetatile 2, 7, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_CheckSwitch2
-	end
-
-MossdeepCity_Gym_EventScript_SetSwitch2Metatiles::
-	setmetatile 8, 14, METATILE_RS_MossdeepGym_RedArrow_Right, FALSE
-	setmetatile 8, 10, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_CheckSwitch3
-	end
-
-MossdeepCity_Gym_EventScript_SetSwitch3Metatiles::
-	setmetatile 15, 17, METATILE_RS_MossdeepGym_RedArrow_Left, FALSE
-	setmetatile 17, 15, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_CheckSwitch4
-	end
-
-MossdeepCity_Gym_EventScript_SetSwitch4Metatiles::
-	setmetatile 1, 23, METATILE_RS_MossdeepGym_RedArrow_Up, FALSE
-	setmetatile 5, 24, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	end
+MossdeepCity_Gym_Text_Book1:
+	.string "Pulled a book from the shelf.\n"
+	.string "The title is “AN INTRODUCTION TO\p"
+	.string "BATTLES”.\p"
+	.string "But I already know how to battle!$"
 
 MossdeepCity_Gym_EventScript_TateAndLiza::
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
@@ -109,99 +94,6 @@ MossdeepCity_Gym_EventScript_TateAndLizaRematch::
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-@ All the below switch scripts are leftover from RS and are functionally unused
-MossdeepCity_Gym_EventScript_Switch1::
-	lockall
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_1, MossdeepCity_Gym_EventScript_ClearSwitch1
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_1
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 5, 5, METATILE_RS_MossdeepGym_RedArrow_Right, FALSE
-	setmetatile 2, 7, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed::
-	special DrawWholeMapView
-	playse SE_CLICK
-	releaseall
-	end
-
-MossdeepCity_Gym_EventScript_ClearSwitch1::
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 5, 5, METATILE_RS_MossdeepGym_RedArrow_Left, FALSE
-	setmetatile 2, 7, METATILE_RS_MossdeepGym_Switch_Up, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_Switch2::
-	lockall
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_2, MossdeepCity_Gym_EventScript_ClearSwitch2
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_2
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 8, 14, METATILE_RS_MossdeepGym_RedArrow_Right, FALSE
-	setmetatile 8, 10, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_ClearSwitch2::
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 8, 14, METATILE_RS_MossdeepGym_RedArrow_Down, FALSE
-	setmetatile 8, 10, METATILE_RS_MossdeepGym_Switch_Up, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_Switch3::
-	lockall
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_3, MossdeepCity_Gym_EventScript_ClearSwitch3
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_3
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 15, 17, METATILE_RS_MossdeepGym_RedArrow_Left, FALSE
-	setmetatile 17, 15, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_ClearSwitch3::
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 15, 17, METATILE_RS_MossdeepGym_RedArrow_Right, FALSE
-	setmetatile 17, 15, METATILE_RS_MossdeepGym_Switch_Up, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_Switch4::
-	lockall
-	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_ClearSwitch4
-	setflag FLAG_MOSSDEEP_GYM_SWITCH_4
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 1, 23, METATILE_RS_MossdeepGym_RedArrow_Up, FALSE
-	setmetatile 5, 24, METATILE_RS_MossdeepGym_Switch_Down, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_ClearSwitch4::
-	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-	waitmovement 0
-	setmetatile 1, 23, METATILE_RS_MossdeepGym_RedArrow_Right, FALSE
-	setmetatile 5, 24, METATILE_RS_MossdeepGym_Switch_Up, TRUE
-	goto MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed
-	end
-
-MossdeepCity_Gym_EventScript_WarpToEntrance::
-	lockall
-	warpmossdeepgym MAP_MOSSDEEP_CITY_GYM, 7, 30
-	waitstate
-	releaseall
-	end
 
 MossdeepCity_Gym_EventScript_Preston::
 	trainerbattle_single TRAINER_PRESTON, MossdeepCity_Gym_Text_PrestonIntro, MossdeepCity_Gym_Text_PrestonDefeat
@@ -276,12 +168,6 @@ MossdeepCity_Gym_EventScript_GymGuidePostVictory::
 	release
 	end
 
-@ Leftover from RS, functionally unused
-MossdeepCity_Gym_Movement_WaitAfterSwitchUse:
-	delay_16
-	delay_16
-	step_end
-
 MossdeepCity_Gym_EventScript_LeftGymStatue::
 	lockall
 	goto_if_set FLAG_BADGE07_GET, MossdeepCity_Gym_EventScript_GymStatueCertified
@@ -304,79 +190,19 @@ MossdeepCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
-MossdeepCity_Gym_EventScript_YellowFloorSwitch::
-	playse SE_SWITCH
-	waitse
-	playse SE_REPEL
-	initrotatingtilepuzzle FALSE
-	moverotatingtileobjects 0
-	waitmovement 0
-	turnrotatingtileobjects
-	waitmovement 0
-	freerotatingtilepuzzle
-	end
-
-MossdeepCity_Gym_EventScript_BlueFloorSwitch::
-	playse SE_SWITCH
-	waitse
-	playse SE_REPEL
-	initrotatingtilepuzzle FALSE
-	moverotatingtileobjects 1
-	waitmovement 0
-	turnrotatingtileobjects
-	waitmovement 0
-	freerotatingtilepuzzle
-	end
-
-MossdeepCity_Gym_EventScript_GreenFloorSwitch::
-	playse SE_SWITCH
-	waitse
-	playse SE_REPEL
-	initrotatingtilepuzzle FALSE
-	moverotatingtileobjects 2
-	waitmovement 0
-	turnrotatingtileobjects
-	waitmovement 0
-	freerotatingtilepuzzle
-	end
-
-MossdeepCity_Gym_EventScript_PurpleFloorSwitch::
-	playse SE_SWITCH
-	waitse
-	playse SE_REPEL
-	initrotatingtilepuzzle FALSE
-	moverotatingtileobjects 3
-	waitmovement 0
-	turnrotatingtileobjects
-	waitmovement 0
-	freerotatingtilepuzzle
-	end
-
-MossdeepCity_Gym_EventScript_RedFloorSwitch::
-	playse SE_SWITCH
-	waitse
-	playse SE_REPEL
-	initrotatingtilepuzzle FALSE
-	moverotatingtileobjects 4
-	waitmovement 0
-	turnrotatingtileobjects
-	waitmovement 0
-	freerotatingtilepuzzle
-	end
-
 MossdeepCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, CHAMPION-bound\n"
 	.string "{PLAYER}?\p"
-	.string "The GYM LEADERS here use\n"
+	.string "The GYM LEADER here uses\n"
 	.string "PSYCHIC-type POKéMON.\p"
-	.string "If you go up against them with\n"
+	.string "If you go up against him with\n"
 	.string "FIGHTING- or POISON-type POKéMON,\l"
 	.string "they'll inflict horrible damage!\p"
-	.string "Plus, they'll come at you with\n"
-	.string "outstanding combination attacks.\p"
-	.string "If you want to win, you'll need to show\n"
-	.string "them how tight you are with your\l"
-	.string "POKéMON. Go for it!$"
+	.string "But to even get to the LEADER,\n"
+	.string "you'll have to navigate the maze!\p"
+	.string "Each book is also a secret switch\n"
+	.string "so you'll need to make sure you\l"
+	.string "find the right books!$"
 
 MossdeepCity_Gym_Text_GymGuidePostVictory:
 	.string "Wow, you're astounding!\n"
@@ -610,7 +436,7 @@ MossdeepCity_Gym_Text_GymStatue:
 
 MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "MOSSDEEP CITY POKéMON GYM\p"
-	.string "LIZA AND TATE'S CERTIFIED TRAINERS:\n"
+	.string "AARON'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
 MossdeepCity_Gym_Text_TateAndLizaPreRematch:
