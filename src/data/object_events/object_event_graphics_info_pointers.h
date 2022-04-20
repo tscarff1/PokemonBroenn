@@ -130,9 +130,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wattson;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flannery;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norman;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sage;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tyler;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Aaron;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Winona;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Liza;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tate;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wallace;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Steven;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally;
@@ -385,8 +385,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NORMAN] =                   &gObjectEventGraphicsInfo_Norman,
     [OBJ_EVENT_GFX_SAGE] =                     &gObjectEventGraphicsInfo_Sage,
     [OBJ_EVENT_GFX_WINONA] =                   &gObjectEventGraphicsInfo_Winona,
-    [OBJ_EVENT_GFX_LIZA] =                     &gObjectEventGraphicsInfo_Liza,
-    [OBJ_EVENT_GFX_TATE] =                     &gObjectEventGraphicsInfo_Tate,
+    [OBJ_EVENT_GFX_TYLER] =                    &gObjectEventGraphicsInfo_Tyler,
+    [OBJ_EVENT_GFX_AARON] =                    &gObjectEventGraphicsInfo_Aaron,
     [OBJ_EVENT_GFX_WALLACE] =                  &gObjectEventGraphicsInfo_Wallace,
     [OBJ_EVENT_GFX_STEVEN] =                   &gObjectEventGraphicsInfo_Steven,
     [OBJ_EVENT_GFX_WALLY] =                    &gObjectEventGraphicsInfo_Wally,
