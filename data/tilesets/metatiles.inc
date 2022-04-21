@@ -564,3 +564,10 @@ gMetatiles_PeterGym::
 	.align 1
 gMetatileAttributes_PeterGym::
 	.incbin "data/tilesets/secondary/petergym/metatile_attributes.bin"
+	.align 1
+gMetatiles_MaxGym::
+	.incbin "data/tilesets/secondary/maxgym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_MaxGym::
+	.incbin "data/tilesets/secondary/maxgym/metatile_attributes.bin"

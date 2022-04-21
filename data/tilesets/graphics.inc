@@ -1750,3 +1750,23 @@ gTilesetPalettes_PeterGym::
 	.align 2
 gTilesetTiles_PeterGym::
 	.incbin "data/tilesets/secondary/petergym/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_MaxGym::
+	.incbin "data/tilesets/secondary/maxgym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/maxgym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_MaxGym::
+	.incbin "data/tilesets/secondary/maxgym/tiles.4bpp.lz"

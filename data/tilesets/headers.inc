@@ -842,3 +842,14 @@ gTileset_PeterGym::
 	.4byte gMetatiles_PeterGym
 	.4byte gMetatileAttributes_PeterGym
 	.4byte InitTilesetAnim_PeterGym
+
+	.align 2
+gTileset_MaxGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_MaxGym
+	.4byte gTilesetPalettes_MaxGym
+	.4byte gMetatiles_MaxGym
+	.4byte gMetatileAttributes_MaxGym
+	.4byte NULL

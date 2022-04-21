@@ -136,7 +136,7 @@
       "x": 22,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_FORTREE_CITY_GYM",
+      "dest_map": "MAP_MAX_GYM",
       "dest_warp_id": 0
     },
     {
@@ -182,7 +182,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

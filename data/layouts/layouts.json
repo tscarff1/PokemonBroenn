@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_PeterGym",
       "border_filepath": "data/layouts/PeterGym/border.bin",
       "blockdata_filepath": "data/layouts/PeterGym/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAX_GYM",
+      "name": "MaxGym_Layout",
+      "width": 20,
+      "height": 45,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MaxGym",
+      "border_filepath": "data/layouts/MaxGym/border.bin",
+      "blockdata_filepath": "data/layouts/MaxGym/map.bin"
     }
   ]
 }

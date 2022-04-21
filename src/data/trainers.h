@@ -3779,7 +3779,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Sage},
     },
 
-    [TRAINER_WINONA_1] =
+    [TRAINER_MAX] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -3789,8 +3789,8 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY,
-        .partySize = ARRAY_COUNT(sParty_Winona1),
-        .party = {.ItemCustomMoves = sParty_Winona1},
+        .partySize = ARRAY_COUNT(sParty_Max),
+        .party = {.ItemCustomMoves = sParty_Max},
     },
 
     [TRAINER_TATE_AND_LIZA_1] =
@@ -5658,8 +5658,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_EDWARDO] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerClass = TRAINER_CLASS_COLLECTOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .trainerName = _("EDWARDO"),
         .items = {},
@@ -9158,7 +9158,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_FLINT] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_CAMPER,
+        .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
         .trainerName = _("FLINT"),
@@ -9172,7 +9172,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ASHLEY] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
         .trainerPic = TRAINER_PIC_PICNICKER,
         .trainerName = _("ASHLEY"),

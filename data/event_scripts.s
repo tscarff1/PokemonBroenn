@@ -1062,3 +1062,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/JirachiCave_Entrance/scripts.inc"
 
 	.include "data/maps/JirachiCave_Main/scripts.inc"
+
+	.include "data/maps/MaxGym/scripts.inc"
