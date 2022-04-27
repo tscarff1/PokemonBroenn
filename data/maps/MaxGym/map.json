@@ -169,14 +169,14 @@
       "y": 30,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 0
+      "dest_warp_id": 8
     },
     {
       "x": 19,
       "y": 30,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 0
+      "dest_warp_id": 9
     },
     {
       "x": 15,
@@ -197,28 +197,28 @@
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 18
+      "dest_warp_id": 27
     },
     {
       "x": 15,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 19
+      "dest_warp_id": 26
     },
     {
       "x": 8,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 2
+      "dest_warp_id": 24
     },
     {
       "x": 8,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 3
+      "dest_warp_id": 25
     },
     {
       "x": 5,
@@ -267,28 +267,21 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 2
+      "dest_warp_id": 17
     },
     {
       "x": 12,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 3
-    },
-    {
-      "x": 5,
-      "y": 17,
-      "elevation": 0,
-      "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 25
+      "dest_warp_id": 16
     },
     {
       "x": 4,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
-      "dest_warp_id": 24
+      "dest_warp_id": 14
     },
     {
       "x": 1,
@@ -303,6 +296,13 @@
       "elevation": 0,
       "dest_map": "MAP_MAX_GYM",
       "dest_warp_id": 2
+    },
+    {
+      "x": 5,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_MAX_GYM",
+      "dest_warp_id": 15
     }
   ],
   "coord_events": [
