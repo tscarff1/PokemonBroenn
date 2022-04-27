@@ -852,4 +852,4 @@ gTileset_MaxGym::
 	.4byte gTilesetPalettes_MaxGym
 	.4byte gMetatiles_MaxGym
 	.4byte gMetatileAttributes_MaxGym
-	.4byte NULL
+	.4byte InitTilesetAnim_MaxGym
