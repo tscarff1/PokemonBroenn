@@ -832,7 +832,15 @@ static const struct SpriteFrameImage sPicTable_MauvilleOldMan2[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Max[] = {
-    obj_frame_tiles(gObjectEventPic_Max),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Max, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_UnusedMagnemiteDoll[] = {
