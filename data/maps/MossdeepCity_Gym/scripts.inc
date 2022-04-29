@@ -19,12 +19,14 @@ MossdeepCity_Gym_EventScript_UnlockHall1::
 	setmetatile 11,32, METATILE_MossdeepGym_Wall, TRUE
 	setmetatile 12,32, METATILE_MossdeepGym_Wall, TRUE
 	setmetatile 13,32, METATILE_MossdeepGym_Wall, TRUE
-	setmetatile 14,32, METATILE_MossdeepGym_WallRight, TRUE
+	setmetatile 14,32, METATILE_MossdeepGym_Wall, TRUE
 
 	setmetatile 11,31, METATILE_MossdeepGym_WallTop, TRUE
 	setmetatile 12,31, METATILE_MossdeepGym_WallTop, TRUE
 	setmetatile 13,31, METATILE_MossdeepGym_WallTop, TRUE
-	setmetatile 14,31, METATILE_MossdeepGym_WallTopRight, TRUE
+	setmetatile 14,31, METATILE_MossdeepGym_WallTop, TRUE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
 	return
 
 MossdeepCity_Gym_Text_Book1:
@@ -32,6 +34,9 @@ MossdeepCity_Gym_Text_Book1:
 	.string "The title is “AN INTRODUCTION TO\p"
 	.string "BATTLES”.\p"
 	.string "But I already know how to battle!$"
+
+MossdeepCity_Gym_Text_HallOpened:
+	.string "A hidden hallway appeared!$"
 
 MossdeepCity_Gym_EventScript_TateAndLiza::
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
