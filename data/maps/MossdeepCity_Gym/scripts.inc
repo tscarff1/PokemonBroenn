@@ -38,6 +38,69 @@ MossdeepCity_Gym_Text_Book1:
 MossdeepCity_Gym_Text_HallOpened:
 	.string "A hidden hallway appeared!$"
 
+MossdeepCity_Gym_EventScript_GetBook2_Left::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book2Left, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+
+	setmetatile 15,28, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 16,28, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 17,28, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 18,28, METATILE_MossdeepGym_WallTopRight, TRUE
+
+	setmetatile 15,29, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 16,29, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 17,29, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 18,29, METATILE_MossdeepGym_Wall, TRUE
+
+	setmetatile 15,30, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 16,30, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 17,30, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 18,30, METATILE_MossdeepGym_FloorDarkTop, FALSE
+
+	setmetatile 14,30 METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 14,29, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 14,28, METATILE_MossdeepGym_FloorDarkLeftCorner, FALSE
+
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book2Left:
+	.string "Pulled a book from the shelf.\p"
+	.string "“We're no strangers to love.\n"
+	.string "You know the rules and so do I”.\p"
+	.string "This appears to be a book of lyrics!$"
+
+MossdeepCity_Gym_EventScript_GetBook2_Right::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book2Right, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 23,29, METATILE_MossdeepGym_Floor, FALSE
+	setmetatile 23,28, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 23,27, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 23,26, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 23,25, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 23,24, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 23,23, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 23,22, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+
+	setmetatile 21,27, METATILE_MossdeepGym_WallTopRight, FALSE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book2Right:
+	.string "Pulled a book from the shelf.\p"
+	.string "“I haven't thought of a book yet\n"
+	.string "But it'll be a great choice!”.\p"
+	.string "Some more filler text?$"
+
+
 MossdeepCity_Gym_EventScript_TateAndLiza::
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle

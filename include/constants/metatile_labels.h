@@ -365,12 +365,15 @@
 #define METATILE_MossdeepGameCorner_CounterOpen_Top       0x22C
 
 // gTileset_MossdeepGym
-#define METATILE_MossdeepGym_FloorDarkTop       0x202
-#define METATILE_MossdeepGym_Wall               0x216
-#define METATILE_MossdeepGym_WallRight          0x217
-#define METATILE_MossdeepGym_WallTop            0x20E
-#define METATILE_MossdeepGym_WallTopRight       0x20F
-#define METATILE_MossdeepGym_YellowArrow_Right  0x250
+#define METATILE_MossdeepGym_Floor                0x20B
+#define METATILE_MossdeepGym_FloorDarkLeft        0x209
+#define METATILE_MossdeepGym_FloorDarkLeftCorner  0x21C
+#define METATILE_MossdeepGym_FloorDarkTop         0x202
+#define METATILE_MossdeepGym_Wall                 0x216
+#define METATILE_MossdeepGym_WallRight            0x217
+#define METATILE_MossdeepGym_WallTop              0x20E
+#define METATILE_MossdeepGym_WallTopRight         0x20F
+#define METATILE_MossdeepGym_YellowArrow_Right    0x250
 
 // gTileset_Mossdeep
 #define METATILE_Mossdeep_Door              0x2A1
