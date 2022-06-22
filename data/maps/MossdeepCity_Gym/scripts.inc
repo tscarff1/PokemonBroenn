@@ -86,9 +86,7 @@ MossdeepCity_Gym_EventScript_GetBook2_Right::
 	setmetatile 23,25, METATILE_MossdeepGym_FloorDarkLeft, FALSE
 	setmetatile 23,24, METATILE_MossdeepGym_FloorDarkLeft, FALSE
 	setmetatile 23,23, METATILE_MossdeepGym_FloorDarkLeft, FALSE
-	setmetatile 23,22, METATILE_MossdeepGym_FloorDarkLeft, FALSE
-
-	setmetatile 21,27, METATILE_MossdeepGym_WallTopRight, FALSE
+	setmetatile 23,22, METATILE_MossdeepGym_FloorDarkLeftCorner, FALSE
 	special DrawWholeMapView
 	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
 	release
@@ -96,6 +94,188 @@ MossdeepCity_Gym_EventScript_GetBook2_Right::
 
 MossdeepCity_Gym_Text_Book2Right:
 	.string "Pulled a book from the shelf.\p"
+	.string "“Harry Potter and the Goblet of\n"
+	.string "Fire”. Dragons and mermaids?\p"
+	.string "This author has quite the imagination!$"
+
+MossdeepCity_Gym_EventScript_GetBook3_Right::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book3Right, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 25,18, METATILE_MossdeepGym_FloorDarkTopLeft, FALSE
+	setmetatile 25,17, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,16, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,15, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,14, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,13, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,12, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,11, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+
+	setmetatile 24,14, METATILE_MossdeepGym_WallTopVert, FALSE
+	setmetatile 24,13, METATILE_MossdeepGym_WallTopVert, FALSE
+	setmetatile 24,12, METATILE_MossdeepGym_WallTopVert, FALSE
+	setmetatile 24,11, METATILE_MossdeepGym_WallTopVert, FALSE
+
+	setmetatile 25,14, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,13, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,12, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 25,11, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book3Right:
+	.string "Pulled a book from the shelf. \p"
+	.string "“I haven't thought of a book yet\n"
+	.string "But it'll be a great choice!”.\p"
+	.string "Some more filler text?$"
+
+MossdeepCity_Gym_EventScript_GetBook3_Mid::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book3Mid, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 20,16, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 20,15, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 20,14, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 20,13, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 20,12, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 19,12, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 18,12, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 17,12, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 16,12, METATILE_MossdeepGym_FloorDarkTop, FALSE
+
+	setmetatile 20,11, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 19,11, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 18,11, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 17,11, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 16,11, METATILE_MossdeepGym_Wall, TRUE
+
+	setmetatile 20,10, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 19,10, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 18,10, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 17,10, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 16,10, METATILE_MossdeepGym_WallTop, TRUE
+
+	setmetatile 15,12, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 15,11, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 15,10, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 15,9, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book3Mid:
+	.string "Pulled a book from the shelf. \p"
+	.string "“I haven't thought of a book yet\n"
+	.string "But it'll be a great choice!”.\p"
+	.string "Some more filler text?$"
+
+MossdeepCity_Gym_EventScript_GetBook3_Left::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book3Left, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 18,20, METATILE_MossdeepGym_FloorDarkTopLeft, FALSE
+	setmetatile 17,20, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 16,20, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 15,20, METATILE_MossdeepGym_FloorDarkTop, FALSE
+	setmetatile 14,20, METATILE_MossdeepGym_FloorDarkTop, FALSE
+
+	setmetatile 17,19, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 16,19, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 15,19, METATILE_MossdeepGym_Wall, TRUE
+	setmetatile 14,19, METATILE_MossdeepGym_Wall, TRUE
+
+	setmetatile 17,18, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 16,18, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 15,18, METATILE_MossdeepGym_WallTop, TRUE
+	setmetatile 14,18, METATILE_MossdeepGym_WallTop, TRUE
+
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book3Left:
+	.string "Pulled a book from the shelf. \p"
+	.string "“I haven't thought of a book yet\n"
+	.string "But it'll be a great choice!”.\p"
+	.string "Some more filler text?$"
+
+MossdeepCity_Gym_EventScript_GetBook4_Left::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book4Left, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 4,18, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,17, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,16, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,15, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,14, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,13, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,12, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,11, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,10, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,9, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 4,8, METATILE_MossdeepGym_FloorDarkLeftCorner, FALSE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book4Left:
+	.string "Pulled a book from the shelf. \p"
+	.string "“I haven't thought of a book yet\n"
+	.string "But it'll be a great choice!”.\p"
+	.string "Some more filler text?$"
+
+MossdeepCity_Gym_EventScript_GetBook4_Right::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book4Right, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 10,19, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 10,18, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 10,17, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 10,16, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 10,15, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 9,16, METATILE_MossdeepGym_WallTopVert, FALSE
+	setmetatile 9,15, METATILE_MossdeepGym_WallTopVert, FALSE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book4Right:
+	.string "Pulled a book from the shelf. \p"
+	.string "“I haven't thought of a book yet\n"
+	.string "But it'll be a great choice!”.\p"
+	.string "Some more filler text?$"
+
+MossdeepCity_Gym_EventScript_GetBook4_Mid::
+	lock
+	msgbox MossdeepCity_Gym_Text_Book4Mid, MSGBOX_DEFAULT
+	playse SE_CLICK
+	waitse
+	setmetatile 6,17, METATILE_MossdeepGym_WallTopRight, FALSE
+	setmetatile 7,19, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 7,18, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 7,17, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 7,16, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 7,15, METATILE_MossdeepGym_FloorDarkLeft, FALSE
+	setmetatile 6,16, METATILE_MossdeepGym_WallTopVert, FALSE
+	setmetatile 6,15, METATILE_MossdeepGym_WallTopVert, FALSE
+	special DrawWholeMapView
+	msgbox MossdeepCity_Gym_Text_HallOpened, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_Text_Book4Mid:
+	.string "Pulled a book from the shelf. \p"
 	.string "“I haven't thought of a book yet\n"
 	.string "But it'll be a great choice!”.\p"
 	.string "Some more filler text?$"

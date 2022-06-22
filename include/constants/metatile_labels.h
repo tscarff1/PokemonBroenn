@@ -369,10 +369,12 @@
 #define METATILE_MossdeepGym_FloorDarkLeft        0x209
 #define METATILE_MossdeepGym_FloorDarkLeftCorner  0x21C
 #define METATILE_MossdeepGym_FloorDarkTop         0x202
+#define METATILE_MossdeepGym_FloorDarkTopLeft     0x203
 #define METATILE_MossdeepGym_Wall                 0x216
 #define METATILE_MossdeepGym_WallRight            0x217
 #define METATILE_MossdeepGym_WallTop              0x20E
 #define METATILE_MossdeepGym_WallTopRight         0x20F
+#define METATILE_MossdeepGym_WallTopVert          0x21F
 #define METATILE_MossdeepGym_YellowArrow_Right    0x250
 
 // gTileset_Mossdeep
