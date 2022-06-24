@@ -170,9 +170,9 @@ MossdeepCity_Gym_EventScript_GetBook3_Mid::
 
 MossdeepCity_Gym_Text_Book3Mid:
 	.string "Pulled a book from the shelf. \p"
-	.string "“I haven't thought of a book yet\n"
-	.string "But it'll be a great choice!”.\p"
-	.string "Some more filler text?$"
+	.string "...\n"
+	.string "This one is so degenerate I refuse\p"
+	.string "to even describe it.$"
 
 MossdeepCity_Gym_EventScript_GetBook3_Left::
 	lock
@@ -281,16 +281,16 @@ MossdeepCity_Gym_Text_Book4Mid:
 	.string "Some more filler text?$"
 
 
-MossdeepCity_Gym_EventScript_TateAndLiza::
-	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
+MossdeepCity_Gym_EventScript_Aaron::
+	trainerbattle_single TRAINER_LEADER_AARON, MossdeepCity_Gym_Text_AaronIntro, MossdeepCity_Gym_Text_AaronDefeat, MossdeepCity_Gym_EventScript_AaronDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_AaronRematch
 	goto_if_unset FLAG_RECEIVED_TM04, MossdeepCity_Gym_EventScript_GiveCalmMind2
-	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_Text_AaronPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
+MossdeepCity_Gym_EventScript_AaronDefeated::
 	message MossdeepCity_Gym_Text_ReceivedMindBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -314,7 +314,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox MossdeepCity_Gym_Text_RegisteredTateAndLiza, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_Text_RegisteredAaron, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
 	delay 30
@@ -337,9 +337,9 @@ MossdeepCity_Gym_EventScript_GiveCalmMind::
 	setflag FLAG_RECEIVED_TM04
 	return
 
-MossdeepCity_Gym_EventScript_TateAndLizaRematch::
-	trainerbattle_rematch_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
-	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
+MossdeepCity_Gym_EventScript_AaronRematch::
+	trainerbattle_rematch_double TRAINER_LEADER_AARON, MossdeepCity_Gym_Text_AaronPreRematch, MossdeepCity_Gym_Text_AaronRematchDefeat, MossdeepCity_Gym_Text_AaronRematchNeedTwoMons
+	msgbox MossdeepCity_Gym_Text_AaronPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -619,7 +619,7 @@ MossdeepCity_Gym_Text_NicholasPostBattle:
 	.string "All right! I think I'll develop a special\n"
 	.string "invincible POKéMON power next.$"
 
-MossdeepCity_Gym_Text_TateAndLizaIntro:
+MossdeepCity_Gym_Text_AaronIntro:
 	.string "TATE: Hehehe… Were you surprised?\p"
 	.string "LIZA: Fufufu… Were you surprised?\p"
 	.string "TATE: That there are two GYM LEADERS?\n"
@@ -633,7 +633,7 @@ MossdeepCity_Gym_Text_TateAndLizaIntro:
 	.string "TATE: This combination of ours…\n"
 	.string "LIZA: Can you beat it?$"
 
-MossdeepCity_Gym_Text_TateAndLizaDefeat:
+MossdeepCity_Gym_Text_AaronDefeat:
 	.string "TATE: What?! Our combination…\n"
 	.string "LIZA: Was shattered!\p"
 	.string "TATE: It can't be helped. You've won…\n"
@@ -659,18 +659,18 @@ MossdeepCity_Gym_Text_ExplainCalmMind:
 	.string "LIZA: For PSYCHIC POKéMON!\p"
 	.string "… … … … … …$"
 
-MossdeepCity_Gym_Text_RegisteredTateAndLiza:
+MossdeepCity_Gym_Text_RegisteredAaron:
 	.string "Registered GYM LEADERS TATE & LIZA\n"
 	.string "in the POKéNAV.$"
 
-MossdeepCity_Gym_Text_TateAndLizaPostBattle:
+MossdeepCity_Gym_Text_AaronPostBattle:
 	.string "TATE: Looks like the bond between you\n"
 	.string "and your POKéMON is far stronger than\l"
 	.string "the bond that we share as twins.\p"
 	.string "LIZA: You will become even stronger!\n"
 	.string "We've battled you, so we know.$"
 
-MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
+MossdeepCity_Gym_Text_AaronNeedTwoMons:
 	.string "TATE: Hehehe… Were you surprised?\p"
 	.string "LIZA: That there are two GYM LEADERS?\p"
 	.string "TATE: Oops, you have only one…\n"
@@ -687,7 +687,7 @@ MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "AARON'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
-MossdeepCity_Gym_Text_TateAndLizaPreRematch:
+MossdeepCity_Gym_Text_AaronPreRematch:
 	.string "TATE: POKéMON…\n"
 	.string "LIZA: POKéMON…\p"
 	.string "TATE: By changing the party's mix…\n"
@@ -699,17 +699,17 @@ MossdeepCity_Gym_Text_TateAndLizaPreRematch:
 	.string "TATE: Our combination…\n"
 	.string "LIZA: We'll show you again and again!$"
 
-MossdeepCity_Gym_Text_TateAndLizaRematchDefeat:
+MossdeepCity_Gym_Text_AaronRematchDefeat:
 	.string "TATE: You and your POKéMON…\n"
 	.string "LIZA: It's as if you were siblings!$"
 
-MossdeepCity_Gym_Text_TateAndLizaPostRematch:
+MossdeepCity_Gym_Text_AaronPostRematch:
 	.string "TATE: You can knock us down,\n"
 	.string "but we'll never stay down!\p"
 	.string "LIZA: Because the two of us,\n"
 	.string "we always support each other!$"
 
-MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
+MossdeepCity_Gym_Text_AaronRematchNeedTwoMons:
 	.string "TATE: You're back again…\n"
 	.string "LIZA: You're back again…\p"
 	.string "TATE: To give us a rematch.\n"

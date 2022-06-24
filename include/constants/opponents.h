@@ -268,11 +268,11 @@
 #define TRAINER_DRAKE                       264
 #define TRAINER_ROXANNE_1                   265
 #define TRAINER_BRAWLY_1                    266
-#define TRAINER_PETER                   267
+#define TRAINER_PETER                       267
 #define TRAINER_FLANNERY_1                  268
-#define TRAINER_SAGE                    269
-#define TRAINER_MAX                    270
-#define TRAINER_TATE_AND_LIZA_1             271
+#define TRAINER_SAGE                        269
+#define TRAINER_MAX                         270
+#define TRAINER_LEADER_AARON                271
 #define TRAINER_JUAN_1                      272
 #define TRAINER_JERRY_1                     273
 #define TRAINER_TED                         274
