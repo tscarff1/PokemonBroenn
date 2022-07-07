@@ -3548,34 +3548,48 @@ static const struct TrainerMonItemCustomMoves sParty_Max[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_TateAndLiza1[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderAaron[] = {
     {
     .iv = 250,
-    .lvl = 41,
+    .lvl = 45,
+    .species = SPECIES_SLOWKING,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_YAWN, MOVE_SURF, MOVE_AMNESIA, MOVE_FUTURE_SIGHT}
+    },
+    {
+    .iv = 250,
+    .lvl = 45,
     .species = SPECIES_CLAYDOL,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN}
+    .heldItem = ITEM_BRIGHT_POWDER,
+    .moves = {MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_ANCIENT_POWER, MOVE_EXPLOSION}
     },
     {
     .iv = 250,
-    .lvl = 41,
-    .species = SPECIES_XATU,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PSYCHIC, MOVE_SUNNY_DAY, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
-    },
-    {
-    .iv = 250,
-    .lvl = 42,
-    .species = SPECIES_LUNATONE,
+    .lvl = 47,
+    .species = SPECIES_GARDEVOIR,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_CALM_MIND}
+    .moves = {MOVE_CALM_MIND, MOVE_WILL_O_WISP, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
     },
     {
     .iv = 250,
-    .lvl = 42,
-    .species = SPECIES_SOLROCK,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
+    .lvl = 45,
+    .species = SPECIES_WOBBUFFET,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_ENCORE, MOVE_DESTINY_BOND, MOVE_COUNTER, MOVE_MIRROR_COAT}
+    },
+    {
+    .iv = 250,
+    .lvl = 45,
+    .species = SPECIES_METAGROSS,
+    .heldItem = ITEM_SALAC_BERRY,
+    .moves = {MOVE_ROCK_SLIDE, MOVE_PSYCHIC, MOVE_EARTHQUAKE, MOVE_IRON_DEFENSE}
+    },
+    {
+    .iv = 250,
+    .lvl = 45,
+    .species = SPECIES_ALAKAZAM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FIRE_PUNCH, MOVE_RECOVER}
     }
 };
 

@@ -3803,8 +3803,8 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_TateAndLiza1),
-        .party = {.ItemCustomMoves = sParty_TateAndLiza1},
+        .partySize = ARRAY_COUNT(sParty_LeaderAaron),
+        .party = {.ItemCustomMoves = sParty_LeaderAaron},
     },
 
     [TRAINER_JUAN_1] =

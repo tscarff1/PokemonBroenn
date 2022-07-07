@@ -128,9 +128,10 @@ MossdeepCity_Gym_EventScript_GetBook3_Right::
 
 MossdeepCity_Gym_Text_Book3Right:
 	.string "Pulled a book from the shelf. \p"
-	.string "“I haven't thought of a book yet\n"
-	.string "But it'll be a great choice!”.\p"
-	.string "Some more filler text?$"
+	.string "“One Hundred Years of Solitude”\n"
+	.string "Wow, this is dark. But it makes\p"
+	.string "me wonder: Is any of this real? Or\n"
+	.string "am I just following a script?$"
 
 MossdeepCity_Gym_EventScript_GetBook3_Mid::
 	lock
@@ -201,10 +202,10 @@ MossdeepCity_Gym_EventScript_GetBook3_Left::
 	end
 
 MossdeepCity_Gym_Text_Book3Left:
-	.string "Pulled a book from the shelf. \p"
-	.string "“I haven't thought of a book yet\n"
-	.string "But it'll be a great choice!”.\p"
-	.string "Some more filler text?$"
+	.string "Pulled a book from the shelf. \n"
+	.string "“Hear the Wind Sing”\p"
+	.string "The narrator has certainly met.\n"
+	.string "some interesting people!$"
 
 MossdeepCity_Gym_EventScript_GetBook4_Left::
 	lock
@@ -228,10 +229,10 @@ MossdeepCity_Gym_EventScript_GetBook4_Left::
 	end
 
 MossdeepCity_Gym_Text_Book4Left:
-	.string "Pulled a book from the shelf. \p"
-	.string "“I haven't thought of a book yet\n"
-	.string "But it'll be a great choice!”.\p"
-	.string "Some more filler text?$"
+	.string "Pulled a book from the shelf. \n"
+	.string "“A Little Life”\p"
+	.string "Wow, you really can never truly know\n"
+	.string "what a person is going through.$"
 
 MossdeepCity_Gym_EventScript_GetBook4_Right::
 	lock
@@ -251,10 +252,10 @@ MossdeepCity_Gym_EventScript_GetBook4_Right::
 	end
 
 MossdeepCity_Gym_Text_Book4Right:
-	.string "Pulled a book from the shelf. \p"
-	.string "“I haven't thought of a book yet\n"
-	.string "But it'll be a great choice!”.\p"
-	.string "Some more filler text?$"
+	.string "Pulled a book from the shelf. \n"
+	.string "“The Catcher in the Rye”\p"
+	.string "Growing up seems rough - good thing\n"
+	.string "I'll be ten years old forever!$"
 
 MossdeepCity_Gym_EventScript_GetBook4_Mid::
 	lock
@@ -276,9 +277,9 @@ MossdeepCity_Gym_EventScript_GetBook4_Mid::
 
 MossdeepCity_Gym_Text_Book4Mid:
 	.string "Pulled a book from the shelf. \p"
-	.string "“I haven't thought of a book yet\n"
-	.string "But it'll be a great choice!”.\p"
-	.string "Some more filler text?$"
+	.string "“Lord of the Rings: The Fellowship\n"
+	.string "of the Ring”.\p"
+	.string "I like this Tom Bombadil guy!$"
 
 
 MossdeepCity_Gym_EventScript_Aaron::
@@ -620,55 +621,39 @@ MossdeepCity_Gym_Text_NicholasPostBattle:
 	.string "invincible POKéMON power next.$"
 
 MossdeepCity_Gym_Text_AaronIntro:
-	.string "TATE: Hehehe… Were you surprised?\p"
-	.string "LIZA: Fufufu… Were you surprised?\p"
-	.string "TATE: That there are two GYM LEADERS?\n"
-	.string "LIZA: That there are two GYM LEADERS?\p"
-	.string "TATE: We're twins!\n"
-	.string "LIZA: We're twins!\p"
-	.string "TATE: We don't need to talk because…\n"
-	.string "LIZA: We can each determine what…\p"
-	.string "TATE: The other is thinking…\n"
-	.string "LIZA: All in our minds!\p"
-	.string "TATE: This combination of ours…\n"
-	.string "LIZA: Can you beat it?$"
+	.string "Reading any good books?$"
 
 MossdeepCity_Gym_Text_AaronDefeat:
-	.string "TATE: What?! Our combination…\n"
-	.string "LIZA: Was shattered!\p"
-	.string "TATE: It can't be helped. You've won…\n"
-	.string "LIZA: So, in recognition, take this.$"
+	.string "Looks like I have more research to do!\n"
+	.string "Here, take this.$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge:
-	.string "{PLAYER} received the MIND BADGE\n"
-	.string "from TATE and LIZA.$"
+	.string "{PLAYER} received the LIBRARY BADGE\n"
+	.string "from AARON.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-	.string "TATE: The MIND BADGE enhances the\n"
+	.string "The LIBRARY BADGE enhances the\n"
 	.string "SP. ATK and SP. DEF of POKéMON.\p"
-	.string "LIZA: It also lets you use the HM move\n"
-	.string "DIVE outside of battle.\p"
-	.string "TATE: You should also take this, too.$"
+	.string "It also lets you use the HM move\n"
+	.string "outside of battle.\p"
+	.string "You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
-	.string "TATE: That TM04 contains…\n"
-	.string "LIZA: CALM MIND!\p"
-	.string "TATE: It raises SP. ATK and…\n"
-	.string "LIZA: It raises SP. DEF!\p"
-	.string "TATE: It's a move that's perfect…\n"
-	.string "LIZA: For PSYCHIC POKéMON!\p"
+	.string "That TM04 contains CALM MIND!\n"
+	.string "Reading a good book also causes a\p"
+	.string "CALM MIND! But it takes the TM to\n"
+	.string "raise SP. ATK and SP.DEF. \p"
 	.string "… … … … … …$"
 
 MossdeepCity_Gym_Text_RegisteredAaron:
-	.string "Registered GYM LEADERS TATE & LIZA\n"
+	.string "Registered GYM LEADER AARON\n"
 	.string "in the POKéNAV.$"
 
 MossdeepCity_Gym_Text_AaronPostBattle:
-	.string "TATE: Looks like the bond between you\n"
-	.string "and your POKéMON is far stronger than\l"
-	.string "the bond that we share as twins.\p"
-	.string "LIZA: You will become even stronger!\n"
-	.string "We've battled you, so we know.$"
+	.string "The love you have for your\n"
+	.string "POKéMON is as strong as my love\l"
+	.string "for books.\p"
+	.string "You will become even stronger!$"
 
 MossdeepCity_Gym_Text_AaronNeedTwoMons:
 	.string "TATE: Hehehe… Were you surprised?\p"
