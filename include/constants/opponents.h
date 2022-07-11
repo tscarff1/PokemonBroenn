@@ -273,7 +273,7 @@
 #define TRAINER_SAGE                        269
 #define TRAINER_MAX                         270
 #define TRAINER_LEADER_AARON                271
-#define TRAINER_JUAN_1                      272
+#define TRAINER_TYLER                       272
 #define TRAINER_JERRY_1                     273
 #define TRAINER_TED                         274
 #define TRAINER_PAUL                        275

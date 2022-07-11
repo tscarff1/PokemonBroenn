@@ -64,7 +64,7 @@
 #define TRAINER_PIC_LEADER_NORMAN         44
 #define TRAINER_PIC_LEADER_WINONA         45
 #define TRAINER_PIC_LEADER_AARON          46
-#define TRAINER_PIC_LEADER_JUAN           47
+#define TRAINER_PIC_LEADER_TYLER          47
 #define TRAINER_PIC_SCHOOL_KID_M          48
 #define TRAINER_PIC_SCHOOL_KID_F          49
 #define TRAINER_PIC_SR_AND_JR             50

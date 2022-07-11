@@ -3593,41 +3593,41 @@ static const struct TrainerMonItemCustomMoves sParty_LeaderAaron[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
+static const struct TrainerMonItemCustomMoves sParty_Tyler[] = {
     {
     .iv = 200,
     .lvl = 41,
-    .species = SPECIES_LUVDISC,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_ATTRACT, MOVE_SWEET_KISS, MOVE_FLAIL}
+    .species = SPECIES_WHIMSICOTT,
+    .heldItem = ITEM_BIG_ROOT,
+    .moves = {MOVE_LEECH_SEED, MOVE_STUN_SPORE, MOVE_PROTECT, MOVE_GIGA_DRAIN}
     },
     {
     .iv = 200,
     .lvl = 41,
-    .species = SPECIES_WHISCASH,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_AMNESIA, MOVE_EARTHQUAKE}
+    .species = SPECIES_ABOMASNOW,
+    .heldItem = ITEM_OCCA_BERRY,
+    .moves = {MOVE_WOOD_HAMMER, MOVE_BLIZZARD, MOVE_ROCK_TOMB, MOVE_GIGA_DRAIN}
     },
     {
     .iv = 200,
     .lvl = 43,
-    .species = SPECIES_SEALEO,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ENCORE, MOVE_BODY_SLAM, MOVE_AURORA_BEAM, MOVE_WATER_PULSE}
+    .species = SPECIES_TORTERRA,
+    .heldItem = ITEM_YACHE_BERRY,
+    .moves = {MOVE_EARTHQUAKE, MOVE_BODY_SLAM, MOVE_IRON_DEFENSE, MOVE_ROCK_SLIDE}
     },
     {
     .iv = 200,
     .lvl = 43,
-    .species = SPECIES_CRAWDAUNT,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_LEER}
+    .species = SPECIES_EXEGGUTOR,
+    .heldItem = ITEM_TANGA_BERRY,
+    .moves = {MOVE_PSYCHIC, MOVE_PSYCH_UP, MOVE_GIGA_DRAIN, MOVE_STOMP}
     },
     {
     .iv = 250,
     .lvl = 46,
-    .species = SPECIES_KINGDRA,
-    .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_COBA_BERRY,
+    .moves = {MOVE_DYNAMIC_PUNCH, MOVE_IRON_TAIL, MOVE_SPORE, MOVE_RAZOR_LEAF}
     }
 };
 
