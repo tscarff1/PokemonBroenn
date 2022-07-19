@@ -79,17 +79,17 @@ SootopolisCity_Gym_1F_Movement_FallThroughIce:
 	set_invisible
 	step_end
 
-SootopolisCity_Gym_1F_EventScript_Juan::
-	trainerbattle_single TRAINER_TYLER, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
+SootopolisCity_Gym_1F_EventScript_Tyler::
+	trainerbattle_single TRAINER_TYLER, SootopolisCity_Gym_1F_Text_TylerIntro, SootopolisCity_Gym_1F_Text_TylerDefeat, SootopolisCity_Gym_1F_EventScript_TylerDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
+	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_TylerRematch
 	goto_if_unset FLAG_RECEIVED_TM03, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_TylerPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-SootopolisCity_Gym_1F_EventScript_JuanDefeated::
+SootopolisCity_Gym_1F_EventScript_TylerDefeated::
 	message SootopolisCity_Gym_1F_Text_ReceivedRainBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -103,11 +103,11 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
-	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
+	call SootopolisCity_Gym_1F_EventScript_GiveGigaDrain
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox SootopolisCity_Gym_1F_Text_RegisteredJuan, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_RegisteredTyler, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
 	delay 30
@@ -115,17 +115,17 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	release
 	end
 
-SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
-	giveitem ITEM_TM03
+SootopolisCity_Gym_1F_EventScript_GiveGigaDrain::
+	giveitem ITEM_TM19
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_ExplainGigaDrain, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM03
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
 	giveitem ITEM_TM03
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_ExplainGigaDrain, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM03
 	release
 	end
@@ -135,9 +135,9 @@ SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge::
 	release
 	end
 
-SootopolisCity_Gym_1F_EventScript_JuanRematch::
-	trainerbattle_rematch_double TRAINER_TYLER, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+SootopolisCity_Gym_1F_EventScript_TylerRematch::
+	trainerbattle_rematch_double TRAINER_TYLER, SootopolisCity_Gym_1F_Text_TylerPreRematch, SootopolisCity_Gym_1F_Text_TylerRematchDefeat, SootopolisCity_Gym_1F_Text_TylerRematchNeedTwoMons
+	msgbox SootopolisCity_Gym_1F_Text_TylerPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 SootopolisCity_Gym_1F_EventScript_GymGuide::
@@ -178,9 +178,9 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "Yo! How's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "SOOTOPOLIS's GYM LEADER JUAN is\n"
+	.string "SOOTOPOLIS's GYM LEADER TYLER is\n"
 	.string "a master of WATER-type POKéMON.\p"
-	.string "And, to get to JUAN, an icy floor\n"
+	.string "And, to get to TYLER, flimsy treetops\n"
 	.string "will hamper your progress…\p"
 	.string "Listen, I'm sorry, but that's all the\n"
 	.string "advice that I have for you.\p"
@@ -188,84 +188,68 @@ SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "go for it yourself!$"
 
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
-	.string "Yow! You've beaten even JUAN, who\n"
-	.string "was supposedly the best in all HOENN!\p"
+	.string "Yow! You've beaten even TYLER, who\n"
+	.string "was supposedly pretty good!\p"
 	.string "Okay! Check out your TRAINER CARD.\p"
 	.string "If you've gotten all the BADGES, you're\n"
 	.string "set for the POKéMON LEAGUE challenge!$"
 
-SootopolisCity_Gym_1F_Text_JuanIntro:
-	.string "Let me ask you.\n"
-	.string "Did you know?\l"
-	.string "Ah, I should not be so coy.\p"
-	.string "It was I who taught WALLACE everything\n"
-	.string "there is to know about POKéMON.\p"
-	.string "Once, I had given up my position as\n"
-	.string "the GYM LEADER.\p"
-	.string "In my place, I had entrusted WALLACE\n"
-	.string "with the GYM.\p"
-	.string "However, a compelling reason arose for\n"
-	.string "me to make a comeback.\p"
-	.string "Ah, but enough chatter.\n"
-	.string "Let us begin our match, shall we?\p"
-	.string "Please, you shall bear witness to\n"
-	.string "our artistry.\p"
-	.string "A grand illusion of water sculpted\n"
-	.string "by POKéMON and myself!$"
+SootopolisCity_Gym_1F_Text_TylerIntro:
+	.string "-ACHOO- -sniffle- Oh hey there!\n"
+	.string "You did -cough- a great job climbing\l"
+	.string "-cough- through this GYM's puzzle!\p"
+	.string "-sniffle- I think. To be honest, -cough-\n"
+	.string "I forgot to watch.\p"
+	.string "-ACHOO!-\n"
+	.string "Well, since you're here, -sniff-\p"
+	.string "wanna battle? $"
 
-@ NOTE: This defeat text actually causes a buffer overflow. It's about 50 bytes too long for
-@ the gDisplayedStringBattle buffer that it's put into, and it stomps all over the gBattleTextBuffs
-@ after, as well as the otherwise unused array after that. One wonders if that's the reason for
-@ the existence of that unused array of ints.
-SootopolisCity_Gym_1F_Text_JuanDefeat:
-	.string "Ahahaha, excellent!\n"
-	.string "Very well, you are the winner.\p"
-	.string "From you, I sense the brilliant shine\n"
-	.string "of skill that will overcome all.\p"
-	.string "However, compared with me or even\n"
-	.string "WALLACE, you are lacking in elegance.\p"
-	.string "Perhaps I should make you a loan\n"
-	.string "of my outfit?\p"
+SootopolisCity_Gym_1F_Text_TylerDefeat:
+	.string "-ACHOO- Wow, you did it! You beat\n"
+	.string "my GRASS type -sniff- POKéMON!\p"
+	.string "That was an awesome -cough- battle!\n"
+	.string "But maybe next time, -sniff- I'll\p"
+	.string "remember my allergy medicine!\n"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "Hahaha, I merely jest!\p"
-	.string "Rather than my clothes, I shall reward\n"
-	.string "you with this, the RAIN BADGE!$"
+    .string "-cough- -sniff-\n"
+	.string "Anyway!\p"
+	.string "You're earned this! -cough- The\n"
+	.string "LEAF BADGE is all yours!$"
 
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
-	.string "{PLAYER} received the RAIN BADGE\n"
-	.string "from JUAN.$"
+	.string "{PLAYER} received the LEAF BADGE\n"
+	.string "from TYLER.$"
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
-	.string "Having the RAIN BADGE shall assure you\n"
-	.string "the full obedience of all your POKéMON\l"
-	.string "to your every command.\p"
-	.string "The RAIN BADGE also allows the use\n"
-	.string "of the HM move WATERFALL to scale\l"
-	.string "walls of cascading water.\p"
-	.string "And, so that you never forget the\n"
-	.string "battle we shared, take this…$"
+	.string "Having the LEAF BADGE guarantees\n"
+	.string "-sniff- that your POKéMON will always\l"
+	.string "obey. -ACHOO-\p"
+	.string "The LEAF BADGE also allows the use\n"
+	.string "of the HM move WATERFALL to climb\l"
+	.string "-cough- waterfalls.\p"
+	.string "Here, I want you to have this, too!$"
 
-SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
+SootopolisCity_Gym_1F_Text_ExplainGigaDrain:
 	.string "The TECHNICAL MACHINE I handed you\n"
-	.string "contains WATER PULSE.\p"
-	.string "In use, it will occasionally confuse\n"
-	.string "the target with ultrasonic waves.\p"
+	.string "-cough- contains GIGA DRAIN.\p"
+	.string "-ACHOO- It's a great move - You get\n"
+	.string "to deal damage AND -sniff- heal!.\p"
 	.string "… … … … … …$"
 
-SootopolisCity_Gym_1F_Text_RegisteredJuan:
-	.string "Registered GYM LEADER JUAN\n"
+SootopolisCity_Gym_1F_Text_RegisteredTyler:
+	.string "Registered GYM LEADER TYLER\n"
 	.string "in the POKéNAV.$"
 
-SootopolisCity_Gym_1F_Text_JuanPostBattle:
+SootopolisCity_Gym_1F_Text_TylerPostBattle:
 	.string "The TRAINERS who have gathered all\n"
 	.string "the GYM BADGES of HOENN should make\l"
 	.string "way to the ultimate destination.\p"
-	.string "The POKéMON LEAGUE.\p"
-	.string "Travel to the easternmost reaches\n"
-	.string "of HOENN, to the island EVER GRANDE.\p"
-	.string "There, you shall find the POKéMON\n"
-	.string "LEAGUE.$"
+	.string "The POKéMON LEAGUE. -sniff-\p"
+	.string "Travel waaaaaaaaay to the EAST\n"
+	.string "to the island EVER GRANDE. -ACHOO-\p"
+	.string "If you hit KANTO, -cough-, you've gone\n"
+	.string "too far.$"
 
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
 	.string "There remains but one BADGE to\n"
@@ -279,10 +263,10 @@ SootopolisCity_Gym_1F_Text_GymStatue:
 
 SootopolisCity_Gym_1F_Text_GymStatueCertified:
 	.string "SOOTOPOLIS CITY POKéMON GYM\p"
-	.string "JUAN'S CERTIFIED TRAINERS:\n"
+	.string "TYLER'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
-SootopolisCity_Gym_1F_Text_JuanPreRematch:
+SootopolisCity_Gym_1F_Text_TylerPreRematch:
 	.string "JUAN: Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
@@ -291,11 +275,11 @@ SootopolisCity_Gym_1F_Text_JuanPreRematch:
 	.string "I shall be delighted to dance with you\n"
 	.string "as often as you wish!$"
 
-SootopolisCity_Gym_1F_Text_JuanRematchDefeat:
+SootopolisCity_Gym_1F_Text_TylerRematchDefeat:
 	.string "Ahahaha, you are the winner!\n"
 	.string "You have defeated me again!$"
 
-SootopolisCity_Gym_1F_Text_JuanPostRematch:
+SootopolisCity_Gym_1F_Text_TylerPostRematch:
 	.string "JUAN: If I told you to become my\n"
 	.string "apprentice, you will refuse, I am sure.\p"
 	.string "I would like to make a gift of my coat\n"
@@ -305,7 +289,7 @@ SootopolisCity_Gym_1F_Text_JuanPostRematch:
 	.string "And that, my friend, is a certain sign\n"
 	.string "of nobility!$"
 
-SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
+SootopolisCity_Gym_1F_Text_TylerRematchNeedTwoMons:
 	.string "JUAN: Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"

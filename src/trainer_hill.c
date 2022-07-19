@@ -164,6 +164,7 @@ static const u16 sPrizeListBrickBreak[]  = {ITEM_TM31_BRICK_BREAK, ITEM_ETHER, I
 static const u16 sPrizeListTorment[]     = {ITEM_TM41_TORMENT,     ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_FLUFFY_TAIL, ITEM_GREAT_BALL};
 static const u16 sPrizeListSkillSwap[]   = {ITEM_TM48_SKILL_SWAP,  ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_FLUFFY_TAIL, ITEM_GREAT_BALL};
 static const u16 sPrizeListGigaDrain[]   = {ITEM_TM19_GIGA_DRAIN,  ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_FLUFFY_TAIL, ITEM_GREAT_BALL};
+static const u16 sPrizeListWaterPulse[]   = {ITEM_TM03_WATER_PULSE,  ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_FLUFFY_TAIL, ITEM_GREAT_BALL};
 static const u16 sPrizeListAttract[]     = {ITEM_TM45_ATTRACT,     ITEM_ETHER, ITEM_MAX_POTION, ITEM_REVIVE, ITEM_FLUFFY_TAIL, ITEM_GREAT_BALL};
 
 static const u16 *const sPrizeLists1[NUM_TRAINER_HILL_PRIZE_LISTS] =
@@ -176,6 +177,7 @@ static const u16 *const sPrizeLists1[NUM_TRAINER_HILL_PRIZE_LISTS] =
 	sPrizeListRoar,
 	sPrizeListSludgeBomb,
 	sPrizeListToxic,
+    sPrizeListGigaDrain,
 	sPrizeListSunnyDay,
 	sPrizeListEarthQuake
 };
@@ -191,6 +193,7 @@ static const u16 *const sPrizeLists2[NUM_TRAINER_HILL_PRIZE_LISTS] =
 	sPrizeListTorment,
 	sPrizeListSkillSwap,
 	sPrizeListGigaDrain,
+    sPrizeListWaterPulse,
 	sPrizeListAttract
 };
 
