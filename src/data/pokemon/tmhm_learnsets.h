@@ -5720,7 +5720,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
-                                            | TMHM(TM06_TOXIC)),
+                                            | TMHM(TM06_TOXIC)
+                                            | TMHM(HM02_FLY)),
 
     [SPECIES_KINGDRA]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM14_BLIZZARD)
