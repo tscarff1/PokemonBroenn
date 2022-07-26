@@ -576,6 +576,7 @@ RusturfTunnel_EventScript_Jerry::
 	waitmovement 0
 	msgbox RusturfTunnel_Text_OpenedCave, MSGBOX_DEFAULT
 	setvar VAR_WISH_TAG_PROGRESS, 8
+	setflag FLAG_HIDE_JERRY_WISH_CAVE
 	releaseall
 	end
 
