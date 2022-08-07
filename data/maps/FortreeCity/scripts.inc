@@ -154,3 +154,53 @@ FortreeCity_Text_GymSign:
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
 
+FortreeCity_EventScript_EggGiver::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_FORTREE_EGG, FortreeCity_EventScript_EggReceived
+	msgbox FortreeCity_Text_YouAreTrainer
+	release
+	end
+
+FortreeCity_EventScript_EggReceived::
+	msgbox FortreeCity_Text_EggCheckup MSGBOX_NPC
+	release
+	end
+
+FortreeCity_Text_EggCheckup:
+	.string "Oh, it's you! How is that EGG doing?\n"
+	.string "I wonder what what GRASS-type POKéMON\p"
+	.string "will hatch from it! I hope it's cute.$"
+
+FortreeCity_Text_YouAreTrainer:
+	.string "Excuse me, you are a trainer, aren't you?\p"
+	.string "I recently found this EGG in the middle\n"
+	.string "of several strange-looking trees. I \n"
+	.string "couldn't bear the thought of this poor \p"
+	.string "EGG being left alone."
+
+FortreeCity_Text_BringGrassType:
+	.string "Since this EGG was in the middle of\n"
+	.string "a grove of trees, I believe it will \p"
+	.string "grow in to an adorable GRASS-TYPE \n"
+	.string "POKéMON! If you can show me 4 GRASS-\p"
+	.string "TYPE POKéMON you have raised, I will\n"
+	.string "leave this EGG in your care.$"
+
+FortreeCity_Text_WillYouRaiseEgg:
+	.string "Since this EGG was in the middle of\n"
+	.string "a grove of trees, I believe it will \p"
+	.string "grow in to an adorable GRASS-TYPE \n"
+	.string "POKéMON!\p"
+	.string "And you seem to have raised your own\n"
+	.string "GRASS-TYPE POKéMON! Tell me, will you\p"
+	.string "also raise this egg?$"
+
+FortreeCity_Text_EggSad:
+	.string "Oh, I am sorry to hear that. I truly\n"
+	.string "believed that this EGG would be at home\p"
+	.string "with you.$"
+
+FortreeCity_Text_GiveEgg:
+	.string "Oh, how wonderful! I am sure this EGG\n"
+	.string "will grow healthy and happy with you!$"
