@@ -5247,6 +5247,12 @@ void GetSpeciesName(u8 *name, u16 species)
     name[i] = EOS;
 }
 
+void GetSpeciesTypes(u8 *types, u16 species) {
+    types[0] = gBaseStats[species].type1;
+    types[1] = gBaseStats[species].type2;
+}
+
+
 u8 CalculatePPWithBonus(u16 move, u8 ppBonuses, u8 moveIndex)
 {
     u8 basePP = gBattleMoves[move].pp;
