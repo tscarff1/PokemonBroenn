@@ -54,3 +54,10 @@
 
 	.2byte \species
 	.endm
+
+@Result is true if party has at least <count> Pokemon with type <type>
+	.macro has_party_with_type type:req, count:req
+	setvar VAR_TEMP_1, \type
+	setvar VAR_TEMP_2, \count
+	specialvar VAR_RESULT, HasPartyWithTypeCount
+	.endm

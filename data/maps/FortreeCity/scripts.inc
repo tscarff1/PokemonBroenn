@@ -159,11 +159,38 @@ FortreeCity_EventScript_EggGiver::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_FORTREE_EGG, FortreeCity_EventScript_EggReceived
 	msgbox FortreeCity_Text_YouAreTrainer
+	has_party_with_type TYPE_GRASS, 3
+	goto_if_eq VAR_RESULT, FALSE, FortreeCity_EventScript_BringGrassType 
+	msgbox FortreeCity_Text_WillYouRaiseEgg, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FortreeCity_EventScript_DeclineEgg
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, FortreeCity_EventScript_NoRoomForEgg
+	msgbox FortreeCity_Text_GiveEgg
+	setflag FLAG_RECEIVED_FORTREE_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message FortreeCity_Text_ReceivedTheEgg
+	waitfanfare
+	giveegg SPECIES_BONSLY
+	release
+	end
+
+FortreeCity_EventScript_NoRoomForEgg::
+	msgbox FortreeCity_Text_NoRoomForEgg
 	release
 	end
 
 FortreeCity_EventScript_EggReceived::
 	msgbox FortreeCity_Text_EggCheckup MSGBOX_NPC
+	release
+	end
+
+FortreeCity_EventScript_BringGrassType::
+	msgbox FortreeCity_Text_BringGrassType, MSGBOX_NPC
+	release
+	end
+
+FortreeCity_EventScript_DeclineEgg::
+	msgbox FortreeCity_Text_EggSad, MSGBOX_NPC
 	release
 	end
 
@@ -173,28 +200,31 @@ FortreeCity_Text_EggCheckup:
 	.string "will hatch from it! I hope it's cute.$"
 
 FortreeCity_Text_YouAreTrainer:
-	.string "Excuse me, you are a trainer, aren't you?\p"
-	.string "I recently found this EGG in the middle\n"
+	.string "Excuse me, you are a trainer, aren't you?\n"
+	.string "I recently found this EGG in the middle\p"
 	.string "of several strange-looking trees. I \n"
 	.string "couldn't bear the thought of this poor \p"
-	.string "EGG being left alone."
+	.string "EGG being left alone.$"
 
 FortreeCity_Text_BringGrassType:
 	.string "Since this EGG was in the middle of\n"
 	.string "a grove of trees, I believe it will \p"
 	.string "grow in to an adorable GRASS-TYPE \n"
-	.string "POKéMON! If you can show me 4 GRASS-\p"
+	.string "POKéMON! If you can show me 3 GRASS-\p"
 	.string "TYPE POKéMON you have raised, I will\n"
 	.string "leave this EGG in your care.$"
 
 FortreeCity_Text_WillYouRaiseEgg:
-	.string "Since this EGG was in the middle of\n"
-	.string "a grove of trees, I believe it will \p"
-	.string "grow in to an adorable GRASS-TYPE \n"
-	.string "POKéMON!\p"
-	.string "And you seem to have raised your own\n"
-	.string "GRASS-TYPE POKéMON! Tell me, will you\p"
+	.string "You have raised a few GRASS -TYPEn\n"
+	.string "POKéMON of your own! Will you\p"
 	.string "also raise this egg?$"
+
+FortreeCity_Text_NoRoomForEgg:
+	.string "Oh dear! You have so many\n"
+	.string "wonderful POKéMON with you that\p"
+	.string "you have no room for this EGG!\p"
+	.string "Please do return when you have\n"
+	.string "made space in your party.$"
 
 FortreeCity_Text_EggSad:
 	.string "Oh, I am sorry to hear that. I truly\n"
@@ -204,3 +234,6 @@ FortreeCity_Text_EggSad:
 FortreeCity_Text_GiveEgg:
 	.string "Oh, how wonderful! I am sure this EGG\n"
 	.string "will grow healthy and happy with you!$"
+
+FortreeCity_Text_ReceivedTheEgg:
+	.string "{PLAYER} received the EGG!$"

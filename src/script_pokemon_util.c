@@ -249,3 +249,24 @@ void ReducePlayerPartyToSelectedMons(void)
 
     CalculatePlayerPartyCount();
 }
+
+//REturns true if the player's party has at least expectedCount (VAR_TEMP_2) of a given type (VAR_TEMP_1)
+bool8 HasPartyWithTypeCount(void)
+{
+    int i;
+    int typeCount = 0;
+    int expectedCount = VarGet(VAR_TEMP_2);
+    CalculatePlayerPartyCount();
+    if(gPlayerPartyCount < expectedCount)
+        return FALSE;
+    
+    for(i = 0; i < gPlayerPartyCount; i++) {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0);
+        u8 types[2]; 
+        GetSpeciesTypes(types, species);
+        if(types[0] == VarGet(VAR_TEMP_1) || types[1] == VarGet(VAR_TEMP_1)) {
+            typeCount++;
+        }
+    }
+    return typeCount >= expectedCount;
+}
