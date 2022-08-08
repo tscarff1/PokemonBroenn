@@ -488,37 +488,3 @@ OldaleTown_Text_ReceivedTheEgg:
 OldaleTown_Text_EggCheckup:
 	.string "Oh! It's you! How is that EGG\n"
 	.string "doing?$"
-
-OldaleTown_EventScript_Moltres::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_MOLTRES, 2, ITEM_NONE
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldaleTown_EventScript_DefeatedMoltres
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, OldaleTown_EventScript_RanFromMoltres
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, OldaleTown_EventScript_RanFromMoltres
-	setflag FLAG_BATTLED_MOLTRES
-	release
-	end
-
-OldaleTown_EventScript_DefeatedMoltres::
-	setvar VAR_0x8004, SPECIES_MOLTRES
-	setflag FLAG_BATTLED_MOLTRES
-	setflag FLAG_HIDE_MOLTRES
-	goto Common_EventScript_LegendaryFlewAway
-	end
-
-OldaleTown_EventScript_RanFromMoltres::
-	setvar VAR_0x8004, SPECIES_MOLTRES
-	setflag FLAG_BATTLED_MOLTRES
-	setflag FLAG_HIDE_MOLTRES
-	goto Common_EventScript_LegendaryFlewAway
-	end
