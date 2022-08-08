@@ -215,7 +215,7 @@ FortreeCity_Text_BringGrassType:
 	.string "leave this EGG in your care.$"
 
 FortreeCity_Text_WillYouRaiseEgg:
-	.string "You have raised a few GRASS -TYPEn\n"
+	.string "You have raised a few GRASS -TYPE\n"
 	.string "POKéMON of your own! Will you\p"
 	.string "also raise this egg?$"
 
