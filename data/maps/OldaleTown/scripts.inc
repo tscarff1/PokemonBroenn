@@ -488,3 +488,4 @@ OldaleTown_Text_ReceivedTheEgg:
 OldaleTown_Text_EggCheckup:
 	.string "Oh! It's you! How is that EGG\n"
 	.string "doing?$"
+	

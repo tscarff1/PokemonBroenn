@@ -170,3 +170,4 @@ VerdanturfTown_Text_KOTH_Guide_Victory:
 	.string "JILL! You must be really strong!\p"
 	.string "Now we'll have to get another KING'S\n"
 	.string "ROCK from our parents.$"
+	

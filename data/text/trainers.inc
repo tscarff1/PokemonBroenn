@@ -4826,3 +4826,4 @@ VerdanturfTown_Text_JillPostBattle:
 	.string "You can keep the KING'S ROCK.\n"
 	.string "I can get us another one from\p"
 	.string "my mom.$"
+	
