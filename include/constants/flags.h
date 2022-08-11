@@ -1503,7 +1503,7 @@
 
 #define FLAG_RECEIVED_OLDALE_EGG                    (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_RECEIVED_PETALBURG_EGG                 (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
+#define FLAG_RECEIVED_MAUVILLE_EGG                  (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
@@ -1522,15 +1522,15 @@
 #define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
 #define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag
 #define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
-#define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
-#define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
+#define FLAG_PURCHASED_WISH_TAG                     (SYSTEM_FLAGS + 0x9A)
+#define FLAG_HIDE_SHELBY_SLATEPORT                  (SYSTEM_FLAGS + 0x9B)
+#define FLAG_HIDE_JERRY_FALLARBOR                   (SYSTEM_FLAGS + 0x9C)
+#define FLAG_HIDE_JERRY_FOSSILMANIAC                (SYSTEM_FLAGS + 0x9D)
+#define FLAG_HIDE_JERRY_FOSSILMANIACHOUSE           (SYSTEM_FLAGS + 0x9E)
+#define FLAG_HIDE_JERRY_ROUTE114                    (SYSTEM_FLAGS + 0x9F)
+#define FLAG_HIDE_JERRY_RUSTURF                     (SYSTEM_FLAGS + 0xA0)
+#define FLAG_HIDE_JERRY_WISH_CAVE                   (SYSTEM_FLAGS + 0xA1)
+#define FLAG_CAUGHT_JIRACHI                         (SYSTEM_FLAGS + 0xA2)
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag

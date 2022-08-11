@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_JIRACHI_CAVE_ENTRANCE",
+      "name": "JirachiCave_Entrance_Layout",
+      "width": 16,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/JirachiCave_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/JirachiCave_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_JIRACHI_CAVE_MAIN",
+      "name": "JirachiCave_Main_Layout",
+      "width": 20,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/JirachiCave_Main/border.bin",
+      "blockdata_filepath": "data/layouts/JirachiCave_Main/map.bin"
     }
   ]
 }

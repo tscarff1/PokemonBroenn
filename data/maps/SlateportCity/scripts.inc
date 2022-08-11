@@ -18,6 +18,7 @@
 .set LOCALID_GRUNT_9, 31
 .set LOCALID_GRUNT_11, 33
 .set LOCALID_SCOTT, 35
+.set LOCALID_SHELBY, 37
 
 @ Note: LOCALID_SLATEPORT_ENERGY_GURU is a local id for this map used elsewhere. It's defined in event_objects.h
 
@@ -1383,3 +1384,315 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+
+SlateportCity_EventScript_WishTagSalesman::
+	lock
+	faceplayer
+	goto_if_ge VAR_WISH_TAG_PROGRESS, 1, SlateportCity_EventScript_EnjoyWishTag
+	showmoneybox 0, 0
+	msgbox SlateportCity_Text_WantWishTag, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_DeclineWishTag
+	checkmoney 2500
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_WishTagNoMoney
+	call_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_RemoveMoney
+	giveitem ITEM_WISH_TAG
+	setvar VAR_WISH_TAG_PROGRESS, 1
+	setflag FLAG_PURCHASED_WISH_TAG
+	hidemoneybox
+	msgbox SlateportCity_Text_EnjoyWishTag, MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_EnjoyWishTag::
+	msgbox SlateportCity_Text_EnjoyWishTag MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_DeclineWishTag::
+	msgbox SlateportCity_Text_DeclineWishTag MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_WishTagNoMoney::
+	msgbox SlateportCity_Text_WishTagNoMoney MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_RemoveMoney::
+	removemoney 2500
+	updatemoneybox
+	return
+
+SlateportCity_Text_EnjoyWishTag:
+	.string "Make sure you think about your WISH\n"
+	.string "as you pin it to the LIGHTHOUSE!\p"
+	.string "Is very important to focus, yes yes!\n"
+	.string "And your WISH will surely come true!$"
+
+SlateportCity_Text_WantWishTag:
+	.string "Hello hello! I have great offer, just\n"
+	.string "for you! My offer is to make your\p"
+	.string "greatest dreams come true, yes yes!\n"
+	.string "How, you ask? With WISH TAG! Simply\p"
+	.string "focus hard on wish, then pin WISH TAG\n"
+	.string "to LIGHTHOUSE! So easy. And only\p"
+	.string "¥2500! Small price for dreams, yes yes!$"
+
+SlateportCity_Text_DeclineWishTag:
+	.string "No? Okay, you must not have money.\n"
+	.string "Come back with money, I make your\p"
+	.string "dreams come true!$"
+
+SlateportCity_Text_WishTagNoMoney:
+	.string "You have no money! Come back with.\n"
+	.string "money, I sell you WISH TAG. You need\p"
+	.string "it.$"
+
+SlateportCity_EventScript_ShelbyTrigger0::
+	lockall
+	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_SHELBY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SHELBY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_SHELBY, SlateportCity_Movement_ShelbyApproachPlayer0
+	waitmovement 0
+	msgbox SlateportCity_Text_ShelbyNoticeWishTag MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_EventScript_ShelbyEncounter
+	msgbox SlateportCity_Text_Shelby_IllBeHere MSGBOX_NPC
+	releaseall
+	end
+
+
+SlateportCity_EventScript_ShelbyTrigger1::
+	lockall
+	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_SHELBY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SHELBY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_SHELBY, SlateportCity_Movement_ShelbyApproachPlayer1
+	waitmovement 0
+	msgbox SlateportCity_Text_ShelbyNoticeWishTag MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_EventScript_ShelbyEncounter
+	msgbox SlateportCity_Text_Shelby_IllBeHere MSGBOX_NPC
+	releaseall
+	end
+
+SlateportCity_EventScript_ShelbyTrigger2::
+	lockall
+	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_SHELBY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SHELBY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_SHELBY, SlateportCity_Movement_ShelbyApproachPlayer2
+	waitmovement 0
+	msgbox SlateportCity_Text_ShelbyNoticeWishTag MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_EventScript_ShelbyEncounter
+	msgbox SlateportCity_Text_Shelby_IllBeHere MSGBOX_NPC
+	releaseall
+	end
+
+SlateportCity_EventScript_ShelbyTrigger3::
+	lockall
+	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_SHELBY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SHELBY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_SHELBY, SlateportCity_Movement_ShelbyApproachPlayer3
+	waitmovement 0
+	msgbox SlateportCity_Text_ShelbyNoticeWishTag MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_EventScript_ShelbyEncounter
+	msgbox SlateportCity_Text_Shelby_IllBeHere MSGBOX_NPC
+	releaseall
+	end
+
+SlateportCity_EventScript_ShelbyTrigger4::
+	lockall
+	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_SHELBY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SHELBY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_SHELBY, SlateportCity_Movement_ShelbyApproachPlayer4
+	waitmovement 0
+	msgbox SlateportCity_Text_ShelbyNoticeWishTag MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_EventScript_ShelbyEncounter
+	msgbox SlateportCity_Text_Shelby_IllBeHere MSGBOX_NPC
+	releaseall
+	end
+
+SlateportCity_EventScript_ShelbyTrigger5::
+	lockall
+	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_SHELBY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SHELBY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_SHELBY, SlateportCity_Movement_ShelbyApproachPlayer5
+	waitmovement 0
+	msgbox SlateportCity_Text_ShelbyNoticeWishTag MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_EventScript_ShelbyEncounter
+	msgbox SlateportCity_Text_Shelby_IllBeHere MSGBOX_NPC
+	releaseall
+	end
+
+SlateportCity_EventScript_ShelbyEncounter::
+	setvar VAR_WISH_TAG_PROGRESS, 2
+	msgbox SlateportCity_Text_ShelbyJirachi, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_ShelbyIllBeHere
+	trainerbattle_single TRAINER_SHELBY_1, SlateportCity_Text_ShelbyBattle, SlateportCity_Text_ShelbyDefeat, SlateportCity_EventScript_ShelbyPostBattle
+	end
+
+SlateportCity_Movement_ShelbyApproachPlayer0:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+SlateportCity_Movement_ShelbyApproachPlayer1:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+SlateportCity_Movement_ShelbyApproachPlayer2:
+	walk_left
+	step_end
+
+SlateportCity_Movement_ShelbyApproachPlayer3:
+	walk_left
+	walk_left
+	walk_in_place_down
+	step_end
+
+SlateportCity_Movement_ShelbyApproachPlayer4:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_down
+	step_end
+
+SlateportCity_Movement_ShelbyApproachPlayer5:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+
+SlateportCity_EventScript_ShelbyIllBeHere::
+	msgbox SlateportCity_Text_Shelby_IllBeHere, MSGBOX_NPC
+	releaseall
+	end
+
+@ If WISH TAG PROGRESS is 0 or 1, we haven't interacted with Shelby or bought the WISH TAG. So Shelby should just give a hint that there is an event
+@ If PROGRESS is 8, the player has caught Jirachi and Shelby should congratulate the player
+@ If PROGRESS is 3-8, the player is looking for Jirachi and has already battled Shelby
+SlateportCity_EventScript_Shelby::
+	goto_if_le VAR_WISH_TAG_PROGRESS, 1, SlateportCity_EventScript_ShelbyWishes
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 9, SlateportCity_EventScript_ShelbyFoundJirachi
+	goto_if_ge VAR_WISH_TAG_PROGRESS, 3, SlateportCity_EventScript_ShelbyGrandsonInformation
+	msgbox SlateportCity_Text_ShelbyReady, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_ShelbyIllBeHere
+	trainerbattle_single TRAINER_SHELBY_1, SlateportCity_Text_ShelbyBattle, SlateportCity_Text_ShelbyDefeat, SlateportCity_EventScript_ShelbyPostBattle
+	end
+
+SlateportCity_EventScript_ShelbyWishes::
+	lock
+	msgbox SlateportCity_Text_ShelbyWishes, MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_ShelbyPostBattle::
+	setvar VAR_WISH_TAG_PROGRESS, 3
+	clearflag FLAG_HIDE_JERRY_FALLARBOR
+	msgbox SlateportCity_Text_ShelbyGrandsonInformation, MSGBOX_NPC
+	end
+
+SlateportCity_EventScript_ShelbyGrandsonInformation::
+	msgbox SlateportCity_Text_ShelbyGrandsonInformation MSGBOX_NPC
+	release
+	end
+
+SlateportCity_EventScript_ShelbyFoundJirachi::
+	msgbox SlateportCity_Text_FoundJirachi, MSGBOX_NPC
+	release
+	end
+
+SlateportCity_Text_ShelbyReady:
+	.string "Good, you've returned. Are you ready\n"
+	.string "to prove yourself in battle?$"
+
+SlateportCity_Text_ShelbyWishes:
+	.string "Wishes are a wonderful thing, aren't\n"
+	.string "they? A way of expressing our\p"
+	.string "dreams and goals. Imagine a way to\n"
+	.string "make your wishes come true!$" 
+
+SlateportCity_Text_ShelbyNoticeWishTag:
+	.string "Oh! That WISH TAG you're holding...\n"
+	.string "I'm afraid it is just a normal\p"
+	.string "scrap of paper. But, I can tell by\n"
+	.string "your look that you are not just a \p"
+	.string "tourist. Yes, a trainer like you\n"
+	.string "must be interested in legends.\p"
+	.string "Would you like to know about the\n"
+	.string "MYTHICAL POKéMON, JIRACHI?$"
+
+SlateportCity_Text_Shelby_IllBeHere:
+	.string "I will be here if you change\n"
+	.string "your mind.$"
+
+SlateportCity_Text_ShelbyJirachi:
+	.string "As I said, JIRACHI is a MYTHICAL\n"
+	.string "POKéMON spoken of in legends.\p"
+	.string "Those few who met JIRACHI claimed\n"
+	.string "it was able to grant their wishes!\p"
+	.string "And my grandson believes he can\n"
+	.string "find JIRACHI! I can tell you where\p"
+	.string "he is... But you must first \n"
+	.string "show your worth in a POKéMON\p"
+	.string "battle! Are you ready?$"
+
+SlateportCity_Text_ShelbyBattle:
+	.string "Show me you are a worthy trainer!$"
+
+SlateportCity_Text_ShelbyDefeat:
+	.string "It's been quite some time since\n"
+	.string "I've met a trainer like you!$"
+
+SlateportCity_Text_FoundJirachi:
+	.string "Incredible! You and my grandson\n"
+	.string "actually found JIRACHI! Thank\p"
+	.string "you for making our dreams come\n"
+	.string "true.$"
+
+SlateportCity_Text_ShelbyGrandsonInformation:
+	.string "The last I heard from my grandson,\n"
+	.string "he was heading to FALLARBOR TOWN to\p"
+	.string "talk to a scientist researching\n"
+	.string "METEORITES. You may find him there.$"

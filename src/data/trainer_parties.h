@@ -4141,14 +4141,19 @@ static const struct TrainerMonNoItemCustomMoves sParty_Vicky[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Shelby1[] = {
     {
     .iv = 200,
-    .lvl = 21,
+    .lvl = 13,
     .species = SPECIES_MEDITITE,
     },
     {
     .iv = 200,
-    .lvl = 21,
-    .species = SPECIES_MAKUHITA,
-    }
+    .lvl = 13,
+    .species = SPECIES_GIRAFARIG,
+    },
+    {
+    .iv = 200,
+    .lvl = 14,
+    .species = SPECIES_NATU,
+    },
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Shelby2[] = {

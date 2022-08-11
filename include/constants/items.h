@@ -929,8 +929,10 @@
 #define ITEM_TEA 757
 #define ITEM_RUBY 758
 #define ITEM_SAPPHIRE 759
+#define ITEM_WISH_TAG 760
+#define ITEM_PURE_BELL 761
 
-#define ITEMS_COUNT 760
+#define ITEMS_COUNT 762
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS
