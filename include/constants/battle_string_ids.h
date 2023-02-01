@@ -612,6 +612,11 @@
 
 #define BATTLESTRINGS_COUNT                           609
 
+// This is the string id that gBattleStringsTable starts with.
+// String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
+// and are instead handled explicitly by BufferStringBattle.
+#define BATTLESTRINGS_TABLE_START  STRINGID_TRAINER1LOSETEXT
+
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
 // They are assigned to the MULTISTRING_CHOOSER byte of gBattleCommunication
@@ -828,6 +833,8 @@
 #define B_MSG_REF_OPPONENT_WON       6
 #define B_MSG_REF_DRAW               7
 #define B_MSG_REF_COMMENCE_BATTLE    8
+
+#define NUM_TRAPPING_MOVES 6
 
 // gSwitchInAbilityStringIds
 #define B_MSG_SWITCHIN_MOLDBREAKER      0

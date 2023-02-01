@@ -3474,7 +3474,7 @@ static void AnimMoveWringOutCircle(struct Sprite* sprite)
     }
     else if(sprite->data[3] < 64)
     {
-        //We need to go for an extra 90Â°
+        //We need to go for an extra 90°
         sprite->data[3] += sprite->data[0];
     }
     else
@@ -3493,7 +3493,7 @@ static void AnimMoveWringOut(struct Sprite* sprite)
     sprite->data[0] = 256 / gBattleAnimArgs[2]; //step size
     sprite->data[1] = gBattleAnimArgs[3]; //Number of circle spins
     sprite->data[2] = gBattleAnimArgs[4]; //radius
-    sprite->data[3] = 64; //current angle 90Â°
+    sprite->data[3] = 64; //current angle 90°
     sprite->callback = AnimMoveWringOutCircle;
 }
 

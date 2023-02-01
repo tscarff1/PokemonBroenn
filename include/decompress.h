@@ -10,10 +10,10 @@ void LZDecompressVram(const u32 *src, void *dest);
 
 u16 LoadCompressedSpriteSheet(const struct CompressedSpriteSheet *src);
 void LoadCompressedSpriteSheetOverrideBuffer(const struct CompressedSpriteSheet *src, void *buffer);
-bool8 LoadCompressedSpriteSheetUsingHeap(const struct CompressedSpriteSheet* src);
+bool8 LoadCompressedSpriteSheetUsingHeap(const struct CompressedSpriteSheet *src);
 
 void LoadCompressedSpritePalette(const struct CompressedSpritePalette *src);
-void LoadCompressedSpritePaletteOverrideBuffer(const struct CompressedSpritePalette *a, void *buffer);
+void LoadCompressedSpritePaletteOverrideBuffer(const struct CompressedSpritePalette *src, void *buffer);
 bool8 LoadCompressedSpritePaletteUsingHeap(const struct CompressedSpritePalette *src);
 
 void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void* buffer, s32 species);

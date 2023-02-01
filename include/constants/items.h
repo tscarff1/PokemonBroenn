@@ -3,7 +3,7 @@
 
 #define ITEM_NONE 0
 
-// PokÃ© Balls
+// Poké Balls
 #define ITEM_POKE_BALL 1
 #define ITEM_GREAT_BALL 2
 #define ITEM_ULTRA_BALL 3
@@ -933,7 +933,10 @@
 #define ITEM_PURE_BELL 761
 
 #define ITEMS_COUNT 762
-#define ITEM_FIELD_ARROW ITEMS_COUNT
+
+// A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
+// Its icon is defined at ITEMS_COUNT as the "return to field" arrow
+#define ITEM_LIST_END 0xFFFF
 
 // Range of berries given out by various NPCS
 #define FIRST_BERRY_MASTER_BERRY      ITEM_POMEG_BERRY

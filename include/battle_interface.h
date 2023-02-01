@@ -34,10 +34,10 @@ enum
 #define TAG_HEALTHBAR_PLAYER2_TILE      0xD706
 #define TAG_HEALTHBAR_OPPONENT2_TILE    0xD707
 
+#define TAG_HEALTHBOX_PALS_1            0xD709
+#define TAG_HEALTHBOX_PALS_2            0xD70A
 #define TAG_HEALTHBOX_SAFARI_TILE       0xD70B
-
 #define TAG_STATUS_SUMMARY_BAR_TILE     0xD70C
-#define TAG_STATUS_SUMMARY_BALLS_TILE   0xD714
 
 #define TAG_MEGA_TRIGGER_TILE           0xD777
 #define TAG_MEGA_INDICATOR_TILE         0xD778
@@ -92,7 +92,7 @@ void DestroyMegaIndicatorSprite(u32 healthboxSpriteId);
 u8 CreatePartyStatusSummarySprites(u8 battler, struct HpAndStatus *partyInfo, u8 arg2, bool8 isBattleStart);
 void Task_HidePartyStatusSummary(u8 taskId);
 void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elementId);
-s32 MoveBattleBar(u8 battler, u8 healthboxSpriteId, u8 whichBar, u8 arg3);
+s32 MoveBattleBar(u8 battler, u8 healthboxSpriteId, u8 whichBar, u8 unused);
 u8 GetScaledHPFraction(s16 hp, s16 maxhp, u8 scale);
 u8 GetHPBarLevel(s16 hp, s16 maxhp);
 void CreateAbilityPopUp(u8 battlerId, u32 ability, bool32 isDoubleBattle);

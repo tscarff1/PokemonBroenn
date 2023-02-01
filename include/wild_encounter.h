@@ -1,10 +1,7 @@
 #ifndef GUARD_WILD_ENCOUNTER_H
 #define GUARD_WILD_ENCOUNTER_H
 
-#define LAND_WILD_COUNT     12
-#define WATER_WILD_COUNT    5
-#define ROCK_WILD_COUNT     5
-#define FISH_WILD_COUNT     10
+#include "constants/wild_encounter.h"
 
 struct WildPokemon
 {
@@ -42,5 +39,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon);
 u16 GetLocalWaterMon(void);
 bool8 UpdateRepelCounter(void);
 bool8 TryDoDoubleWildBattle(void);
+
+bool8 StandardWildEncounter_Debug(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H
