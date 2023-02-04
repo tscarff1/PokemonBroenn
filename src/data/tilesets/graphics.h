@@ -1634,3 +1634,48 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PeterGym[][16] =
+{
+		INCBIN_U16("data/tilesets/secondary/petergym/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/13.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/14.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/petergym/palettes/15.gbapal"),
+
+};
+const u32 gTilesetTiles_PeterGym[] = 
+	INCBIN_U32("data/tilesets/secondary/petergym/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_MaxGym[][16] =
+{
+		INCBIN_U16("data/tilesets/secondary/maxgym/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/13.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/14.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/maxgym/palettes/15.gbapal"),
+};
+const u32 gTilesetTiles_MaxGym[] = 
+	INCBIN_U32("data/tilesets/secondary/maxgym/tiles.4bpp.lz");
