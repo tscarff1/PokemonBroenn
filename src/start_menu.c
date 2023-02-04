@@ -59,7 +59,6 @@ enum
     MENU_ACTION_BAG,
     MENU_ACTION_POKENAV,
     MENU_ACTION_PLAYER,
-    MENU_ACTION_QUESTS,
     MENU_ACTION_SAVE,
     MENU_ACTION_OPTION,
     MENU_ACTION_EXIT,
@@ -323,7 +322,6 @@ static void BuildNormalStartMenu(void)
     }
 
     AddStartMenuAction(MENU_ACTION_PLAYER);
-    AddStartMenuAction(MENU_ACTION_QUESTS);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_EXIT);
