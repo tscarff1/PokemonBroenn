@@ -1450,7 +1450,9 @@ SlateportCity_Text_WishTagNoMoney:
 	.string "it.$"
 
 SlateportCity_EventScript_ShelbyTrigger0::
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 2
 	lockall
+	setvar VAR_WISH_TAG_PROGRESS, 2
 	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	playse SE_PIN
@@ -1468,7 +1470,9 @@ SlateportCity_EventScript_ShelbyTrigger0::
 
 
 SlateportCity_EventScript_ShelbyTrigger1::
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 2
 	lockall
+	setvar VAR_WISH_TAG_PROGRESS, 2
 	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	playse SE_PIN
@@ -1485,7 +1489,9 @@ SlateportCity_EventScript_ShelbyTrigger1::
 	end
 
 SlateportCity_EventScript_ShelbyTrigger2::
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 2
 	lockall
+	setvar VAR_WISH_TAG_PROGRESS, 2
 	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	playse SE_PIN
@@ -1502,7 +1508,9 @@ SlateportCity_EventScript_ShelbyTrigger2::
 	end
 
 SlateportCity_EventScript_ShelbyTrigger3::
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 2
 	lockall
+	setvar VAR_WISH_TAG_PROGRESS, 2
 	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	playse SE_PIN
@@ -1519,7 +1527,9 @@ SlateportCity_EventScript_ShelbyTrigger3::
 	end
 
 SlateportCity_EventScript_ShelbyTrigger4::
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 2
 	lockall
+	setvar VAR_WISH_TAG_PROGRESS, 2
 	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	playse SE_PIN
@@ -1536,7 +1546,9 @@ SlateportCity_EventScript_ShelbyTrigger4::
 	end
 
 SlateportCity_EventScript_ShelbyTrigger5::
+	goto_if_eq VAR_WISH_TAG_PROGRESS, 2
 	lockall
+	setvar VAR_WISH_TAG_PROGRESS, 2
 	applymovement LOCALID_SHELBY, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	playse SE_PIN
@@ -1552,8 +1564,11 @@ SlateportCity_EventScript_ShelbyTrigger5::
 	releaseall
 	end
 
+SlateportCity_EventScript_DoNothing::
+	releaseall
+	end
+
 SlateportCity_EventScript_ShelbyEncounter::
-	setvar VAR_WISH_TAG_PROGRESS, 2
 	msgbox SlateportCity_Text_ShelbyJirachi, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_ShelbyIllBeHere
 	trainerbattle_single TRAINER_SHELBY_1, SlateportCity_Text_ShelbyBattle, SlateportCity_Text_ShelbyDefeat, SlateportCity_EventScript_ShelbyPostBattle
@@ -1616,7 +1631,7 @@ SlateportCity_EventScript_Shelby::
 	goto_if_le VAR_WISH_TAG_PROGRESS, 1, SlateportCity_EventScript_ShelbyWishes
 	goto_if_eq VAR_WISH_TAG_PROGRESS, 9, SlateportCity_EventScript_ShelbyFoundJirachi
 	goto_if_ge VAR_WISH_TAG_PROGRESS, 3, SlateportCity_EventScript_ShelbyGrandsonInformation
-	msgbox SlateportCity_Text_ShelbyReady, MSGBOX_YESNO
+	msgbox SlateportCity_Text_ShelbyJirachi, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_ShelbyIllBeHere
 	trainerbattle_single TRAINER_SHELBY_1, SlateportCity_Text_ShelbyBattle, SlateportCity_Text_ShelbyDefeat, SlateportCity_EventScript_ShelbyPostBattle
 	end
@@ -1688,7 +1703,7 @@ SlateportCity_Text_ShelbyDefeat:
 SlateportCity_Text_FoundJirachi:
 	.string "Incredible! You and my grandson\n"
 	.string "actually found JIRACHI! Thank\p"
-	.string "you for making our dreams come\n"
+	.string "you for making our wishes come\n"
 	.string "true.$"
 
 SlateportCity_Text_ShelbyGrandsonInformation:
