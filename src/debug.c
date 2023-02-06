@@ -69,7 +69,6 @@ enum { // Main
     DEBUG_MENU_ITEM_GIVE,
     DEBUG_MENU_ITEM_SOUND,
     DEBUG_MENU_ITEM_ACCESS_PC,
-    DEBUG_MENU_ITEM_BROENN,
     DEBUG_MENU_ITEM_CANCEL
 };
 enum { // Util
@@ -132,9 +131,6 @@ enum { //Sound
     DEBUG_SOUND_MENU_ITEM_MUS,
 };
 
-enum {//Broenn!
-    DEBUG_BROENN_MENU_ITEM_TYLER_GYM
-};
 // *******************************
 // Constants
 #define DEBUG_MAIN_MENU_WIDTH 15
@@ -203,7 +199,6 @@ static void DebugAction_OpenFlagsMenu(u8 taskId);
 static void DebugAction_OpenVariablesMenu(u8 taskId);
 static void DebugAction_OpenGiveMenu(u8 taskId);
 static void DebugAction_OpenSoundMenu(u8 taskId);
-static void DebugAction_OpenBroennMenu(u8 taskId);
 static void DebugTask_HandleMenuInput_Main(u8 taskId);
 static void DebugTask_HandleMenuInput_Utilities(u8 taskId);
 static void DebugTask_HandleMenuInput_Scripts(u8 taskId);
@@ -277,7 +272,6 @@ static void DebugAction_Sound_SE_SelectId(u8 taskId);
 static void DebugAction_Sound_MUS(u8 taskId);
 static void DebugAction_Sound_MUS_SelectId(u8 taskId);
 
-
 static void DebugTask_HandleMenuInput(u8 taskId, void (*HandleInput)(u8));
 static void DebugAction_OpenSubMenu(u8 taskId, struct ListMenuTemplate LMtemplate);
 
@@ -306,7 +300,6 @@ static const u8 sDebugText_Flags[] =     _("Flags");
 static const u8 sDebugText_Vars[] =      _("Variables");
 static const u8 sDebugText_Give[] =      _("Give X");
 static const u8 sDebugText_Sound[] =     _("Sound");
-static const u8 sDebugText_Broenn[] =    _("BROENN");
 static const u8 sDebugText_Cancel[] =    _("Cancel");
 // Script menu
 static const u8 sDebugText_Util_Script_1[] = _("Script 1");
@@ -396,9 +389,6 @@ static const u8 sDebugText_Sound_MUS[] =    _("Music");
 static const u8 sDebugText_Sound_MUS_ID[] = _("Music Id: {STR_VAR_3}\n{STR_VAR_1}    \n{STR_VAR_2}");
 static const u8 sDebugText_Sound_Empty[] =  _("");
 
-//Broenn Menu
-static const u8 sDebugText_Broenn_TylerGym[] = _("TYLER Gym");
-
 static const u8 digitInidicator_1[] =        _("{LEFT_ARROW}+1{RIGHT_ARROW}        ");
 static const u8 digitInidicator_10[] =       _("{LEFT_ARROW}+10{RIGHT_ARROW}       ");
 static const u8 digitInidicator_100[] =      _("{LEFT_ARROW}+100{RIGHT_ARROW}      ");
@@ -407,7 +397,6 @@ static const u8 digitInidicator_10000[] =    _("{LEFT_ARROW}+10000{RIGHT_ARROW} 
 static const u8 digitInidicator_100000[] =   _("{LEFT_ARROW}+100000{RIGHT_ARROW}   ");
 static const u8 digitInidicator_1000000[] =  _("{LEFT_ARROW}+1000000{RIGHT_ARROW}  ");
 static const u8 digitInidicator_10000000[] = _("{LEFT_ARROW}+10000000{RIGHT_ARROW} ");
-
 const u8 * const gText_DigitIndicator[] =
 {
     digitInidicator_1,
@@ -444,7 +433,6 @@ static const struct ListMenuItem sDebugMenu_Items_Main[] =
     [DEBUG_MENU_ITEM_GIVE]      = {sDebugText_Give,      DEBUG_MENU_ITEM_GIVE},
     [DEBUG_MENU_ITEM_SOUND]     = {sDebugText_Sound,     DEBUG_MENU_ITEM_SOUND},
     [DEBUG_MENU_ITEM_ACCESS_PC] = {sDebugText_AccessPC,  DEBUG_MENU_ITEM_ACCESS_PC},
-    [DEBUG_MENU_ITEM_BROENN] = {sDebugText_Broenn, DEBUG_MENU_ITEM_BROENN},
     [DEBUG_MENU_ITEM_CANCEL]    = {sDebugText_Cancel,    DEBUG_MENU_ITEM_CANCEL}
 };
 static const struct ListMenuItem sDebugMenu_Items_Utilities[] =
@@ -512,11 +500,6 @@ static const struct ListMenuItem sDebugMenu_Items_Sound[] =
     [DEBUG_SOUND_MENU_ITEM_SE]  = {sDebugText_Sound_SE,  DEBUG_SOUND_MENU_ITEM_SE},
     [DEBUG_SOUND_MENU_ITEM_MUS] = {sDebugText_Sound_MUS, DEBUG_SOUND_MENU_ITEM_MUS},
 };
-static const struct ListMenuItem sDebugMenu_Items_Broenn[] = 
-{
-    [DEBUG_BROENN_MENU_ITEM_TYLER_GYM] = {sDebugText_Broenn_TylerGym, DEBUG_BROENN_MENU_ITEM_TYLER_GYM},
-};
-
 
 // *******************************
 // Menu Actions
@@ -529,15 +512,8 @@ static void (*const sDebugMenu_Actions_Main[])(u8) =
     [DEBUG_MENU_ITEM_GIVE]      = DebugAction_OpenGiveMenu,
     [DEBUG_MENU_ITEM_SOUND]     = DebugAction_OpenSoundMenu,
     [DEBUG_MENU_ITEM_ACCESS_PC] = DebugAction_AccessPC,
-    [DEBUG_MENU_ITEM_BROENN] = DebugAction_OpenBroennMenu,
     [DEBUG_MENU_ITEM_CANCEL]    = DebugAction_Cancel
 };
-
-static void (*const sDebugMenu_Actions_Broenn[])(u8) = 
-{
-    [DEBUG_BROENN_MENU_ITEM_TYLER_GYM] = DebugAction_Util_HealParty
-};
-
 static void (*const sDebugMenu_Actions_Utilities[])(u8) =
 {
     [DEBUG_UTIL_MENU_ITEM_HEAL_PARTY]     = DebugAction_Util_HealParty,
@@ -693,12 +669,6 @@ static const struct ListMenuTemplate sDebugMenu_ListTemplate_Sound =
     .totalItems = ARRAY_COUNT(sDebugMenu_Items_Sound),
 };
 
-static const struct ListMenuTemplate sDebugMenu_ListTemplate_Broenn = 
-{
-    .items = sDebugMenu_Items_Broenn,
-    .moveCursorFunc = ListMenuDefaultCursorMoveFunc,
-    .totalItems = ARRAY_COUNT(sDebugMenu_Items_Broenn)
-};
 
 // *******************************
 // Functions universal
@@ -907,25 +877,6 @@ static void DebugTask_HandleMenuInput_Sound(u8 taskId)
     }
 }
 
-static void DebugTask_HandleMenuInput_Broenn(u8 taskId)
-{
-     void (*func)(u8);
-    u32 input = ListMenu_ProcessInput(gTasks[taskId].data[0]);
-
-    if (JOY_NEW(A_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        if ((func = sDebugMenu_Actions_Broenn[input]) != NULL)
-            func(taskId);
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        Debug_DestroyMenu(taskId);
-        Debug_ShowMainMenu();
-    }
-}
-
 // *******************************
 // Open sub-menus
 static void DebugAction_OpenUtilitiesMenu(u8 taskId)
@@ -957,12 +908,6 @@ static void DebugAction_OpenSoundMenu(u8 taskId)
 {
     Debug_DestroyMenu(taskId);
     Debug_ShowMenu(DebugTask_HandleMenuInput_Sound, sDebugMenu_ListTemplate_Sound);
-}
-
-static void DebugAction_OpenBroennMenu(u8 taskId)
-{
-    Debug_DestroyMenu(taskId);
-    Debug_ShowMenu(DebugTask_HandleMenuInput_Broenn, sDebugMenu_ListTemplate_Broenn);
 }
 
 

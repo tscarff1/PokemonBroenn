@@ -141,9 +141,15 @@ VerdanturfTown_EventScript_Jack::
 	end
 
 VerdanturfTown_EventScript_Jill::
-	trainerbattle_single TRAINER_JILL, VerdanturfTown_Text_JillIntro, VerdanturfTown_Text_JillDefeat
+	trainerbattle_single TRAINER_JILL, VerdanturfTown_Text_JillIntro, VerdanturfTown_Text_JillDefeat, VerdanturfTown_EventScript_JillDefeated
 	msgbox VerdanturfTown_Text_JillPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VerdanturfTown_EventScript_JillDefeated::
+	giveitem ITEM_KINGS_ROCK
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	setflag FLAG_RECEIVED_HILL_KINGS_ROCK
+	return
 
 VerdanturfTown_EventScript_KOTH_Guide::
 	lock

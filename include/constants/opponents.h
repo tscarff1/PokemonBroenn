@@ -116,7 +116,7 @@
 #define TRAINER_VALERIE_4                   112
 #define TRAINER_VALERIE_5                   113
 #define TRAINER_CINDY_1                     114
-#define TRAINER_DAPHNE                      115
+#define TRAINER_DANIEL                      115
 #define TRAINER_GRUNT_SPACE_CENTER_2        116
 #define TRAINER_CINDY_2                     117
 #define TRAINER_BRIANNA                     118
@@ -129,8 +129,8 @@
 #define TRAINER_SHEILA                      125
 #define TRAINER_SHIRLEY                     126
 #define TRAINER_JESSICA_1                   127
-#define TRAINER_CONNIE                      128
-#define TRAINER_BRIDGET                     129
+#define TRAINER_CONNOR                      128
+#define TRAINER_MIYAGI                     129
 #define TRAINER_OLIVIA                      130
 #define TRAINER_TIFFANY                     131
 #define TRAINER_JESSICA_2                   132
@@ -268,12 +268,12 @@
 #define TRAINER_DRAKE                       264
 #define TRAINER_ROXANNE_1                   265
 #define TRAINER_BRAWLY_1                    266
-#define TRAINER_WATTSON_1                   267
+#define TRAINER_PETER                       267
 #define TRAINER_FLANNERY_1                  268
-#define TRAINER_NORMAN_1                    269
-#define TRAINER_WINONA_1                    270
-#define TRAINER_TATE_AND_LIZA_1             271
-#define TRAINER_JUAN_1                      272
+#define TRAINER_SAGE                        269
+#define TRAINER_MAX                         270
+#define TRAINER_LEADER_AARON                271
+#define TRAINER_TYLER                       272
 #define TRAINER_JERRY_1                     273
 #define TRAINER_TED                         274
 #define TRAINER_PAUL                        275
@@ -302,7 +302,7 @@
 #define TRAINER_MIGUEL_5                    298
 #define TRAINER_VICTORIA                    299
 #define TRAINER_VANESSA                     300
-#define TRAINER_BETHANY                     301
+#define TRAINER_BRETT                     301
 #define TRAINER_ISABEL_1                    302
 #define TRAINER_ISABEL_2                    303
 #define TRAINER_ISABEL_3                    304
@@ -615,7 +615,7 @@
 #define TRAINER_SALLY                       611
 #define TRAINER_ROBIN                       612
 #define TRAINER_ANDREA                      613
-#define TRAINER_CRISSY                      614
+#define TRAINER_KRIS                      614
 #define TRAINER_RICK                        615
 #define TRAINER_LYLE                        616
 #define TRAINER_JOSE                        617

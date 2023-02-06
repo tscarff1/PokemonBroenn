@@ -170,6 +170,14 @@ static const union AnimCmd *const sAnims_LeaderWattson[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_LeaderPeter[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_LeaderSage[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_LeaderFlannery[] ={
     sAnim_GeneralFrame0,
 };
@@ -182,11 +190,11 @@ static const union AnimCmd *const sAnims_LeaderWinona[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_LeaderTateAndLiza[] ={
+static const union AnimCmd *const sAnims_LeaderAaron[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_LeaderJuan[] ={
+static const union AnimCmd *const sAnims_LeaderTyler[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -370,6 +378,11 @@ static const union AnimCmd *const sAnims_RubySapphireMay[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_LeaderMax[] ={
+    sAnim_GeneralFrame0,
+};
+
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -414,12 +427,13 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_ELITE_FOUR_DRAKE] = sAnims_EliteFourDrake,
     [TRAINER_PIC_LEADER_ROXANNE] = sAnims_LeaderRoxanne,
     [TRAINER_PIC_LEADER_BRAWLY] = sAnims_LeaderBrawly,
-    [TRAINER_PIC_LEADER_WATTSON] = sAnims_LeaderWattson,
+    [TRAINER_PIC_LEADER_PETER] = sAnims_LeaderPeter,
+    [TRAINER_PIC_LEADER_SAGE] = sAnims_LeaderSage,
     [TRAINER_PIC_LEADER_FLANNERY] = sAnims_LeaderFlannery,
     [TRAINER_PIC_LEADER_NORMAN] = sAnims_LeaderNorman,
     [TRAINER_PIC_LEADER_WINONA] = sAnims_LeaderWinona,
-    [TRAINER_PIC_LEADER_TATE_AND_LIZA] = sAnims_LeaderTateAndLiza,
-    [TRAINER_PIC_LEADER_JUAN] = sAnims_LeaderJuan,
+    [TRAINER_PIC_LEADER_AARON] = sAnims_LeaderAaron,
+    [TRAINER_PIC_LEADER_TYLER] = sAnims_LeaderTyler,
     [TRAINER_PIC_SCHOOL_KID_M] = sAnims_SchoolKidM,
     [TRAINER_PIC_SCHOOL_KID_F] = sAnims_SchoolKidF,
     [TRAINER_PIC_SR_AND_JR] = sAnims_SrAndJr,
@@ -465,4 +479,5 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_LEAF] = sAnims_Leaf,
     [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireBrendan,
     [TRAINER_PIC_RS_MAY] = sAnims_RubySapphireMay,
+    [TRAINER_PIC_LEADER_MAX] = sAnims_LeaderMax,
 };

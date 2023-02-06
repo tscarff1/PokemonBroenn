@@ -30,6 +30,7 @@
 #include "constants/frontier_util.h"
 #include "constants/game_stat.h"
 #include "constants/item.h"
+#include "constants/item_config.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
 #include "constants/layouts.h"
@@ -60,7 +61,6 @@
 
 	.section script_data, "aw", %progbits
 
-@ 81DB67C
 	.include "data/script_cmd_table.inc"
 
 gSpecialVars::
@@ -578,6 +578,8 @@ gStdScripts_End::
 	.include "data/scripts/new_game.inc"
 	.include "data/scripts/hall_of_fame.inc"
 
+	.include "data/scripts/debug.inc"
+
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
 	goto EventScript_ResetMrBriney
@@ -1058,6 +1060,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 
+	.include "data/maps/PeterGym/scripts.inc"
 	.include "data/maps/JirachiCave_Entrance/scripts.inc"
 
 	.include "data/maps/JirachiCave_Main/scripts.inc"
+
+	.include "data/maps/MaxGym/scripts.inc"
