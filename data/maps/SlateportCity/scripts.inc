@@ -1411,7 +1411,6 @@ SlateportCity_EventScript_EnjoyWishTag::
 
 SlateportCity_EventScript_DeclineWishTag::
 	msgbox SlateportCity_Text_DeclineWishTag MSGBOX_NPC
-	hidemoneybox
 	release
 	end
 
