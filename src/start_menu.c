@@ -675,26 +675,6 @@ static bool8 StartMenuPokeNavCallback(void)
     return FALSE;
 }
 
-static bool8 StartMenuQuestsCallback(void)
-{
-    if (!gPaletteFade.active)
-    {
-        FlagSet(FLAG_SYS_NATIONAL_DEX);
-        EnableNationalPokedex();
-        FlagSet(FLAG_HIDE_JERRY_FOSSILMANIAC);
-        FlagSet(FLAG_HIDE_JERRY_FOSSILMANIACHOUSE);
-        FlagSet(FLAG_HIDE_MT_CHIMNEY_GUARD);
-        FlagSet(FLAG_HIDE_JERRY_ROUTE114);
-        FlagSet(FLAG_HIDE_JERRY_RUSTURF);
-        FlagSet(FLAG_HIDE_JERRY_WISH_CAVE);
-        VarSet(VAR_WISH_TAG_PROGRESS,4);
-        ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);  // Display PokeNav
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
 static bool8 StartMenuPlayerNameCallback(void)
 {
     if (!gPaletteFade.active)
