@@ -94,6 +94,7 @@ Route114_FossilManiacsHouse_EventScript_Jerry::
 	playse SE_EXIT
 	removeobject LOCALID_JERRY
 	clearflag FLAG_HIDE_JERRY_ROUTE114
+	clearflag FLAG_HIDE_JERRY_RUSTURF
 	release
 	end
 

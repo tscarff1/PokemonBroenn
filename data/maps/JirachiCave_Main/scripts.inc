@@ -51,7 +51,7 @@ JirachiCave_Main_JerryTrigger::
 
 JirachiCave_Main_Jerry::
 	lock
-	msgbox JirachiCave_Main_Text_JerryFoundJirachi, MSGBOX_DEFAULT
+	msgbox JirachiCave_Main_Text_JerryFoundJirachi, MSGBOX_NPC
 	release
 	end
 

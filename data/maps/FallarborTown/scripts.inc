@@ -100,7 +100,7 @@ FallarborTown_EventScript_JerryTalk::
 	end
 
 FallarborTown_EventScript_JerryAppears::
-	goto_if_unset FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FallarborTown_EventScript_DoNothing
+	goto_if_set FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO, FallarborTown_EventScript_DoNothing
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -172,9 +172,9 @@ FallarborTown_Text_JerryCosmoNoHelp:
 
 FallarborTown_Text_JerryInvitePlayer:
 	.string "Oh! You've met my grandmother! My name is\n"
-	.string "Jerry. I could use a TRAINER's help. If\n"
-	.string "you would like to help me in my search\p"
-	.string "for JIRACHI, I will be visting the\n"
-	.string "house of the FOSSIL MANIAC next. I \p"
-	.string "believe JIRACHI may be sleeping deep\n"
+	.string "Jerry. I could use a TRAINER's help. If\p"
+	.string "you would like to help me in my search\n"
+	.string "for JIRACHI, I will be visting the\p"
+	.string "house of the FOSSIL MANIAC next. I \n"
+	.string "believe JIRACHI may be sleeping deep\p"
 	.string "underground!$"

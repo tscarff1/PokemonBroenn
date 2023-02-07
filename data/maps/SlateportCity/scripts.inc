@@ -1628,6 +1628,7 @@ SlateportCity_EventScript_ShelbyIllBeHere::
 @ If PROGRESS is 8, the player has caught Jirachi and Shelby should congratulate the player
 @ If PROGRESS is 3-8, the player is looking for Jirachi and has already battled Shelby
 SlateportCity_EventScript_Shelby::
+	faceplayer
 	goto_if_le VAR_WISH_TAG_PROGRESS, 1, SlateportCity_EventScript_ShelbyWishes
 	goto_if_eq VAR_WISH_TAG_PROGRESS, 9, SlateportCity_EventScript_ShelbyFoundJirachi
 	goto_if_ge VAR_WISH_TAG_PROGRESS, 3, SlateportCity_EventScript_ShelbyGrandsonInformation
