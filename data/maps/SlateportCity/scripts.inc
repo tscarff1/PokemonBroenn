@@ -365,7 +365,7 @@ SlateportCity_EventScript_PokefanF::
 	end
 
 SlateportCity_EventScript_Man2::
-	msgbox SlateportCity_Text_BattleTentBuiltRecently, MSGBOX_NPC
+	msgbox SlateportCity_Text_Souvenirs, MSGBOX_NPC
 	end
 
 SlateportCity_EventScript_AquaGrunt1::
@@ -1130,14 +1130,12 @@ SlateportCity_Text_CantChangeTradeMonName:
 	.string "The original TRAINER's love for that\n"
 	.string "POKéMON is in the nickname.$"
 
-SlateportCity_Text_BattleTentBuiltRecently:
-	.string "Recently, a BATTLE TENT was built\n"
-	.string "in SLATEPORT.\p"
-	.string "GYMS are fun, but the BATTLE TENT's\n"
-	.string "awesome in its own way.\p"
-	.string "You should go find tough POKéMON\n"
-	.string "for the BATTLE TENT!$"
-
+SlateportCity_Text_Souvenirs:
+	.string "I love checking out the SLATEPORT\n"
+	.string "market and buying souvenirs!\p"
+	.string "You never know what you\n"
+	.string "might find!$"
+	
 SlateportCity_Text_CaptSternBeingInterviewed:
 	.string "I was hoping that it was a famous star\n"
 	.string "so I could get an autograph.\p"

@@ -479,6 +479,8 @@ Route109_EventScript_Elijah::
 DewfordTown_Text_BrineyLandedInSlateportDeliverGoods:
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "We've made land in SLATEPORT!\p"
+	.string "Take a look at the market, but\n"
+	.string "be wary of shady salesmen!\p"
 	.string "I suppose you're going to visit CAPT.\n"
 	.string "STERN and deliver the DEVON GOODS?$"
 
