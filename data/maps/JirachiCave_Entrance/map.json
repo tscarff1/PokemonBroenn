@@ -22,14 +22,14 @@
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_RUSTURF_TUNNEL",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 12,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_JIRACHI_CAVE_MAIN",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

@@ -113,17 +113,18 @@ FallarborTown_EventScript_JerryAppears::
 	waitmovement 0
 	closedoor 6,17
 	waitdooranim
-	msgbox FallarborTown_Text_JerryCosmoNoHelp, MSGBOX_NPC
+	msgbox FallarborTown_Text_JerryCosmoNoHelp, MSGBOX_DEFAULT
 	playse SE_PIN
 	applymovement LOCALID_JERRY, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_JERRY, Common_Movement_Delay48
-	msgbox FallarborTown_Text_JerryInvitePlayer, MSGBOX_NPC
+	msgbox FallarborTown_Text_JerryInvitePlayer, MSGBOX_DEFAULT
 	applymovement LOCALID_JERRY, FallarborTown_Movement_JerryExitAfterHouse
 	waitmovement 0
 	removeobject LOCALID_JERRY
 	setvar VAR_WISH_TAG_PROGRESS, 4
 	setflag FLAG_HIDE_JERRY_FALLARBOR
+	releaseall
 	end
 
 @This just makes the trigger not do anything if COSMO is not back from Meteor Falls
@@ -135,11 +136,16 @@ FallarborTown_Movement_PushPlayerDown:
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
+	face_up
 	step_end
 
 FallarborTown_Movement_PlayerWatchJerryExit:
 	delay_16
 	walk_in_place_faster_left
+	step_end
+
+FallarborTown_Movement_PlayerFaceUp:
+	face_up
 	step_end
 
 FallarborTown_Movement_JerryExitHouse:
