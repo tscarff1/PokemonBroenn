@@ -100,7 +100,7 @@ FallarborTown_EventScript_JerryTalk::
 	end
 
 FallarborTown_EventScript_JerryAppears::
-	goto_if_unset FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FallarborTown_EventScript_DoNothing
+	goto_if_set FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO, FallarborTown_EventScript_DoNothing
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -113,17 +113,18 @@ FallarborTown_EventScript_JerryAppears::
 	waitmovement 0
 	closedoor 6,17
 	waitdooranim
-	msgbox FallarborTown_Text_JerryCosmoNoHelp, MSGBOX_NPC
+	msgbox FallarborTown_Text_JerryCosmoNoHelp, MSGBOX_DEFAULT
 	playse SE_PIN
 	applymovement LOCALID_JERRY, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_JERRY, Common_Movement_Delay48
-	msgbox FallarborTown_Text_JerryInvitePlayer, MSGBOX_NPC
+	msgbox FallarborTown_Text_JerryInvitePlayer, MSGBOX_DEFAULT
 	applymovement LOCALID_JERRY, FallarborTown_Movement_JerryExitAfterHouse
 	waitmovement 0
 	removeobject LOCALID_JERRY
 	setvar VAR_WISH_TAG_PROGRESS, 4
 	setflag FLAG_HIDE_JERRY_FALLARBOR
+	releaseall
 	end
 
 @This just makes the trigger not do anything if COSMO is not back from Meteor Falls
@@ -135,11 +136,16 @@ FallarborTown_Movement_PushPlayerDown:
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
+	face_up
 	step_end
 
 FallarborTown_Movement_PlayerWatchJerryExit:
 	delay_16
 	walk_in_place_faster_left
+	step_end
+
+FallarborTown_Movement_PlayerFaceUp:
+	face_up
 	step_end
 
 FallarborTown_Movement_JerryExitHouse:
@@ -172,9 +178,9 @@ FallarborTown_Text_JerryCosmoNoHelp:
 
 FallarborTown_Text_JerryInvitePlayer:
 	.string "Oh! You've met my grandmother! My name is\n"
-	.string "Jerry. I could use a TRAINER's help. If\n"
-	.string "you would like to help me in my search\p"
-	.string "for JIRACHI, I will be visting the\n"
-	.string "house of the FOSSIL MANIAC next. I \p"
-	.string "believe JIRACHI may be sleeping deep\n"
+	.string "Jerry. I could use a TRAINER's help. If\p"
+	.string "you would like to help me in my search\n"
+	.string "for JIRACHI, I will be visting the\p"
+	.string "house of the FOSSIL MANIAC next. I \n"
+	.string "believe JIRACHI may be sleeping deep\p"
 	.string "underground!$"
