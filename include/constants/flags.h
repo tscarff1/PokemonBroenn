@@ -1480,7 +1480,7 @@
 #define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
 #define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
 #define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_HIDE_MT_CHIMNEY_GUARD                  (SYSTEM_FLAGS + 0xAF) // Unused Flag
+#define FLAG_UNUSED_0xAF                            (SYSTEM_FLAGS + 0xAF) // Unused Flag
 #define FLAG_HIDE_MOLTRES                           (SYSTEM_FLAGS + 0xB0) 
 #define FLAG_HIDE_ZAPDOS                            (SYSTEM_FLAGS + 0xB1) 
 #define FLAG_HIDE_ARTICUNO                          (SYSTEM_FLAGS + 0xB2) 

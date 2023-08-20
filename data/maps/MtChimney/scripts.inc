@@ -183,208 +183,40 @@ MtChimney_Movement_ArchieExitNorth:
 	walk_down
 	step_end
 
-MtChimney_Movement_Unused1:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	step_end
+MtChimney_EventScript_Moltres::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_MOLTRES, 2, ITEM_NONE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtChimney_EventScript_DefeatedMoltres
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtChimney_EventScript_RanFromMoltres
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MtChimney_EventScript_RanFromMoltres
+	setflag FLAG_BATTLED_MOLTRES
+	release
+	end
 
-MtChimney_Movement_Unused2:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	step_end
+MtChimney_EventScript_DefeatedMoltres::
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	setflag FLAG_BATTLED_MOLTRES
+	setflag FLAG_HIDE_MOLTRES
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
-MtChimney_Movement_Unused3:
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
+MtChimney_EventScript_RanFromMoltres::
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	setflag FLAG_BATTLED_MOLTRES
+	setflag FLAG_HIDE_MOLTRES
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
-MtChimney_Movement_Unused4:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused5:
-	delay_16
-	delay_16
-	delay_16
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused6:
-	delay_16
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused7:
-	delay_16
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused8:
-	delay_16
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_faster_down
-	step_end
-
-MtChimney_Movement_Unused9:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused10:
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused11:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused12:
-	delay_16
-	delay_16
-	walk_in_place_faster_left
-	delay_16
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused13:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	walk_in_place_faster_left
-	delay_16
-	walk_down
-	walk_down
-	step_end
-
-MtChimney_Movement_Unused14:
-	lock_facing_direction
-	walk_fast_left
-	unlock_facing_direction
-	face_right
-	step_end
-
-MtChimney_Movement_Unused15:
-	walk_left
-	walk_in_place_faster_right
-	delay_16
-	step_end
 
 MtChimney_EventScript_BusyAquaGrunt1::
 	msgbox MtChimney_Text_MagmaOutnumbersUs, MSGBOX_SIGN
