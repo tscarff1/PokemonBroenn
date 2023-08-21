@@ -77,6 +77,7 @@ MtChimney_EventScript_Maxie::
 	clearflag FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO
 	setflag FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
 	clearflag FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
+	clearflag FLAG_HIDE_MOLTRES
 	releaseall
 	end
 
@@ -190,7 +191,7 @@ MtChimney_EventScript_Moltres::
 	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_MOLTRES, 2, ITEM_NONE
+	setwildbattle SPECIES_MUDKIP, 2, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

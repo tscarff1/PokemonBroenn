@@ -1,11 +1,9 @@
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
-.set LOCALID_MOLTRES, 6
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, OldaleTown_OnResume
 	.byte 0
 
 OldaleTown_OnTransition:
@@ -14,12 +12,8 @@ OldaleTown_OnTransition:
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
-	call_if_set FLAG_BATTLED_MOLTRES, OldaleTown_EventScript_HideMoltres
 	end
 
-OldaleTown_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, OldaleTown_EventScript_TryRemoveMoltres
-	end
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
 OldaleTown_EventScript_SetOldaleState::

@@ -4592,7 +4592,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jirachi = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres = {
 	.tileTag = TAG_NONE, 
-	.paletteTag=OBJ_EVENT_PAL_TAG_JIRACHI, 
+	.paletteTag=OBJ_EVENT_PAL_TAG_MOLTRES, 
 	.reflectionPaletteTag=OBJ_EVENT_PAL_TAG_NONE, 
 	.size=512, 
 	.width=32, 

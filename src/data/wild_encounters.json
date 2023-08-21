@@ -85,7 +85,7 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_WURMPLE"
+                "species": "SPECIES_PICHU"
               },
               {
                 "min_level": 2,
@@ -100,7 +100,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WURMPLE"
+                "species": "SPECIES_SKWOVET"
               },
               {
                 "min_level": 3,
@@ -115,7 +115,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WURMPLE"
+                "species": "SPECIES_LEDYBA"
               },
               {
                 "min_level": 3,
