@@ -9449,6 +9449,7 @@ static const u16 sHoundoomTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_SWAGGER,
     MOVE_SWIFT,
+    MOVE_FLY,
     MOVE_UNAVAILABLE,
 };
 
