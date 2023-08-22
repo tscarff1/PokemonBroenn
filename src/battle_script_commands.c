@@ -4037,9 +4037,9 @@ static void Cmd_getexp(void)
                     viaExpShare++;
             }
             #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
-                calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 5;
+                calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * 1.5 * gBattleMons[gBattlerFainted].level / 5;
             #else
-                calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
+                calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * 1.5 * gBattleMons[gBattlerFainted].level / 7;
             #endif
 
             #if B_SPLIT_EXP < GEN_6
