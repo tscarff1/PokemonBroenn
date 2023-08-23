@@ -1043,12 +1043,12 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_NUMEL"
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_NUMEL"
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 15,
@@ -1058,7 +1058,7 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_NUMEL"
+                "species": "SPECIES_CHARMANDER"
               },
               {
                 "min_level": 14,
@@ -1088,12 +1088,12 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_TORCHIC"
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_TORCHIC"
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
                 "min_level": 16,
