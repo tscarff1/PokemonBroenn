@@ -209,7 +209,8 @@ void BattleAI_SetupAIData(u8 defaultScoreMoves)
     }
 
     //sBattler_AI = gActiveBattler;
-    
+    if(Random() % 100 > 1)
+        gBattlerTarget = SetRandomTarget(sBattler_AI);
     gBattleStruct->aiChosenTarget[sBattler_AI] = gBattlerTarget;
 }
 
