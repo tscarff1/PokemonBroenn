@@ -17,6 +17,11 @@ GraniteCave_1F_EventScript_ReceivedFlash::
 	release
 	end
 
+GraniteCave_1F_EventScript_Boy::
+	msgbox GraniteCave_1F_Text_Slapped, MSGBOX_DEFAULT
+	release 
+	end
+
 GraniteCave_1F_Text_GetsDarkAheadHereYouGo:
 	.string "Hey, you.\n"
 	.string "It gets awfully dark ahead.\l"
@@ -37,3 +42,14 @@ GraniteCave_1F_Text_ExplainFlash:
 	.string "But, to use it, you need the GYM BADGE\n"
 	.string "from DEWFORD's POKéMON GYM.$"
 
+GraniteCave_1F_Text_Slapped:
+	.string "OW!\n"
+	.string "Why would you do that?!\p"
+	.string "You actually just slapped me!\n"
+	.string "I came all the way down in to this\p"
+	.string "dank, dark cave to get away from\n"
+	.string "random people trying to slap me\p"
+	.string "and you managed to find me and\n"
+	.string "slap me anyway?! WHO DOES THAT?!\p"
+	.string "That's so messed up!\n"
+	.string "Not cool. Not cool at all$"
