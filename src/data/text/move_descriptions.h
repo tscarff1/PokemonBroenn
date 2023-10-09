@@ -968,6 +968,10 @@ static const u8 sRainDanceDescription[] = _(
     "Boosts the power of Water-\n"
     "type moves for 5 turns.");
 
+static const u8 sPeeOnEmDescription[] = _(
+    "Pee on your foes to \n"
+    "establish dominance.");
+
 static const u8 sSunnyDayDescription[] = _(
     "Boosts the power of Fire-\n"
     "type moves for 5 turns.");
@@ -3298,6 +3302,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_CROSS_CHOP - 1] = sCrossChopDescription,
     [MOVE_TWISTER - 1] = sTwisterDescription,
     [MOVE_RAIN_DANCE - 1] = sRainDanceDescription,
+    [MOVE_PEE_ON_EM - 1] = sPeeOnEmDescription,
     [MOVE_SUNNY_DAY - 1] = sSunnyDayDescription,
     [MOVE_CRUNCH - 1] = sCrunchDescription,
     [MOVE_MIRROR_COAT - 1] = sMirrorCoatDescription,

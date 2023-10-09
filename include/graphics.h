@@ -9755,6 +9755,7 @@ extern const u32 gBattleAnimSpritePal_GlowyGreenOrb[];
 extern const u32 gBattleAnimSpritePal_GreenSpike[];
 extern const u32 gBattleAnimSpritePal_WhiteCircleOfLight[];
 extern const u32 gBattleAnimSpritePal_GlowyBlueOrb[];
+extern const u32 gBattleAnimSpritePal_Pee[];
 extern const u32 gBattleAnimSpritePal_Pokeblock[];
 extern const u32 gBattleAnimSpritePal_WhiteFeather[];
 extern const u32 gBattleAnimSpritePal_Sparkle6[];

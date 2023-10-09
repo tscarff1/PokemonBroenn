@@ -281,7 +281,7 @@
 #define ANIM_TAG_SPARKLE_6                  (ANIM_SPRITES_START + 271)
 #define ANIM_TAG_SPLASH                     (ANIM_SPRITES_START + 272)
 #define ANIM_TAG_SWEAT_BEAD                 (ANIM_SPRITES_START + 273)
-#define ANIM_TAG_GEM_1                      (ANIM_SPRITES_START + 274) // unused
+#define ANIM_TAG_GLOWY_YELLOW_ORB           (ANIM_SPRITES_START + 274) // pee?!
 #define ANIM_TAG_GEM_2                      (ANIM_SPRITES_START + 275) // unused
 #define ANIM_TAG_GEM_3                      (ANIM_SPRITES_START + 276) // unused
 #define ANIM_TAG_SLAM_HIT_2                 (ANIM_SPRITES_START + 277)
@@ -394,7 +394,6 @@
 #define ANIM_TAG_OMEGA_SYMBOL               (ANIM_SPRITES_START + 382)
 #define ANIM_TAG_STEEL_BEAM                 (ANIM_SPRITES_START + 383)
 #define ANIM_TAG_POLTERGEIST                (ANIM_SPRITES_START + 384)
-
 // battlers
 #define ANIM_ATTACKER    0
 #define ANIM_TARGET      1

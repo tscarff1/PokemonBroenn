@@ -4322,6 +4322,21 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMovePower = 0,
         .zMoveEffect = Z_EFFECT_SPD_UP_1,
     },
+    [MOVE_PEE_ON_EM] =
+    {
+        .effect = EFFECT_RAIN_DANCE,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_STATUS,
+        .zMovePower = 0,
+        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+    },
 
     [MOVE_SUNNY_DAY] =
     {

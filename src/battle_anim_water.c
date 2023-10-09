@@ -33,10 +33,13 @@ static void AnimSmallBubblePair_Step(struct Sprite *);
 static void AnimSmallDriftingBubbles(struct Sprite *);
 static void AnimSmallDriftingBubbles_Step(struct Sprite *);
 static void AnimSmallWaterOrb(struct Sprite *);
+static void AnimPeeOrb(struct Sprite *);
 static void AnimWaterSpoutRain(struct Sprite *);
 static void AnimWaterSpoutRainHit(struct Sprite *);
 static void AnimWaterSportDroplet(struct Sprite *);
 static void AnimWaterSportDroplet_Step(struct Sprite *);
+static void AnimPeeDroplet(struct Sprite *);
+static void AnimPeeDroplet_Step(struct Sprite *);
 static void AnimWaterPulseBubble_Step(struct Sprite *);
 static void AnimWaterPulseRingBubble(struct Sprite *);
 static void AnimWaterPulseRing_Step(struct Sprite *);
@@ -52,6 +55,8 @@ static void CreateWaterSpoutLaunchDroplets(struct Task *, u8);
 static void CreateWaterSpoutRainDroplet(struct Task *, u8);
 static void AnimTask_WaterSport_Step(u8);
 static void CreateWaterSportDroplet(struct Task *);
+static void AnimTask_Pee_Step(u8);
+static void CreatePeeDroplet(struct Task *);
 static void CreateWaterPulseRingBubbles(struct Sprite *, int, int);
 static void AnimAquaTail(struct Sprite *sprite);
 static void AnimKnockOffAquaTail(struct Sprite *sprite);
@@ -402,6 +407,17 @@ const struct SpriteTemplate gSmallWaterOrbSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimSmallWaterOrb,
+};
+
+const struct SpriteTemplate gPeeOrbSpriteTemplate = 
+{
+    .tileTag = ANIM_TAG_GLOWY_GREEN_ORB,
+    .paletteTag = ANIM_TAG_GLOWY_GREEN_ORB,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimPeeOrb,
 };
 
 static const union AnimCmd sAnim_WaterPulseBubble_0[] =
@@ -1412,6 +1428,28 @@ static void AnimSmallWaterOrb(struct Sprite *sprite)
     }
 }
 
+static void AnimPeeOrb(struct Sprite *sprite)
+{
+    switch (sprite->data[0])
+    {
+    case 0:
+        sprite->data[4] += (sprite->data[1] % 6) * 3;
+        sprite->data[5] += (sprite->data[1] % 3) * 3;
+        sprite->data[0]++;
+    case 1:
+        sprite->data[2] += sprite->data[4];
+        sprite->data[3] += sprite->data[5];
+        sprite->x = sprite->data[2] >> 4;
+        sprite->y = sprite->data[3] >> 4;
+        if (sprite->x < -8 || sprite->x > 248 || sprite->y < -8 || sprite->y > 120)
+        {
+            gTasks[sprite->data[6]].data[sprite->data[7]]--;
+            DestroySprite(sprite);
+        }
+        break;
+    }
+}
+
 void AnimTask_WaterSpoutRain(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
@@ -1661,6 +1699,147 @@ static void AnimWaterSportDroplet_Step(struct Sprite *sprite)
         for (i = 0; i < NUM_TASKS; i++)
         {
             if (gTasks[i].func == AnimTask_WaterSport_Step)
+            {
+                gTasks[i].data[10] = 1;
+                gTasks[i].data[8]--;
+                DestroySprite(sprite);
+            }
+        }
+    }
+}
+
+//Pee
+void AnimTask_Pee(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    task->data[3] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    task->data[4] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    task->data[7] = (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_PLAYER) ? 1 : -1;
+    if (IsContest())
+        task->data[7] *= -1;
+    task->data[5] = task->data[3] + task->data[7] * 8;
+    task->data[6] = task->data[4] - task->data[7] * 8;
+    task->data[9] = -32;
+    task->data[1] = 0;
+    task->data[0] = 0;
+    task->func = AnimTask_Pee_Step;
+}
+
+static void AnimTask_Pee_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    switch (task->data[0])
+    {
+    case 0:
+        CreatePeeDroplet(task);
+        if (task->data[10] != 0)
+            task->data[0]++;
+        break;
+    case 1:
+        CreatePeeDroplet(task);
+        if (++task->data[1] > 16)
+        {
+            task->data[1] = 0;
+            task->data[0]++;
+        }
+        break;
+    case 2:
+        CreatePeeDroplet(task);
+        task->data[5] += task->data[7] * 6;
+        if (!(task->data[5] >= -16 && task->data[5] <= 256))
+        {
+            if (++task->data[12] > 2)
+            {
+                task->data[13] = 1;
+                task->data[0] = 6;
+                task->data[1] = 0;
+            }
+            else
+            {
+                task->data[1] = 0;
+                task->data[0]++;
+            }
+        }
+        break;
+    case 3:
+        CreatePeeDroplet(task);
+        task->data[6] -= task->data[7] * 2;
+        if (++task->data[1] > 7)
+            task->data[0]++;
+        break;
+    case 4:
+        CreatePeeDroplet(task);
+        task->data[5] -= task->data[7] * 6;
+        if (!(task->data[5] >= -16 && task->data[5] <= 256))
+        {
+            task->data[12]++;
+            task->data[1] = 0;
+            task->data[0]++;
+        }
+        break;
+    case 5:
+        CreatePeeDroplet(task);
+        task->data[6] -= task->data[7] * 2;
+        if (++task->data[1] > 7)
+            task->data[0] = 2;
+        break;
+    case 6:
+        if (task->data[8] == 0)
+            task->data[0]++;
+        break;
+    default:
+        DestroyAnimVisualTask(taskId);
+        break;
+    }
+}
+
+static void CreatePeeDroplet(struct Task *task)
+{
+    u8 spriteId;
+
+    if (++task->data[2] > 1)
+    {
+        task->data[2] = 0;
+        spriteId = CreateSprite(&gPeeOrbSpriteTemplate, task->data[3], task->data[4], 10);
+        if (spriteId != MAX_SPRITES)
+        {
+            gSprites[spriteId].data[0] = 16;
+            gSprites[spriteId].data[2] = task->data[5];
+            gSprites[spriteId].data[4] = task->data[6];
+            gSprites[spriteId].data[5] = task->data[9];
+            InitAnimArcTranslation(&gSprites[spriteId]);
+            gSprites[spriteId].callback = AnimPeeDroplet;
+            task->data[8]++;
+        }
+    }
+}
+
+static void AnimPeeDroplet(struct Sprite *sprite)
+{
+    if (TranslateAnimHorizontalArc(sprite))
+    {
+        sprite->x += sprite->x2;
+        sprite->y += sprite->y2;
+        sprite->data[0] = 6;
+        sprite->data[2] = (Random2() & 0x1F) - 16 + sprite->x;
+        sprite->data[4] = (Random2() & 0x1F) - 16 + sprite->y;
+        sprite->data[5] = ~(Random2() & 7);
+        InitAnimArcTranslation(sprite);
+        sprite->callback = AnimPeeDroplet_Step;
+    }
+}
+
+static void AnimPeeDroplet_Step(struct Sprite *sprite)
+{
+    u16 i;
+
+    if (TranslateAnimHorizontalArc(sprite))
+    {
+        for (i = 0; i < NUM_TASKS; i++)
+        {
+            if (gTasks[i].func == AnimTask_Pee_Step)
             {
                 gTasks[i].data[10] = 1;
                 gTasks[i].data[8]--;

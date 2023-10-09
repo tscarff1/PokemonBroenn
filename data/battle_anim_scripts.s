@@ -805,6 +805,7 @@ gBattleAnims_Moves::
 	.4byte Move_SANDSEAR_STORM
 	.4byte Move_LUNAR_BLESSING
 	.4byte Move_TAKE_HEART
+	.4byte Move_PEE_ON_EM
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -19202,6 +19203,19 @@ Move_RAIN_DANCE:
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG | F_PAL_BATTLERS_2, 2, 4, 0, RGB_BLACK
 	waitforvisualfinish
+	end
+
+Move_PEE_ON_EM:
+	loadspritegfx ANIM_TAG_GLOWY_GREEN_ORB
+	createvisualtask AnimTask_Pee, 5
+	delay 8
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 44
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 44
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 44
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	end
 
 Move_BITE:
